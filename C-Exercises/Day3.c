@@ -4,6 +4,7 @@ int main(){
     int n;
     printf("Input: ");
     scanf("%d", &n);
+
     for(int i = 1; i <= n; i++){
         for(int b = 1; b <=i; b++){
             printf("*");
