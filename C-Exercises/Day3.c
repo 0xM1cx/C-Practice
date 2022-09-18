@@ -1,20 +1,42 @@
 #include <stdio.h>
 
-int main(){
-    int n;
-    printf("Input: ");
-    scanf("%d", &n);
-
-    for(int i = 1; i <= n; i++){
-        for(int b = 1; b <=i; b++){
-            printf("*");
-        }
-        printf("\n");
+int exerciseTwo(){
+    /* Write a program to read 10 numbers from the keyboard and find their sum and average.*/
+    int sum = 0;
+    for(int i = 0; i <= 10; i++){
+        int n;
+        scanf("Number: %d", &n);
+        sum += n;
     }
-    for(int j = n - 1; j >= 1; j--){
-        for(int a = j; a >=1; a--){
-            printf("*");
-        }
-        printf("\n");
+    float avg = sum / 10;
+
+    printf("The sum of 10 no. is: %d\nThe Average is: %fl", sum, avg);
+}
+
+int exerciseOne() {
+ /*Write a program to display n terms of natural numbers and their sum*/
+    int n;
+    printf("What is n? ");
+    scanf("%d", &n);
+    int sum = 0;
+
+    for(int i = 0; i <= n; i++){
+        printf("%d ", i);
+        sum += i;
+    }
+    printf("\n");
+    printf("The Sum of Natural Numbers up to 7 terms: %d \n", sum);
+}
+
+
+int main(){
+    int Userinput;
+    printf("Your choice: ");
+    scanf("%d", &Userinput);
+    if(Userinput == 1){
+        exerciseOne();
+    }
+    else if(Userinput == 2){
+        exerciseTwo();
     }
 }
