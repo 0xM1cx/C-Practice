@@ -1,5 +1,24 @@
 #include <stdio.h>
 
+int exerciseThree(){
+    int input;
+    scanf("%d", &input);
+    for(int b = 1; b <= input; ++b){
+        for(int j = 1; j <= b; ++j){
+            printf("*");
+        }
+        printf("\n");
+    }
+    for(int a = input; a >= 0; --a){
+        for(int l = a; l >= 0; --l){
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+
+
 int exerciseTwo(){
     /* Write a program to read 10 numbers from the keyboard and find their sum and average.*/
     int sum = 0;
@@ -18,7 +37,7 @@ int exerciseOne() {
     int n;
     printf("What is n? ");
     scanf("%d", &n);
-    int sum = 0;
+   int sum = 0;
 
     for(int i = 0; i <= n; i++){
         printf("%d ", i);
@@ -38,5 +57,7 @@ int main(){
     }
     else if(Userinput == 2){
         exerciseTwo();
+    }else if(Userinput == 3){
+        exerciseThree();
     }
 }
