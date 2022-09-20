@@ -2,16 +2,16 @@
 
 int assingmentTwo(){
     int len;
-    int wid;
+    int hei;
 
     printf("What is the length: ");
     scanf("%d", &len);
     printf("What is the Height: ");
-    scanf("%d", &wid);
+    scanf("%d", &hei);
 
-    int area = len * wid;
+    int area = len * hei;
 
-    printf("The area of the rectangle is: %d\n", area);
+    printf("The area of the rectangle is: %d", area);
 }
 
 int exerciseThree(){
