@@ -1,5 +1,40 @@
 #include <stdio.h>
-
+int assingmentThree(){
+    int i = 1;
+    int j;
+    int rows = 20;
+    // An top part han heart
+    for(i = rows/2; i <= rows; i+=2){ 
+        for(j = 1; j < rows-i; j+=2) {  
+            printf(" ");  
+        }
+        
+        for(j = 1; j <= i; j++){  
+            printf("*");  
+        }  
+        
+        for(j = 1; j <= rows-i; j++){  
+            printf(" ");  
+        }  
+        
+        for(j = 1; j <= i; j++){  
+            printf("*");  
+        }  
+        
+        printf("\n");  
+    }
+    // and ubos na part han heart; bali ine an inverted pyramid.
+    for(i = rows; i >= 1; i--){  
+        for(j = i; j < rows; j++){  
+            printf(" ");  
+        }  
+        for(j = 1; j <= (i*2)-1; j++){  
+            printf("*");  
+        }  
+       
+        printf("\n");  
+    }
+}
 int assingmentTwo(){
     int len;
     int wid;
@@ -75,5 +110,7 @@ int main(){
         exerciseThree();
     }else if(Userinput == 4){
         assingmentTwo();
+    }else if(Userinput == 5){
+        assingmentThree();
     }
 }

@@ -6,6 +6,13 @@
 #include <string.h>
 
 // Print out User Inputs
+int exerciseSix(){
+    char crush[20];
+    printf("Name han imo crush:  ");
+    scanf("%s", &crush);
+    printf("%s", crush);
+
+}
 int exerciseOne() {
     int currentDate = 2022;
     int birthYear;
@@ -102,6 +109,9 @@ int main(){
     }
     else if(Userinput == 5){
         exerciseFive();
+    }
+    else if(Userinput==6){
+        exerciseSix();
     }
     else{
         exit(0);
