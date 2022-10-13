@@ -38,7 +38,7 @@ int checkCompatabilityOfTwoPeople(){
             for(j = 1; j <= i; j++){  
                 printf("*");  
             }  
-            
+           
             printf("\n");  
         }
         // and ubos na part han heart; bali ine an inverted pyramid.

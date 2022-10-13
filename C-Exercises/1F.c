@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 int questionThree(){
     /*Write a C program the convertes the number of minutes to 
@@ -6,7 +7,7 @@ int questionThree(){
 
     int min;
     printf("INPUT MINUTES: ");
-    fgets(min);
+    scanf("%d" ,&min);
     float days = min / 24;
     float years = min / 525600;
 
@@ -19,6 +20,7 @@ int questionTwo(){
     if the number entered is positive or negative*/
 
     int userInput;
+    
     printf("INPUT NUMBER: ");
     scanf("%d", &userInput);
     
