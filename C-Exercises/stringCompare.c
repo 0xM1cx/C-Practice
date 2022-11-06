@@ -67,7 +67,7 @@ int checkCompatabilityOfSomeone(){
 
 int main(){
     int choice;
-    printf("Type 0 to check the compatability of two people\nType 1 to check your compatability to one person\nYour choice:  ");
+    printf("Type 0 to check the compatability of two persons\nType 1 to check your compatability to one person\nYour choice:  ");
     scanf("%d", &choice);
     if(choice == 0){
         checkCompatabilityOfTwoPeople();
