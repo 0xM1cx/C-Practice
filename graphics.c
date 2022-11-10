@@ -21,6 +21,8 @@ do{
         printf("They are disimilar");
         break;
     }
+}while(name == "Yes" || name == "YES" || name == "yes" && name == "No" || name == "NO" || name == "no");        
 }
-while(name == "Yes" || name == "YES" || name == "yes" && name == "No" || name == "NO" || name == "no");        
-}
+
+
+
