@@ -4,10 +4,7 @@
 
 void main()
 {
-
     char name[5];
-    
-
 do{
     printf("Rule no.1: Don't enter any invalid input.\n");
     printf("Yes or No[Yes/No]: ");
