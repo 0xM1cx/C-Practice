@@ -1,25 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void main()
 {
 
     char name[5];
+    
 
 do{
     printf("Rule no.1: Don't enter any invalid input.\n");
     printf("Yes or No[Yes/No]: ");
-    scanf("%s", name);
+    gets(name);
+    int result = strcmp(name, "Yes");    
 
-    strcmp();
-    if(name == "Yes" || name == "YES" || name == "yes"){
-            printf("You're in a loop.");
-    }
-    else if(name == "No" || name == "NO" || name == "yes"){
-           printf("You're in a loop."); 
-    }
-    else{
-        printf("I TOLD YOU, DON'T ENTER ANY INVALID OUTPUT!");
+    switch (result)
+    {
+    case 0:
+        printf("They are similar");
+        break;
+    
+    default:
+        printf("They are disimilar");
+        break;
     }
 }
 while(name == "Yes" || name == "YES" || name == "yes" && name == "No" || name == "NO" || name == "no");        
