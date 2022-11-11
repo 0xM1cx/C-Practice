@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 void main()
 {
     char name[5];
@@ -13,6 +14,7 @@ do{
 
     switch (result)
     {
+
     case 0:
         printf("They are similar");
         break;
