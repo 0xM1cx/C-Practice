@@ -16,17 +16,28 @@ void main() {
 
     //     printf("The biggest value is: %d\n", biggest);
     // }
+    int sum = 0;
+    int a = 0;
+    srand(time(0));
+    int num[5];
 
-    int a = 1;
-        srand(time(0));
-    while (a <= 5)
+    while (a <= 4)
     {
         int randomNumber = rand() % 10 + 1;
-        printf("%d. %d\n", a, randomNumber);
+        num[a] = randomNumber;
+
+        if(a != 4){
+            printf("%d +", randomNumber);
+        }else{
+            printf("%d = ", randomNumber);
+        }
         a++;
-        
+        sum += randomNumber;
     }
     
+    printf("%d", sum);
+
+
 
 
 }
