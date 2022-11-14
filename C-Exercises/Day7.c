@@ -21,7 +21,7 @@ void main() {
         srand(time(0));
     while (a <= 5)
     {
-        int randomNumber = rand();
+        int randomNumber = rand() % 10 + 1;
         printf("%d. %d\n", a, randomNumber);
         a++;
         
