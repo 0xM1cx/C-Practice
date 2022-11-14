@@ -1,4 +1,26 @@
 #include <stdio.h>
+void invertedTriangleNumbers(){
+    int a, b, n;
+    printf("How many lines? ");
+    scanf("%d", &n);
+
+    b = n;
+    while (b >= 1)
+    {
+        a = 1;
+        while (a <= b)
+        {
+            printf("%d", b);
+            a++;
+        }
+        
+        printf("\n");
+        b--;
+    }
+    
+}
+
+
 
 void descendingNumberTriangle(){
     int a, b, n;
@@ -22,6 +44,7 @@ void descendingNumberTriangle(){
 
 int main(){
     descendingNumberTriangle();
+    invertedTriangleNumbers();
     
     return 0;
 }
