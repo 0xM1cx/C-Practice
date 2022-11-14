@@ -8,22 +8,35 @@ int main(){
     ctrl2 = lines;
     while (ctrl2 >= 1)
     {
-        ctrl1 = 1;
-        while (ctrl1 <= ctrl2)
-        {
-            printf(" ");
-            ctrl1++;
-        }
         ctrl1 = lines;
         while (ctrl1 >= ctrl2)
         {
             printf("*");
             ctrl1--;
         }
+        // ctrl1 = 1;
+        // while (ctrl1 <= ctrl2)
+        // {
+        //     printf("*");
+        //     ctrl1++;  
+        // }
+
+        // ctrl1 = 1;
+        // while (ctrl1 <= ctrl2)
+        // {
+        //     printf(" ");
+        //     ctrl1++;
+        // }
+
+        // ctrl1 = lines;
+        // while (ctrl1 >= ctrl2)
+        // {
+        //     printf("*");
+        //     ctrl1--;
+        // }
         printf("\n");
         ctrl2--;
-        
-        
+
     }
     
 
