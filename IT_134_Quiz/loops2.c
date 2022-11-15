@@ -1,4 +1,16 @@
 #include <stdio.h>
+
+void forLoop(){
+    for(int i = 1; i<10; i++){
+        for (int b = 1; b < i; b++)
+        {
+            printf("*");
+        }
+        
+    printf("\n");
+    }
+}
+
 void invertedTriangleNumbers(){
     int a, b, n;
     printf("How many lines? ");
@@ -43,8 +55,8 @@ void descendingNumberTriangle(){
 }
 
 int main(){
-    descendingNumberTriangle();
-    invertedTriangleNumbers();
-    
+    // descendingNumberTriangle();
+    // invertedTriangleNumbers();
+    forLoop();
     return 0;
 }

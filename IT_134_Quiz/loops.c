@@ -11,29 +11,29 @@ int main(){
         ctrl1 = lines;
         while (ctrl1 >= ctrl2)
         {
-            printf("*");
+            printf(" ");
             ctrl1--;
         }
-        // ctrl1 = 1;
-        // while (ctrl1 <= ctrl2)
-        // {
-        //     printf("*");
-        //     ctrl1++;  
-        // }
+        ctrl1 = 1;
+        while (ctrl1 <= ctrl2)
+        {
+            printf("*");
+            ctrl1++;  
+        }
 
-        // ctrl1 = 1;
-        // while (ctrl1 <= ctrl2)
-        // {
-        //     printf(" ");
-        //     ctrl1++;
-        // }
+        ctrl1 = 1;
+        while (ctrl1 <= ctrl2)
+        {
+            printf(" ");
+            ctrl1++;
+        }
 
-        // ctrl1 = lines;
-        // while (ctrl1 >= ctrl2)
-        // {
-        //     printf("*");
-        //     ctrl1--;
-        // }
+        ctrl1 = lines;
+        while (ctrl1 >= ctrl2)
+        {
+            printf("*");
+            ctrl1--; 
+        }
         printf("\n");
         ctrl2--;
 
