@@ -10,7 +10,7 @@ void invertedTriangleNumbers(){
         a = 1;
         while (a <= b)
         {
-            printf("%d", b);
+            printf("%d\t", b);
             a++;
         }
         

@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(){
-    int crtl1, ctrl2 = 1, lines;
+    int crtl1, ctrl2 = 1, vertical;
     printf("How many lines? ");
     scanf("%d", &lines);
     while (ctrl2 <= lines)
