@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void main(){
     int PassFlag = 0, tries = 4, input;
@@ -8,6 +9,8 @@ void main(){
         scanf("%d", &input);
         if(tries != 0){
             if(input == 2004){
+                system("cls");
+                printf("Correct!!");
                 PassFlag = 1;
             }else{
                 printf("Incorrect Password!\n");
