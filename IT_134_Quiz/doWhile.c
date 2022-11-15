@@ -6,7 +6,7 @@ void main(){
     {
         printf("Input: ");
         scanf("%d", &input);
-        if(){
+        if(tries != 0){
             if(input == 2004){
                 PassFlag = 1;
             }else{
@@ -14,7 +14,7 @@ void main(){
                 tries--;
             }
         }else{
-
+            PassFlag = 1;
         }
         
     } while (PassFlag != 1);
