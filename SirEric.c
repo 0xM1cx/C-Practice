@@ -9,8 +9,8 @@ int main(){
         crtl1 = 1;
         char space = '_';
         
-        int crtl3 = 1;
-        while(crtl3 <= lines)
+        int crtl3 = lines;
+        while(crtl3 >= lines)
         {
             printf("%c",space);
             crtl3++;
