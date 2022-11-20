@@ -14,7 +14,6 @@ void main(){
                 printf("Correct!!");
                 PassFlag = 1; // ig set an PassFlag to 1 kay para mag end na it game.
             }else{
-                system("cls");
                 printf("Incorrect Password!\n"); // kun mali edi mali tapos amo ine an magawas.
                 tries--; // since mali man ig miminus an tries kay sure ak it user mag try again. stubborn man it sure dire maaram mag let go.
             }
