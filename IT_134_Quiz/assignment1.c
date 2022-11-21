@@ -9,5 +9,17 @@ void main(){
     printf("INTEGER: ");
     scanf("%d", &userInt);
 
+    for(;userInt != 1;){
+        if (userInt % 2 == 0)
+        {
+            userInt /= 2;
+            printf("%d\n", userInt);
+        }else{
+            userInt  = (userInt * 3) + 1;
+            printf("%d\n", userInt);
+        }
+        
+    }
+
 
 }
