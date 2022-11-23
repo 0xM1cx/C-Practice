@@ -1,12 +1,24 @@
-#include <stdio.h>
-#include <time.h>
-#include <unistd.h>
-#include <windows.h>
+#include <stdio.h> // Para sa printf() tapos scanf()
+#include <time.h> // Para sa srand(time(0))
+#include <unistd.h> // Para sa sleep()
+#include <windows.h> // Para sa sleep()
+#include <stdlib.h> // Para sa atoi()
 
+void findWinner(int playerOneSum, int playerTwoSum){
+    if (playerOneSum > playerTwoSum){
+        printf("\nPlayer 1 is the winner!!");
+    }
+    else if(playerTwoSum > playerOneSum){
+        printf("\nPlayer 2 is the winner!!");
+    }else{
+        printf("\nITS A TIE!!");
+    }
+}
 
 int getCards(){
+
     // Step 4
-    srand(time(0));
+    srand(time(0)); // Para mag babago yung random number everytime na matatawag itong getCards()
     
     int randNums[2];
     int randNumsSymbols[2];
@@ -52,12 +64,13 @@ void main(){
     int playerOneValues = getCards();
     int playerTwoValues = getCards();
 
-    int playerOneSum = playerOneValues[2] + playerOneValues()[3];
-    int playerTwoSum = playerTwoValues()[2] + playerTwoValues()[3];
+    int playerOneSum = atoi(playerOneValues[2]) + atoi(playerOneValues[3]);
+    int playerTwoSum = atoi(playerTwoValues[2]) + atoi(playerTwoValues[3]);
 
     // Displaying Cards to the USER
-    printf("Player 1: %c of %s and %c")
+    printf("Player 1: %c of %s and %c of %s", playerOneValues[2], playerOneValues[0], playerOneValues[3], playerOneValues[1]);
+    printf("Player 2: %c of %s and %c of %s", playerTwoValues[2], playerTwoValues[0], playerTwoValues[3], playerTwoValues[1]);
 
-
+    findWinner(playerOneSum, playerTwoSum);
 
 }
