@@ -29,6 +29,7 @@ void main(){
 
     char letters[4] = {'A', 'J', 'K', 'Q'};
     int numbers[9] = {2, 3, 4, 5, 6, 7, 8, 9, 10};
+    char shapes[4][10] = {"Hearts", "Spades", "Clover", "Diamond"};
 
     char pass[100];
     printf("Password: ");
