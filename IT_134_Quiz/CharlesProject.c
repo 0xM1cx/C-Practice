@@ -61,9 +61,44 @@ void main(){
     printf("Card is giving to both players");
     sleep(5);
 
-    int playerOneValues = getCards();
-    int playerTwoValues = getCards();
+    getPlayerOneCards:
+        srand(time(0)); // Para mag babago yung random number everytime na matatawag itong getCards()
+        
+        int randNums[2];
+        int randNumsSymbols[2];
+        int TotalrandNums[4];
 
+        
+        // Getting the symbols for the card
+        for(int i = 0; i <= 1; i++){
+            randNumsSymbols[i] = rand() % 3;
+        }
+
+        // Getting the car number
+        for(int b = 2; b<=3; b++){
+            randNums[b] = rand() % 9;
+        }
+
+    getPlayerTwoCards:
+        srand(time(0)); // Para mag babago yung random number everytime na matatawag itong getCards()
+        
+        int _randNums[2];
+        int _randNumsSymbols[2];
+
+        
+        // Getting the symbols for the card
+        for(int i = 0; i <= 1; i++){
+            _randNumsSymbols[i] = rand() % 3;
+        }
+
+        // Getting the car number
+        for(int b = 2; b<=3; b++){
+            _randNums[b] = rand() % 9;
+        }
+    
+    goto getPlayerOneCards;
+    goto getPlayerTwoCards;
+    
     int playerOneSum = atoi(playerOneValues[2]) + atoi(playerOneValues[3]);
     int playerTwoSum = atoi(playerTwoValues[2]) + atoi(playerTwoValues[3]);
 
@@ -73,4 +108,4 @@ void main(){
 
     findWinner(playerOneSum, playerTwoSum);
 
-}
+} 
