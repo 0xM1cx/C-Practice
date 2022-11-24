@@ -109,8 +109,8 @@ void main(){
     
     // Displaying Cards to the USER
     system("cls");
-    printf("Player %s: %d of %d and %d of %d\n", playerOne, randNums[0], randNumsSymbols[0], randNums[1], randNumsSymbols[1]);
-    printf("Player %s: %d of %d and %d of %d", playerTwo, _randNums[0], _randNumsSymbols[0], _randNums[3], _randNumsSymbols[1]);
+    printf("Player %s: %d of %d and %d of %d\n", playerOne, num[randNums[0]], shapes[randNumsSymbols[0]], num[randNums[1]], shapes[randNumsSymbols[1]]);
+    printf("Player %s: %d of %d and %d of %d", playerTwo, num[_randNums[0]], shapes[_randNumsSymbols[0]], num[_randNums[1]], shapes[_randNumsSymbols[1]]);
 
 
 
