@@ -15,28 +15,28 @@ void findWinner(int playerOneSum, int playerTwoSum){
     }
 }
 
-int getCards(){
+// int getCards(){
 
-    // Step 4
-    srand(time(0)); // Para mag babago yung random number everytime na matatawag itong getCards()
+//     // Step 4
+//     srand(time(0)); // Para mag babago yung random number everytime na matatawag itong getCards()
     
-    int randNums[2];
-    int randNumsSymbols[2];
-    int TotalrandNums[4];
+//     int randNums[2];
+//     int randNumsSymbols[2];
+//     int TotalrandNums[4];
 
     
-    // Getting the symbols for the card
-    for(int i = 0; i <= 1; i++){
-        TotalrandNums[i] = rand() % 3;
-    }
+//     // Getting the symbols for the card
+//     for(int i = 0; i <= 1; i++){
+//         TotalrandNums[i] = rand() % 3;
+//     }
 
-    // Getting the car number
-    for(int b = 2; b<=3; b++){
-        TotalrandNums[b] = rand() % 9;
-    }
+//     // Getting the car number
+//     for(int b = 2; b<=3; b++){
+//         TotalrandNums[b] = rand() % 9;
+//     }
     
-    return TotalrandNums;
-}
+//     return TotalrandNums;
+// }
 
 
 void main(){
@@ -49,24 +49,28 @@ void main(){
     char playerTwo[50];
 
     // Step 1
-    printf("Player 1; What is your name? ");
+    printf("Player 1: What is your name? ");
     scanf("%s", playerOne);
 
-    printf("Player 2; What is your name? ");
+    printf("Player 2: What is your name? ");
     scanf("%s", playerTwo);
 
     // Step 2 and 3
-    printf("Car is shuffling........");
+    printf("Card is shuffling........");
     sleep(5);
-    printf("Card is giving to both players");
+    printf("\nCard is giving to both players");
     sleep(5);
 
+
+    goto getPlayerOneCards;
+    goto getPlayerTwoCards;
+    
+    // Generating Cards for Player 1
     getPlayerOneCards:
         srand(time(0)); // Para mag babago yung random number everytime na matatawag itong getCards()
         
         int randNums[2];
         int randNumsSymbols[2];
-        int TotalrandNums[4];
 
         
         // Getting the symbols for the card
@@ -75,10 +79,12 @@ void main(){
         }
 
         // Getting the car number
-        for(int b = 2; b<=3; b++){
+        for(int b = 0; b<=1; b++){
             randNums[b] = rand() % 9;
         }
 
+
+    // Generating Cards for Player 2
     getPlayerTwoCards:
         srand(time(0)); // Para mag babago yung random number everytime na matatawag itong getCards()
         
@@ -92,20 +98,20 @@ void main(){
         }
 
         // Getting the car number
-        for(int b = 2; b<=3; b++){
+        for(int b = 0; b<=1; b++){
             _randNums[b] = rand() % 9;
         }
     
-    goto getPlayerOneCards;
-    goto getPlayerTwoCards;
+ 
+    int playerOneSum = num[randNums[0]] + num[randNums[1]];
+    int playerTwoSum = num[_randNums[0]] + num[_randNums[1]];
+
     
-    int playerOneSum = atoi(playerOneValues[2]) + atoi(playerOneValues[3]);
-    int playerTwoSum = atoi(playerTwoValues[2]) + atoi(playerTwoValues[3]);
-
     // Displaying Cards to the USER
-    printf("Player 1: %c of %s and %c of %s", playerOneValues[2], playerOneValues[0], playerOneValues[3], playerOneValues[1]);
-    printf("Player 2: %c of %s and %c of %s", playerTwoValues[2], playerTwoValues[0], playerTwoValues[3], playerTwoValues[1]);
+    system("cls");
+    printf("Player %s: %d of %d and %d of %d\n", playerOne, randNums[0], randNumsSymbols[0], randNums[1], randNumsSymbols[1]);
+    printf("Player %s: %d of %d and %d of %d", playerTwo, _randNums[0], _randNumsSymbols[0], _randNums[3], _randNumsSymbols[1]);
 
-    findWinner(playerOneSum, playerTwoSum);
+
 
 } 
