@@ -113,18 +113,21 @@ void main(){
     
     // Displaying Cards to the USER
     // The the purpose of the conditions is to see if it is 1 because 1 in lucky 9 is A, so it will replace  1 with A.
-    if(randNums[0] == '1'){
-        randNums[0] = 'A';
-        printf("\nPlayer %s: %c of %s and %c of %s\n", playerTwo, num[_randNums[0]], shapes[_randNumsSymbols[0]], num[_randNums[1]], shapes[_randNumsSymbols[1]]);
-        printf("Player %s: %c of %s and %c of %s\n", playerOne, num[randNums[0]], shapes[randNumsSymbols[0]], num[randNums[1]], shapes[randNumsSymbols[1]]);
-    }else if(randNums[1] == '1'){
-        randNums[1] = 'A'; 
-        printf("\nPlayer %s: %c of %s and %c of %s\n", playerTwo, num[_randNums[0]], shapes[_randNumsSymbols[0]], num[_randNums[1]], shapes[_randNumsSymbols[1]]);
-        printf("Player %s: %c of %s and %c of %s\n", playerOne, num[randNums[0]], shapes[randNumsSymbols[0]], num[randNums[1]], shapes[randNumsSymbols[1]]);
-    }else{
-        printf("\nPlayer %s: %c of %s and %c of %s\n", playerTwo, num[_randNums[0]], shapes[_randNumsSymbols[0]], num[_randNums[1]], shapes[_randNumsSymbols[1]]);
-        printf("Player %s: %c of %s and %c of %s\n", playerOne, num[randNums[0]], shapes[randNumsSymbols[0]], num[randNums[1]], shapes[randNumsSymbols[1]]);
-    }
+    goto displayCards;
+    
+    displayCards:
+        if(randNums[0] == '1'){
+            randNums[0] = 'A';
+            printf("\nPlayer %s: %c of %s and %c of %s\n", playerTwo, num[_randNums[0]], shapes[_randNumsSymbols[0]], num[_randNums[1]], shapes[_randNumsSymbols[1]]);
+            printf("Player %s: %c of %s and %c of %s\n", playerOne, num[randNums[0]], shapes[randNumsSymbols[0]], num[randNums[1]], shapes[randNumsSymbols[1]]);
+        }else if(randNums[1] == '1'){
+            randNums[1] = 'A'; 
+            printf("\nPlayer %s: %c of %s and %c of %s\n", playerTwo, num[_randNums[0]], shapes[_randNumsSymbols[0]], num[_randNums[1]], shapes[_randNumsSymbols[1]]);
+            printf("Player %s: %c of %s and %c of %s\n", playerOne, num[randNums[0]], shapes[randNumsSymbols[0]], num[randNums[1]], shapes[randNumsSymbols[1]]);
+        }else{
+            printf("\nPlayer %s: %c of %s and %c of %s\n", playerTwo, num[_randNums[0]], shapes[_randNumsSymbols[0]], num[_randNums[1]], shapes[_randNumsSymbols[1]]);
+            printf("Player %s: %c of %s and %c of %s\n", playerOne, num[randNums[0]], shapes[randNumsSymbols[0]], num[randNums[1]], shapes[randNumsSymbols[1]]);
+        }
 
     findWinner(playerOneSum, playerTwoSum);
 
