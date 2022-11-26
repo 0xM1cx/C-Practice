@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 
 void main(){
 
@@ -17,7 +19,38 @@ void main(){
     Number of Even:
     Sum of Odd:
     Sum of Even: */
+    
+    srand(time(0));
+    int randNum;
+    int numberOfOdd = 0;
+    int numberOfEven = 0;
+    int sumOfEven = 0, sumOfOdd = 0;
 
+    for (int i = 1; i < 10; i++)
+    {
+        for (int b = 0; b < 10; b++)
+        {
+            randNum = rand() % 50 + 1;
+            if (randNum % 2 == 0)
+            {
+                numberOfEven += 1;
+                sumOfEven += randNum;
+            }else{
+                numberOfOdd += 1;
+                sumOfOdd += randNum;
+            }
+
+            printf("%4d", randNum);
+            
+        } 
+        printf("\n");
+    }
+
+    printf("\nNumber of Even: %d", numberOfEven);
+    printf("\nNumber of Odd: %d", numberOfOdd );
+    printf("\nSum of Odd: %d", sumOfOdd);
+    printf("\nSum of Even: %d", sumOfEven);
+    
 
 
 }
