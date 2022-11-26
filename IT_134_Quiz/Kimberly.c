@@ -17,6 +17,8 @@ void main(){
 
     // Initializing gameplay system variables
     int playerLife = 10;
+    char grimoiresOfChoice[2][20] = {"Burakkugurimoa", "Akuagurimoa"};
+    char playerGrimoire[20];
     
     
 
