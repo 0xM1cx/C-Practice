@@ -26,9 +26,9 @@ void main(){
     int numberOfEven = 0;
     int sumOfEven = 0, sumOfOdd = 0;
 
-    for (int i = 1; i < 10; i++)
+    for (int i = 1; i <= 10; i++)
     {
-        for (int b = 0; b < 10; b++)
+        for (int b = 1; b <= 10; b++)
         {
             randNum = rand() % 50 + 1;
             if (randNum % 2 == 0)

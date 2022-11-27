@@ -15,10 +15,20 @@ void main() // gin void ko hiya para dire naak mag sure return 0. kay main funct
 
         if (size >= 1 && size <= 15) // ig check kay kun an input ha user within ha specified range an assignment.
         {
+            // printf("%4c", 32);
+            printf("    ");
+            for (int f = 1; f <= size; f++)
+            {   
+                printf("%4d", f);
+            }
+            printf("\n");
             for (int i = 1; i <= size; i++) // parent loop. an mga rows
-            { 
+            {   
+            
+                printf("%4d", i);
                 for (int b = 1; b <= size; b++) // child loop para han pag print han columns.
-                {
+                {   
+
                     printf("%4d", i * b); // multiply ko an curent value han i to the current value of b. 
                     /*So diba na first value han parent loop, i, above kay 1, because int i = 1. Since 1 < han size then mag proceed
                     hiya ha child loop. Then an first value han child loop kay 1 liwat so 1 * 1 = 1 amot una na print. Now 
@@ -28,6 +38,7 @@ void main() // gin void ko hiya para dire naak mag sure return 0. kay main funct
                      less than size then ig print out na an product 1 * 2 = 2. So on and so forth na ito. IDK no kun magets niya tak yakan
                     dire ak teacher bobo ak mag tutdo.*/
                 }
+                
                 printf("\n");
                 
             }
