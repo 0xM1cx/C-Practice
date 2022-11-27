@@ -15,8 +15,8 @@ void main() // gin void ko hiya para dire naak mag sure return 0. kay main funct
 
         if (size >= 1 && size <= 15) // ig check kay kun an input ha user within ha specified range an assignment.
         {
-            // printf("%4c", 32);
-            printf("    ");
+            printf("%4c", 32);
+            
             for (int f = 1; f <= size; f++)
             {   
                 printf("%4d", f);
