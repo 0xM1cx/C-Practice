@@ -5,9 +5,10 @@
 
 #define size 7
 
+
+
 void main(){
     srand(time(0));
-
     
     // Make a 7x7 2 dimensional array
     int array[size][size];
