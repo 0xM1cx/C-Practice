@@ -8,15 +8,16 @@
 
 
 void main(){
-    srand(time(0));
+    srand(time(0)); 
     
     // Make a 7x7 2 dimensional array
-    int array[size][size];
+    int array[size][size]; // Initialize the 7x7 array
     for (int i = 0; i <size; i++)
     {
         for (int b = 0; b < size; b++)
         {
-            array[i][b] = rand() % 50 + 1;
+            // Generating a random number for every element in the array.
+            array[i][b] = rand() % 50 + 1; 
         }     
     }
 
