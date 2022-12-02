@@ -4,6 +4,8 @@
 #include <windows.h> // Para sa sleep()
 #include <stdlib.h> // Para sa atoi()
 
+
+
 void findWinner(int playerOneSum, int playerTwoSum){
     if (playerOneSum > playerTwoSum){
         printf("\nPlayer 1 is the winner!!");
