@@ -17,24 +17,14 @@ void main(){
 
     int array[size][size];
     int counter = 1;
-    // for (int a = 0; a < size; a++)
-    // {
-    //     for (int f= 0; f < size; f++)
-    //     {
-    //         array[a][f] = counter;
-    //         counter++;
-    //     }
-        
-    // }
-    int t = 0, r = 0;
-    int cnt = 1;
-    while(t < size){
-        while(r < size){
-            array[t][r] = cnt;
-            cnt++;
-            r++;
+    for (int a = 0; a < size; a++)
+    {
+        for (int f= 0; f < size; f++)
+        {
+            array[a][f] = counter;
+            counter++;
         }
-        t++;
+        
     }
     
 
