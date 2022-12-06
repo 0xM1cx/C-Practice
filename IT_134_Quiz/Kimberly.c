@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-void BookOneChoiceOne(playerName){
+void BookOneChoiceOne(char playerName){
     printf("...I'm %s", playerName);
 }
 
@@ -18,21 +18,15 @@ void BookTwo(){
 }
 
 
-void BookOne(playerName){
+void BookOne(char playerName){
     int userInput;
     char playername[20];
-    printf("You are a bookworm, always reading books day and night. From firctionn to facts, horror to comedy.\n
-    When someone asks you what book they should read, you already know the answer not by random but by examining\n
-    the kind of person they are and the type of book they would like.\n");
+    printf("You are a bookworm, always reading books day and night. From firctionn to facts, horror to comedy.\nWhen someone asks you what book they should read, you already know the answer not by random but by examining\nthe kind of person they are and the type of book they would like.\n");
 
     sleep(2);
-    printf("One day you go home, tired, hungry and itching to read the new book you just bought the other day entitled\n
-    \"The Reader's Adventure to the Unknown\". At 9:00 pm you sit down in you bed and start reading the book. After 2 hours\n
-    you start to feel doozy and slowly fall asleep with the book beside you bed.\n");
+    printf("One day you go home, tired, hungry and itching to read the new book you just bought the other day entitled\n\"The Reader's Adventure to the Unknown\". At 9:00 pm you sit down in you bed and start reading the book. After 2 hours\nyou start to feel doozy and slowly fall asleep with the book beside you bed.\n");
 
-    printf("You wake up in an unfamiliar forest. Unable to recall what happened after you dozed off. You hear something, a\n
-    rattling sound near the bushes to you left. Then someone came out, a girl with a bow and arrow. Telling you to duck and\n
-    cover as she was about to hit the boar behind you.\n");
+    printf("You wake up in an unfamiliar forest. Unable to recall what happened after you dozed off. You hear something, a\nrattling sound near the bushes to you left. Then someone came out, a girl with a bow and arrow. Telling you to duck and\ncover as she was about to hit the boar behind you.\n");
 
     printf("*You duck out of the way*\n");
     printf("*She hits the boar behind you*");
@@ -41,10 +35,8 @@ void BookOne(playerName){
 
     printf("CRYSTAL: What is your name?");
     choiceOne:
-        printf("YOU CHOICES:\n
-        1. Tell you name\n
-        2. Don't tell her\n");
-        scanf("%d", %userInput);
+        printf("YOU CHOICES:\n1. Tell you name\n2. Don't tell her\n");
+        scanf("%d", &userInput);
     if(userInput == 1){
         BookOneChoiceOne(playerName);
         playername = playerName;
