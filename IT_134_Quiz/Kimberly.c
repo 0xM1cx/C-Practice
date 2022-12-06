@@ -45,7 +45,7 @@ void BookOne(char playerName){
     else if(userInput == 2){
         BookOneChoiceTwo();
     }else{
-
+        goto choiceOne;
     }
     
 }
