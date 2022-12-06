@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <string.h>
 
 void BookOneChoiceOne(char playerName){
     printf("...I'm %s", playerName);
@@ -20,7 +21,7 @@ void BookTwo(){
 
 void BookOne(char playerName){
     int userInput;
-    char playername[20];
+    char username[20];
     printf("You are a bookworm, always reading books day and night. From firctionn to facts, horror to comedy.\nWhen someone asks you what book they should read, you already know the answer not by random but by examining\nthe kind of person they are and the type of book they would like.\n");
 
     sleep(2);
@@ -39,7 +40,7 @@ void BookOne(char playerName){
         scanf("%d", &userInput);
     if(userInput == 1){
         BookOneChoiceOne(playerName);
-        playername = playerName;
+        strcpy(username, playerName);
     }
     else if(userInput == 2){
         BookOneChoiceTwo();
