@@ -19,6 +19,7 @@ int currentRoll = 0;
 
 // Main function where the program will first start
 void main(){
+    srand(time(0));
     char UserInput; // This is used to get the user input
 
     currentRoll = 0; // this is used for the number of the row used in the 2d array
@@ -26,7 +27,7 @@ void main(){
 
     printf("WELCOME PLAYER\n\n");
     printf("Current Capital: %d\n\n\n", currentCapital); // Displaying the current capital to the user
-    printf("[P]lay\n[E]xit\n");
+    printf("[P]lay\n[E]xit\n\nINPUT: ");
     scanf(" %c", &UserInput);
 
     if(UserInput == 'P' || UserInput == 'p'){
@@ -44,7 +45,6 @@ void main(){
 
 
 int getRanNums(){
-    srand(time(0));
 
     int dieOne = rand() % 6 + 1; // Invokes a random number for 
     int dieTwo = rand() % 6 + 1;
@@ -59,16 +59,17 @@ int getRanNums(){
 
 void succedingRolls(int userBet, int valToWin){
 
-    int randNum = getRanNums();
+    srand(time(0));
     int valueToWin = valToWin;
     int isDone = 1;
-
-    printf("Roll %d\n\t", currentRoll+1);
-    printf("D1: %d\n\t", RollsArr[currentRoll][0]);
-    printf("D2: %d\n\t", RollsArr[currentRoll][1]);
-    printf("T: %d\n", RollsArr[currentRoll][2]);
-
     while(isDone){
+
+        int randNum = getRanNums();
+        printf("Roll %d\n\t", currentRoll+1);
+        printf("D1: %d\n\t", RollsArr[currentRoll][0]);
+        printf("D2: %d\n\t", RollsArr[currentRoll][1]);
+        printf("T: %d\n", RollsArr[currentRoll][2]);
+
         if(randNum == valueToWin){
             printf("Winner!!\n\n");
             currentCapital += userBet;
@@ -82,7 +83,11 @@ void succedingRolls(int userBet, int valToWin){
             isDone = 0;
         }
         currentRoll++;
-        sleep(5)
+        for(int i = 0; i<= 4; i++){
+            printf(".");
+            sleep(1);
+        }
+        printf("\n");
     }
 }
 
@@ -109,6 +114,11 @@ void play(int userBet){
         currentCapital -= userBet;
         main();
     }else{
+        for(int i = 0; i<= 4; i++){
+            printf(".");
+            sleep(1);
+        }
+        printf("\n");
         succedingRolls(userBet, randNum);
     }           
 }
