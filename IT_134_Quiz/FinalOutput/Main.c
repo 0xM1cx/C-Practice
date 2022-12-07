@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <windows.h>
 
 int getRanNums();
 void succedingRolls(int userBet, int valToWin);
