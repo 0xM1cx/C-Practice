@@ -1,29 +1,31 @@
-#include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <windows.h>
+#include <stdio.h> // For the scanf and printf functions
+#include <time.h> // for the time() function for generating a new random number everytime the rand() is called
+#include <stdlib.h> 
+#include <unistd.h> // for the sleep(), compatability for linux
+#include <windows.h> // for the sleep(), compatability for windows
 
-int getRanNums();
+// Declaring the functions to be used
+int getRanNums(); 
 void succedingRolls(int userBet, int valToWin);
 void play(int userBet);
 void bet();
 
-
+// Declaring and initializing the global variables to be used
 int currentCapital = 1000;
 int RollsArr[100][100];
 int currentRoll = 0;
 
 
 
-
+// Main function where the program will first start
 void main(){
-    char UserInput;
+    char UserInput; // This is used to get the user input
 
-    currentRoll = 0;
+    currentRoll = 0; // this is used for the number of the row used in the 2d array
 
 
     printf("WELCOME PLAYER\n\n");
+    printf("Current Capital: %d\n\n\n", currentCapital); // Displaying the current capital to the user
     printf("[P]lay\n[E]xit\n");
     scanf(" %c", &UserInput);
 
@@ -68,18 +70,19 @@ void succedingRolls(int userBet, int valToWin){
 
     while(isDone){
         if(randNum == valueToWin){
-            printf("Winner!!");
+            printf("Winner!!\n\n");
             currentCapital += userBet;
             main();
             isDone = 0;
         }else if (randNum == 7)
         {
-            printf("You Lost!!");
+            printf("You Lost!!\n\n");
             currentCapital -= userBet;
             main();
             isDone = 0;
         }
         currentRoll++;
+        sleep(5)
     }
 }
 
