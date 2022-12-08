@@ -22,6 +22,16 @@ int currentRoll = 0;
 void main(){
     
     system("cls");
+
+    if (currentCapital == 0)
+    {
+        char usrInput;
+        printf("No More Money.\n\n\nThank You For Playing");
+        printf("\n\nPress Any Key to Continue");
+        scanf(" %c", &usrInput);
+        exit(0);
+    }
+    
     srand(time(0));
     char UserInput; // This is used to get the user input
 
@@ -31,7 +41,14 @@ void main(){
     printf("\033[0;34m");
     printf("WELCOME TO ROLL OR DIE\n\n");
     printf("\033[0;37m");
-    printf("=========================\n\n");
+    printf("=========================\n\n\n");
+
+    
+    printf("DEVELOPERS:\n\t");
+    printf("Shawn Michael Sudaria\n\t");
+    printf("Jade Hart Lee\n\t");
+    printf("Renz Ivan Monteza\n\n");
+
     printf("Current Capital: %d\n\n\n", currentCapital); // Displaying the current capital to the user
     printf("[P]lay\n[E]xit\n\nINPUT: ");
     scanf(" %c", &UserInput);
@@ -44,7 +61,7 @@ void main(){
     }
     else{
         printf("Invalid Input, it must be either P or E");
-        sleep(3);
+        sleep(2);
         main();
     }
 }
@@ -58,13 +75,20 @@ void playAgain(){
     if(userInput == 'Y' || userInput == 'y'){
         main();
     }
-    else if(userInput == 'N' || userInput == 'N'){
+    else if(userInput == 'N' || userInput == 'n'){
+        system("cls");
+        printf("\033[0;37m");
+        printf("=========================\n\n");
+        printf("\033[0;34m");
+        printf("Thank You For \033[0;37m Playing!!\n\n");
+        printf("\033[0;37m");
+        printf("=========================\n\n");
+        sleep(2);
         exit(0);
     }else{
         printf("Wrong Input!!!");
-        sleep(3);
-        playAgain();
-        
+        sleep(2);
+        playAgain();  
     }
     
 }
@@ -93,7 +117,7 @@ void succedingRolls(int userBet, int valToWin){
         printf("Roll %d\n\t", currentRoll+1);
         printf("D1: %d\n\t", RollsArr[currentRoll][0]);
         printf("D2: %d\n\t", RollsArr[currentRoll][1]);
-        printf("T: %d\n", RollsArr[currentRoll][2]);
+        printf("T: %d\n\n", RollsArr[currentRoll][2]);
 
         if(randNum == valueToWin){
             printf("Winner!!\n\n");
@@ -108,10 +132,22 @@ void succedingRolls(int userBet, int valToWin){
             isDone = 0;
         }
         currentRoll++;
-        for(int i = 0; i<= 4; i++){
-            printf(".");
+
+        printf("\n\nRolling Dice and Getting sum  ");
+        for (int i = 0; i<=0; i++) {
             sleep(1);
-        }
+            printf("\b\\");
+            
+            sleep(1);
+            printf("\b|");
+        
+            sleep(1);
+            printf("\b/");
+        
+            sleep(1);
+            printf("\b-");
+            sleep(1);
+    }
         printf("\n");
     }
 }
@@ -121,7 +157,25 @@ void play(int userBet){
 
     
     int randNum = getRanNums();
-    printf("Roll 1\n\t");
+
+    printf("\n\nRolling Dice and Getting sum  ");
+    for (int i = 0; i<=0; i++) {
+        sleep(1);
+        printf("\b\\");
+        
+        sleep(1);
+        printf("\b|");
+       
+        sleep(1);
+        printf("\b/");
+       
+        sleep(1);
+        printf("\b-");
+        sleep(1);
+    }
+    
+
+    printf("\n\nRoll 1\n\t");
     printf("D1: %d\n\t", RollsArr[currentRoll][0]);
     printf("D2: %d\n\t", RollsArr[currentRoll][1]);
     printf("T: %d\n", RollsArr[currentRoll][2]);
@@ -130,19 +184,30 @@ void play(int userBet){
     
     if (randNum == 7)
     {
-        printf("We have a winner");
+        printf("We have a winner\n\n");
         currentCapital += userBet;
         playAgain();
     }
     else if(randNum == 11 || randNum == 2){
-        printf("You have lost");
+        printf("You have lost\n\n");
         currentCapital -= userBet;
         playAgain();
     }else{
-        for(int i = 0; i<= 4; i++){
-            printf(".");
+        printf("\n\nRolling Dice and Getting sum  ");
+        for (int i = 0; i<=0; i++) {
             sleep(1);
-        }
+            printf("\b\\");
+            
+            sleep(1);
+            printf("\b|");
+        
+            sleep(1);
+            printf("\b/");
+        
+            sleep(1);
+            printf("\b-");
+            sleep(1);
+    }
         printf("\n");
         succedingRolls(userBet, randNum);
     }           

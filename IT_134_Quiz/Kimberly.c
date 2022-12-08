@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-voide goToOffice(), goNear(), BookTwo(), BookOne(char *playerName);
+void goToOffice(), goNear(), BookTwo(), BookOne(char *playerName);
 
 
 void goToOffice(){
