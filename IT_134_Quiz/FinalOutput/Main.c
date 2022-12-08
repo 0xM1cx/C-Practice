@@ -9,6 +9,7 @@ int getRanNums();
 void succedingRolls(int userBet, int valToWin);
 void play(int userBet);
 void bet();
+void playAgain();
 
 // Declaring and initializing the global variables to be used
 int currentCapital = 1000;
@@ -19,13 +20,18 @@ int currentRoll = 0;
 
 // Main function where the program will first start
 void main(){
+    
+    system("cls");
     srand(time(0));
     char UserInput; // This is used to get the user input
 
     currentRoll = 0; // this is used for the number of the row used in the 2d array
-
-
-    printf("WELCOME PLAYER\n\n");
+    printf("\033[0;37m");
+    printf("=========================\n\n");
+    printf("\033[0;34m");
+    printf("WELCOME TO ROLL OR DIE\n\n");
+    printf("\033[0;37m");
+    printf("=========================\n\n");
     printf("Current Capital: %d\n\n\n", currentCapital); // Displaying the current capital to the user
     printf("[P]lay\n[E]xit\n\nINPUT: ");
     scanf(" %c", &UserInput);
@@ -43,6 +49,25 @@ void main(){
     }
 }
 
+
+void playAgain(){
+    char userInput;
+    printf("Do you want to play again? Y or N\nINPUT: ");
+    scanf(" %c", &userInput);
+
+    if(userInput == 'Y' || userInput == 'y'){
+        main();
+    }
+    else if(userInput == 'N' || userInput == 'N'){
+        exit(0);
+    }else{
+        printf("Wrong Input!!!");
+        sleep(3);
+        playAgain();
+        
+    }
+    
+}
 
 int getRanNums(){
 
@@ -73,13 +98,13 @@ void succedingRolls(int userBet, int valToWin){
         if(randNum == valueToWin){
             printf("Winner!!\n\n");
             currentCapital += userBet;
-            main();
+            playAgain();
             isDone = 0;
         }else if (randNum == 7)
         {
             printf("You Lost!!\n\n");
             currentCapital -= userBet;
-            main();
+            playAgain();
             isDone = 0;
         }
         currentRoll++;
@@ -107,12 +132,12 @@ void play(int userBet){
     {
         printf("We have a winner");
         currentCapital += userBet;
-        main();
+        playAgain();
     }
     else if(randNum == 11 || randNum == 2){
         printf("You have lost");
         currentCapital -= userBet;
-        main();
+        playAgain();
     }else{
         for(int i = 0; i<= 4; i++){
             printf(".");
@@ -136,3 +161,5 @@ void bet(){
 
     play(userBet);
 }
+
+

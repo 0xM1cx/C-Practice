@@ -78,10 +78,6 @@ void BookOne(char *playerName){
     }else{
         goto choiceTwo;
     }
-
-
-
-    
 }   
 
 
