@@ -12,32 +12,27 @@ void succedingRolls(int userBet, int valToWin), play(int userBet), bet(), playAg
 
 // Declaring and initializing the global variables to be used
 int currentCapital = 1000;
-int RollsArr[size][3];
+int RollsArr[size][size];
 int currentRoll = 0;
 
 
 
 // Main function where the program will first start
 void main(){
-    
+    system("eugene cam - cove.mp3");
     system("cls");
 
-    
-    
     srand(time(0));
     char UserInput; // This is used to get the user input
 
     displayBanner();
     printf("\033[0;32m");
 
-    
 
-
-    
     displayInfo();
 
     
-    printf("[P]lay\n[E]xit\n\nINPUT: ");
+    printf("[P]lay\n[E]xit\n[R]ules\n\nINPUT: ");
     scanf(" %c", &UserInput);
 
     if(UserInput == 'P' || UserInput == 'p'){
@@ -46,7 +41,9 @@ void main(){
     else if(UserInput == 'E' || UserInput == 'e'){
         exit(0);
     }
-    else{
+    else if(UserInput == 'R' || UserInput == 'r'){
+        rules();
+    }else{
         printf("Invalid Input, it must be either P or E");
         sleep(2);
         main();
@@ -97,12 +94,13 @@ void playAgain(){
     }
     else if(userInput == 'N' || userInput == 'n'){
         system("cls");
+        displayBanner();
         printf("\033[0;37m");
-        printf("=========================\n\n");
+        printf("\t\t\t=========================\n\n");
         printf("\033[0;34m");
-        printf("Thank You For \033[0;37m Playing!!\n\n");
+        printf("\033[0;32m \t\t\tThank You For \033[0;37m Playing!!\n\n");
         printf("\033[0;37m");
-        printf("=========================\n\n\n\n\n");
+        printf("\t\t\t=========================\n\n\n\n\n");
         displayInfo();
         sleep(2);
         exit(0);
@@ -132,6 +130,7 @@ void succedingRolls(int userBet, int valToWin){
     srand(time(0));
     int _valueToWin = valToWin;
     int isDone = 1;
+
     while(isDone){
 
         int randNum = getRanNums();
@@ -145,17 +144,21 @@ void succedingRolls(int userBet, int valToWin){
         printf("T: %d\n\n", RollsArr[currentRoll][2]);
 
         if(randNum == _valueToWin){
+            printf("\033[0;37m");
             printf("\n\n\nWinner!!\n\n");
             currentCapital += userBet;
             printf("Current Capital: %d\n\n\n", currentCapital);
+            printf("\033[0;32m");
             loadingAnimation();
             playAgain();
             isDone = 0;
         }else if (randNum == 7)
         {
+            printf("\033[0;37m");
             printf("\n\n\nYou Lost!!\n\n");
             currentCapital -= userBet;
             printf("Current Capital: %d\n\n\n", currentCapital);
+            printf("\033[0;32m");
             loadingAnimation();
             playAgain();
             isDone = 0;
@@ -184,17 +187,21 @@ void play(int userBet){
     currentRoll++;
     
     if (randNum == 7)
-    {
-        printf("\n\n\nWe have a winner\n\n");
+    {   
+        printf("\033[0;37m");
+        printf("\n\n\nWe have a winner_\n\n");
         currentCapital += userBet;
         printf("Current Capital: %d\n\n\n", currentCapital);
+        printf("\033[0;32m");
         loadingAnimation();
         playAgain();
     }
     else if(randNum == 11 || randNum == 2){
+        printf("\033[0;37m");
         printf("\n\n\nYou have lost\n\n");
         currentCapital -= userBet;
         printf("Current Capital: %d\n\n\n", currentCapital);
+        printf("\033[0;32m");
         loadingAnimation();
         playAgain();
         
@@ -205,7 +212,7 @@ void play(int userBet){
 
 void bet(){
     int userBet;
-
+    
     system("cls");
 
     displayBanner();
@@ -213,10 +220,22 @@ void bet(){
 
     if (currentCapital == 0)
     {
+        system("cls");
+        printf("\033[0;37m");
+        printf("**    **                    **                               \n");
+        printf("//**  **                    /**                               \n");
+        printf(" //****    ******  **   **  /**        ******   ******  *****\n"); 
+        printf("  //**    **////**/**  /**  /**       **////** **////  **///**\n");
+        printf("   /**   /**   /**/**  /**  /**      /**   /**//***** /*******\n");
+        printf("   /**   /**   /**/**  /**  /**      /**   /** /////**/**////\n"); 
+        printf("   /**   //****** //******  /********//******  ****** //******\n");
+        printf("   //     //////   //////   ////////  //////  //////   //////\n");
+        printf("\033[0;32m");
         char usrInput;
-        printf("Insufficient Balance.\n\n\nThank You For Playing");
-        printf("\n\nPress Any Key to Continue");
+        printf("\n\nInsufficient Balance.\n\n\nThank You For Playing");
+        printf("\n\nPress Any E to Exit ");
         scanf(" %c", &usrInput);
+        loadingAnimation();
         exit(0);
     }
 
@@ -241,7 +260,15 @@ void displayInfo(){
 
 
 void rules(){
-    system("cls");
+    system("cls");                                    
+    printf("    *******            **                \n");
+    printf("    /**////**          /**                \n");
+    printf("    /**   /**  **   ** /**   *****   ******\n");
+    printf("    /*******  /**  /** /**  **///** **////\n"); 
+    printf("    /**///**  /**  /** /** /*******//***** \n");
+    printf("    /**  //** /**  /** /** /**////  /////**\n");
+    printf("    /**   //**//****** *** //****** ****** \n");
+    printf("    //     //  //////  ///  ////// //////\n\n\n");  
     printf("In the 1st roll if the sum of the 2 randomly generated numbers is 7 then you will win.\nBut if the sum is 11 or 2 then you will lose. However, if the sum is neither of the\naforementioned numbers then it will move to succeeding rolls. In the 2nd rolls and onwards\nthe rules will be different, you will only win if the sum of the newly randomly generated num\nbers is equal to the sum of the first roll and you will lose if the sum is equal to 7.");
 
 }
