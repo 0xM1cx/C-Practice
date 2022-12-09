@@ -3,9 +3,68 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
-void goToOffice(), goNear(), BookTwo(), BookOne(char *playerName);
 
+void goToOffice(), goNear(), BookTwo(), BookOne(char *playerName), loadingAnimation(), getWish(), end();
+int getRandnum();
+int playerGotBook = 0;
+
+void end(){
+    system("cls");
+    printf("Thank you for playing");
+    loadingAnimation();
+}
+
+void getWish(){
+    printf("DOCTOR: Great you have passed the test, you can now get you wish\n\n");
+    sleep(1);
+    printf("*You wish to get your memories back and go home*\n\n");
+    sleep(1);
+    printf("*The ball shines brightly until your blinded by the light, the next thing you know you\nhear a Crsytal's voice*");
+    sleep(1);
+    printf("CRYSTAL: Bye, we'll meet again soon.");
+    loadingAnimation();
+    end();
+    
+}
+
+
+void loadingAnimation(){
+    for (int i = 0; i<=0; i++) {
+        sleep(1);
+        printf("\b\\");
+        
+        sleep(1);
+        printf("\b|");
+    
+        sleep(1);
+        printf("\b/");
+    
+        sleep(1);
+        printf("\b-");
+        sleep(1);
+    }
+}
+
+
+
+int getRandnum(){
+    srand(time(0));
+    int randNum = rand() % 7;
+    int chosenNums[8];
+    int index = 0;
+    int arrSize = sizeof(chosenNums)/sizeof(chosenNums[0]);
+    for(int i = 0; i <= arrSize - 1; i++){
+        if(randNum != chosenNums[i]){
+            chosenNums[index] = randNum;
+            index++;
+            return chosenNums[i];
+
+        }
+    }
+    
+}
 
 
 void goToOffice(char *username){
@@ -39,16 +98,166 @@ void goNear(char *username){
     printf("*Crystal Proceeds to tell the whole story to the doctor*\n\n");
 
     printf("DOCTOR: OK. I understand.\n\n");
+    printf()
 
     BookTwo();
 }
 
 
 void BookTwo(){
-    printf("DOCTOR: What genre of books do you like?");
-    printf("YOU: I like sci-fi stories, something like cyberpunk");
-    printf("DOCTOR: Why sci-fi?");
-    printf("YOU: Because I like technology, programming, network engineering, etc.\n Ever since I was in elementary I dabled with tech with the support of my father who\n worked in IT");
+    char wordsToGuess[8][30] = {"CPU", "GPU", "Monitor", "Programming", "Binary", "Network", "WAN", "LAN"}; 
+    int points = 0;
+
+    printf("DOCTOR: What genre of books do you like?\n\n");
+    sleep(1);
+    printf("YOU: I like sci-fi stories, something like cyberpunk\n\n");
+    sleep(1);
+    printf("DOCTOR: Why sci-fi?\n\n");
+    sleep(1);
+    printf("YOU: Because I like technology, programming, network engineering, etc.\n Ever since I was in elementary I dabled with tech with the support of my father who\n worked in IT\n\n");
+    sleep(1);
+    printf("DOCTOR: OK. I think I have foud a way to bring back the memory you lost\nI will give you a crystal ball that will test you based on you interest.\n\n");
+    sleep(1);
+    printf("YOU: So that's why you asked  what genre of books I liked.\n\n");
+    sleep(1);
+    printf("*The Doctor puts a crystal ball on the table and it starts glowing.*\n\n");
+    sleep(1);
+    printf("DOCTOR: Questions will be given, each question you answer correctly will give you 1 point. \nGet 5 points and you will be given a wish\n\n");
+    srand(time(0));
+    char userAns[30];
+    int randNum = getRandnum();
+
+    game:
+        switch (randnum)
+        {
+        case 0:
+            printf("It where data is processed. What computer component is it");
+            for(int i = 1; i <= strlen(wordsToGuess[randNum]); i++){
+                printf("*");
+            }
+            scanf("%s", userAns);
+            if(strcmp(userAns, wordsToGuess[randNum]) == 1){
+                printf("Correct");
+                points++;
+            }else{
+                printf("Wrong");
+                points--;
+            }
+            break;
+        case 1:
+            printf("primarily used to manage and improve video and graphics performance");
+            for(int i = 1; i <= strlen(wordsToGuess[randNum]); i++){
+                printf("*");
+            }
+            scanf("%s", userAns);
+            if(strcmp(userAns, wordsToGuess[randNum]) == 1){
+                printf("Correct");
+                points++;
+            }else{
+                printf("Wrong");
+                points--;
+            }
+            break;
+        case 2:
+            printf("This device displays the processed data");
+            for(int i = 1; i <= strlen(wordsToGuess[randNum]); i++){
+                printf("*");
+            }
+            scanf("%s", userAns);
+            if(strcmp(userAns, wordsToGuess[randNum]) == 1){
+                printf("Correct");
+                points++;
+            }else{
+                printf("Wrong");
+                points--;
+            }
+            break;
+        case 3:
+            printf("It is an act of writing instructions for the computer to execute");
+            for(int i = 1; i <= strlen(wordsToGuess[randNum]); i++){
+                printf("*");
+            }
+            scanf("%s", userAns);
+            if(strcmp(userAns, wordsToGuess[randNum]) == 1){
+                printf("Correct");
+                points++;
+            }else{
+                printf("Wrong");
+                points--;
+            }
+            break;
+        case 4:
+            printf("A 2 base number system that computer use");
+            for(int i = 1; i <= strlen(wordsToGuess[randNum]); i++){
+                printf("*");
+            }
+            scanf("%s", userAns);
+            if(strcmp(userAns, wordsToGuess[randNum]) == 1){
+                printf("Correct");
+                points++;
+            }else{
+                printf("Wrong");
+                points--;
+            }
+            break;
+        case 5:
+            printf("It a interconnection of nodes where they can send and receive data from each other");
+            for(int i = 1; i <= strlen(wordsToGuess[randNum]); i++){
+                printf("*");
+            }
+            scanf("%s", userAns);
+            if(strcmp(userAns, wordsToGuess[randNum]) == 1){
+                printf("Correct");
+                points++;
+            }else{
+                printf("Wrong");
+                points--;
+            }
+            break;
+        case 6:
+            printf("It is a network topology where it is situated in a wide gelogical landscape");
+            for(int i = 1; i <= strlen(wordsToGuess[randNum]); i++){
+                printf("*");
+            }
+            scanf("%s", userAns);
+            if(strcmp(userAns, wordsToGuess[randNum]) == 1){
+                printf("Correct");
+                points++;
+            }else{
+                printf("Wrong");
+                points--;
+            }
+            break;
+        case 7:
+            printf("It is a network toplogy which spans in a local area");
+            for(int i = 1; i <= strlen(wordsToGuess[randNum]); i++){
+                printf("*");
+            }
+            scanf("%s", userAns);
+            if(strcmp(userAns, wordsToGuess[randNum]) == 1){
+                printf("Correct");
+                points++;
+            }else{
+                printf("Wrong");
+                points--;
+            }
+            break;
+        }
+    
+    if(points >= 5){
+        getWish();
+    }else{
+        if(playerGotBook == 1){
+            printf("Since you got the book from the Doctor, you get a second chance");
+            loadingAnimation();
+            goto game;
+        }else{
+            printf("You didn't get enough points.");
+            loadingAnimation();
+            end();
+        }
+    }
+
 }
 
 
@@ -86,10 +295,15 @@ void BookOne(char *playerName){
 
 
     printf("Sorry about that, I'm Crystal, a professional adventurer from the town to the north named Negus.\nIf it's ok to ask, what were you doing here in the forest.\n\n");
+    sleep(1);
     printf("YOU: I don't recall. I just woke up here\n\n");
+    sleep(1);
     printf("CRYSTAL: Do you recall something, even just a little? Home? Family or Friends?\n\n");
+    sleep(1);
     printf("YOU: No...The last thing I remember was reading a book before dozing off\n\n\n");
+    sleep(1);
     printf("CRYSTAL: This is problematic...Ok, come with me, let's go to Chiba, its a town nearby. I know a doctor there.\nHe might be able to help you, especially after the situation you've just experienced. After that \nI'll treat you to dinner as an apology for earlier\n\n\n");
+    sleep(1);
     printf("YOU: OK\n\n\n\n");
     sleep(3);
     printf("*You and Crystal Walk to Chiba*");
@@ -112,14 +326,6 @@ void BookOne(char *playerName){
 
 
 void main(){
-
-    // Initializing gameplay system variables
-    int playerLife = 10;
-    char grimoiresOfChoice[2][20] = {"Burakkugurimoa", "Akuagurimoa"};
-    char playerGrimoire[20];
-    
-    
-
     // Ask the player for his/her name
     char playerName[20];
     printf("PLAYER NAME: ");
