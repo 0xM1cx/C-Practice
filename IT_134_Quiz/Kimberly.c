@@ -45,7 +45,10 @@ void goNear(char *username){
 
 
 void BookTwo(){
-
+    printf("DOCTOR: What genre of books do you like?");
+    printf("YOU: I like sci-fi stories, something like cyberpunk");
+    printf("DOCTOR: Why sci-fi?");
+    printf("YOU: Because I like technology, programming, network engineering, etc.\n Ever since I was in elementary I dabled with tech with the support of my father who\n worked in IT");
 }
 
 
