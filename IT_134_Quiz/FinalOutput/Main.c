@@ -4,6 +4,13 @@
 #include <unistd.h> // for the sleep(), compatability for linux
 #include <windows.h> // for the sleep(), compatability for windows
 
+/*
+DEVELOPERS:
++ @shun_m1cx | Shawn Michael Sudaria
++ @renz_mont | Renz Ivan Monteza
++ @jadehartlee | Jade Hart Lee
+*/
+
 #define size 100
 
 // Declaring the functions to be used
@@ -65,6 +72,7 @@ void displayBanner(){
     printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n\n",219,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,219);
 }
 
+// The Animated Loading Screen.
 void loadingAnimation(){
     for (int i = 0; i<=0; i++) {
         sleep(1);
@@ -114,7 +122,7 @@ void playAgain(){
 
 int getRanNums(){
 
-    int dieOne = rand() % 6 + 1; // Invokes a random number for 
+    int dieOne = rand() % 6 + 1; // Invokes a random number for die 1
     int dieTwo = rand() % 6 + 1;
     int sum = dieOne + dieTwo;
     
@@ -254,8 +262,8 @@ void bet(){
 void displayInfo(){
     printf("DEVELOPERS:\n\t");
     printf("Shawn Michael Sudaria\t @shun_m1cx\t Github: https://github.com/0xM1cx\n\t");
-    printf("Jade Hart Lee\n\t");
-    printf("Renz Ivan Monteza\n\n");
+    printf("Jade Hart Lee\t @jadehartlee\n\t");
+    printf("Renz Ivan Monteza\t @renz_mont\n\n");
 }
 
 
