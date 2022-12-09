@@ -4,16 +4,15 @@
 #include <unistd.h> // for the sleep(), compatability for linux
 #include <windows.h> // for the sleep(), compatability for windows
 
+#define size 100
+
 // Declaring the functions to be used
 int getRanNums(); 
-void succedingRolls(int userBet, int valToWin);
-void play(int userBet);
-void bet();
-void playAgain();
+void succedingRolls(int userBet, int valToWin), play(int userBet), bet(), playAgain(), displayInfo(), rules();
 
 // Declaring and initializing the global variables to be used
 int currentCapital = 1000;
-int RollsArr[100][100];
+int RollsArr[size][size];
 int currentRoll = 0;
 
 
@@ -35,19 +34,29 @@ void main(){
     srand(time(0));
     char UserInput; // This is used to get the user input
 
+    printf("\033[0;37m");
+    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",95,95,95,220, 223, 223, 223, 220,220,220,220,220,220,220,223,223,223,220,95,95,95);
+    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 196,196,196, 219, 178,178, 178,178,178,178,178,178,178,178,178,178,178,219,196,196,196);
+    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 196,196,196, 196,219,178,178,219,178,178,178,178,178,219,178,178,219,196,196,196);
+    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 196,220,220,196,196,219,178,178,178,223,219,223,178,178,178,219,196,196,220,220,196);
+    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 219,178,178,219,196,223,220,178,178,178,178,178,178,178,220,223,196,219,178,178,219);
+    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",219,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,219);
+    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",219,178,178, 203,196,203, 201,187,203,196,201,187,201,187,201,203,187,201,187,178,219);
+    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",219,178,178,  186,186,186,  204,196, 186,196,186,196,186,186,186,186,186,204,196,178,219);
+    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",219,178,178, 200,202,188,  200,188, 200,188, 200,188, 200,188,202,196,202, 200,188,178,219);
+    printf("\t\t\t %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n\n",219,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,219);
+    printf("\033[0;32m");
+
     currentRoll = 0; // this is used for the number of the row used in the 2d array
-    printf("\033[0;37m");
-    printf("=========================\n\n");
-    printf("\033[0;34m");
-    printf("WELCOME TO ROLL OR DIE\n\n");
-    printf("\033[0;37m");
-    printf("=========================\n\n\n");
+    // printf("\033[0;37m");
+    // printf("=========================\n\n");
+    // printf("\033[0;34m");
+    // printf("WELCOME TO ROLL OR DIE\n\n");
+    // printf("\033[0;37m");
+    // printf("=========================\n\n\n");
 
     
-    printf("DEVELOPERS:\n\t");
-    printf("Shawn Michael Sudaria\n\t");
-    printf("Jade Hart Lee\n\t");
-    printf("Renz Ivan Monteza\n\n");
+    displayInfo();
 
     printf("Current Capital: %d\n\n\n", currentCapital); // Displaying the current capital to the user
     printf("[P]lay\n[E]xit\n\nINPUT: ");
@@ -69,11 +78,12 @@ void main(){
 
 void playAgain(){
     char userInput;
+    
     printf("Do you want to play again? Y or N\nINPUT: ");
     scanf(" %c", &userInput);
 
     if(userInput == 'Y' || userInput == 'y'){
-        main();
+        bet();
     }
     else if(userInput == 'N' || userInput == 'n'){
         system("cls");
@@ -82,7 +92,8 @@ void playAgain(){
         printf("\033[0;34m");
         printf("Thank You For \033[0;37m Playing!!\n\n");
         printf("\033[0;37m");
-        printf("=========================\n\n");
+        printf("=========================\n\n\n\n\n");
+        displayInfo();
         sleep(2);
         exit(0);
     }else{
@@ -145,7 +156,7 @@ void succedingRolls(int userBet, int valToWin){
             printf("\b/");
         
             sleep(1);
-            printf("\b-");
+            printf("\b--");
             sleep(1);
     }
         printf("\n");
@@ -170,7 +181,7 @@ void play(int userBet){
         printf("\b/");
        
         sleep(1);
-        printf("\b-");
+        printf("\b--");
         sleep(1);
     }
     
@@ -205,7 +216,7 @@ void play(int userBet){
             printf("\b/");
         
             sleep(1);
-            printf("\b-");
+            printf("\b--");
             sleep(1);
     }
         printf("\n");
@@ -227,4 +238,16 @@ void bet(){
     play(userBet);
 }
 
+void displayInfo(){
+    printf("DEVELOPERS:\n\t");
+    printf("Shawn Michael Sudaria\t @shun_m1cx\t Github: https://github.com/0xM1cx\n\t");
+    printf("Jade Hart Lee\n\t");
+    printf("Renz Ivan Monteza\n\n");
+}
 
+
+void rules(){
+    system("cls");
+    printf("In the 1st roll if the sum of the 2 randomly generated numbers is 7 then you will win.\nBut if the sum is 11 or 2 then you will lose. However, if the sum is neither of the\naforementioned numbers then it will move to succeeding rolls. In the 2nd rolls and onwards\nthe rules will be different, you will only win if the sum of the newly randomly generated num\nbers is equal to the sum of the first roll and you will lose if the sum is equal to 7.");
+
+}

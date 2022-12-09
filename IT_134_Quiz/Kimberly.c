@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <windows.h>
 #include <unistd.h>
@@ -8,12 +7,40 @@
 void goToOffice(), goNear(), BookTwo(), BookOne(char *playerName);
 
 
-void goToOffice(){
+
+void goToOffice(char *username){
+    printf("You go near it and saw a brown and worn out grimoire with a\nclover logo. As your hand gets closer the shine from the grimoire\ngets brighter.")
+    printf("\n*someone grabs your hand before you could touch it*");
+
+    printf("DOCTOR: Who are you?\n\n");
+    printf("YOU: Sorry, I wasn't gonna steal it. I just saw it glowing and it got me curious\n\n");
+    printf("*Crystal intervenes and says sorry to the professor*\n\n");
+    printf("CRYSTAL: Hey Doc, sorry about that. This is %s. I've brought her here\nbecause I thought you could help her.\n\n", username);
+    printf("DOCTOR: OK...Um sorry about that. I was just worried that a person was\ntrying to steal my stuff...\n That grimoire glowed when your hand came near it. Did you feel anything?\n\n");
+    printf("YOU: Yes, I felt like something was surging within me. Like it was reaching my soul\n\n");
+
+    printf("DOCTOR: Grimoire is a special kind of book, in which they only choose a handful\nof people to be their master. A person who\n holds a grimoire can learn to read and use the spells stored within it.\nMaybe it's best to give it to you. As it seems that the grimoire determined you to be\nworthy of being a reader of its spells.\n\n");
+    printf("DOCTOR: So Crystal what seems to be the problem. As I guessed you didn’t come here without a good reason.\n\n");
+    printf("CRYSTAL: You see…\n\n*CRYSTAL tells the whole story to the Doctor*\n\n");
+    printf("DOCTOR: OK, I understand. Let’s go to my office.\n\n");
     
+    BookTwo();
+
 }
 
-void goNear(){
+void goNear(char *username){
+    printf("*Both of you enter the Doctors office.*\n\n");
+    printf("DOCTOR: Greetings Crystal. Have you been well?\n\nCRYSTAL: Yes Doc, and you?\n\nDOCTOR: Splendid. Who is this?\n\n");
+    printf("CRYSTAL: This is my friend %s\n\n", username);
+    printf("YOU: Hello.\n\nDOCTOR: Pleasure to meet you %s. How can I assist you?", username);
 
+    printf("CRYSTAL: Well...\n\n");
+
+    printf("*Crystal Proceeds to tell the whole story to the doctor*\n\n");
+
+    printf("DOCTOR: OK. I understand.\n\n");
+
+    BookTwo();
 }
 
 
@@ -71,10 +98,10 @@ void BookOne(char *playerName){
         printf("YOUR CHOICE:\n 1. Go Near it\n2. Go Directly to the Doctors office\n\n");
         scanf("%d", &userInput);
     if(userInput == 1){
-        goNear();
+        goNear(username);
     }
     else if(userInput == 2){
-        goToOffice();
+        goToOffice(username);
     }else{
         goto choiceTwo;
     }
@@ -109,3 +136,6 @@ void main(){
     BookOne(playerName);
 
 }
+
+
+
