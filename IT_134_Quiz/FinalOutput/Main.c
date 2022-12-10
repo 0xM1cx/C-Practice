@@ -10,6 +10,9 @@ DEVELOPERS:
 + @renz_mont | Renz Ivan Monteza
 + @jadehartlee | Jade Hart Lee
 */
+
+
+
 /*
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⣖⣤⣶⣿⣿⣿⣿⣿⣭⡶⠶⠒⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠈⠉⠁⠒⠤⠀⡔⠄⠀⠂
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡴⢋⣥⣾⣿⣿⣿⣿⣿⣿⡿⠛⠁⢀⣠⠔⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠛⠓⢤⡀⠀⠀⢀⣀⠈⠂⠉⠀
@@ -56,7 +59,7 @@ DEVELOPERS:
 + /
 */
 #define size 100
-
+int score;
 
 // Declaring the functions to be used
 int getRanNums(); 
@@ -196,6 +199,7 @@ printf("\t\t\t                                          `-.__.-'\n");
         drawBlocks();
         printf("\033[0;34m");
         printf("\033[0;32m \t\t\tThank You For\033[0;37m Playing!!\n\n");
+        printf("\Your score: %d\n\n", score);
         printf("\033[0;37m");
         drawBlocks();
         displayInfo();
@@ -288,6 +292,7 @@ void play(int userBet){
         printf("\033[0;37m");
         printf("\n\n\nWe have a winner_\n\n");
         currentCapital += userBet;
+        score++;
         printf("Current Capital: %d\n\n\n", currentCapital);
         printf("\033[0;32m");
         loadingAnimation();
@@ -330,6 +335,7 @@ void bet(){
         printf("\033[0;32m");
         char usrInput;
         printf("\n\nInsufficient Balance.\n\n\nThank You For Playing");
+        printf("\n\nYour score: %d", score);
         printf("\n\nPress Any E to Exit ");
         scanf(" %c", &usrInput);
         loadingAnimation();
