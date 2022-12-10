@@ -11,11 +11,16 @@ DEVELOPERS:
 + @jadehartlee | Jade Hart Lee
 */
 
+
 #define size 100
+
+
 
 // Declaring the functions to be used
 int getRanNums(); 
 void succedingRolls(int userBet, int valToWin), play(int userBet), bet(), playAgain(), displayInfo(), rules(), loadingAnimation(), displayBanner();
+
+
 
 // Declaring and initializing the global variables to be used
 int currentCapital = 1000;
@@ -28,7 +33,6 @@ int currentRoll = 0;
 void main(){
     system("eugene cam - cove.mp3");
     system("cls");
-
     srand(time(0));
     char UserInput; // This is used to get the user input
 
@@ -231,14 +235,14 @@ void bet(){
     {
         system("cls");
         printf("\033[0;37m");
-        printf("**    **                    **                               \n");
-        printf("//**  **                    /**                               \n");
-        printf(" //****    ******  **   **  /**        ******   ******  *****\n"); 
-        printf("  //**    **////**/**  /**  /**       **////** **////  **///**\n");
-        printf("   /**   /**   /**/**  /**  /**      /**   /**//***** /*******\n");
-        printf("   /**   /**   /**/**  /**  /**      /**   /** /////**/**////\n"); 
-        printf("   /**   //****** //******  /********//******  ****** //******\n");
-        printf("   //     //////   //////   ////////  //////  //////   //////\n");
+        printf("\t\t\t**    **                    **                               \n");
+        printf("\t\t\t//**  **                    /**                               \n");
+        printf("\t\t\t //****    ******  **   **  /**        ******   ******  *****\n"); 
+        printf("\t\t\t  //**    **////**/**  /**  /**       **////** **////  **///**\n");
+        printf("\t\t\t   /**   /**   /**/**  /**  /**      /**   /**//***** /*******\n");
+        printf("\t\t\t   /**   /**   /**/**  /**  /**      /**   /** /////**/**////\n"); 
+        printf("\t\t\t   /**   //****** //******  /********//******  ****** //******\n");
+        printf("\t\t\t   //     //////   //////   ////////  //////  //////   //////\n");
         printf("\033[0;32m");
         char usrInput;
         printf("\n\nInsufficient Balance.\n\n\nThank You For Playing");
@@ -261,25 +265,25 @@ void bet(){
 }
 
 void displayInfo(){
-    printf("DEVELOPERS:\n\t");
-    printf("Shawn Michael Sudaria\t @shun_m1cx\t Github: https://github.com/0xM1cx\n\t");
-    printf("Jade Hart Lee\t @jadehartlee\n\t");
-    printf("Renz Ivan Monteza\t @renz_mont\n\n");
+    printf("\t\t\tDEVELOPERS:\n\t");
+    printf("\t\t\tShawn Michael Sudaria\t @shun_m1cx\t Github: https://github.com/0xM1cx\n\t");
+    printf("\t\t\tJade Hart Lee\t\t @jadehartlee\n\t");
+    printf("\t\t\tRenz Ivan Monteza\t @renz_mont\n\n");
 }
 
 
 void rules(){
     system("cls");      
-    printf("==============================================\n\n");                              
-    printf("    *******            **                \n");
-    printf("    /**////**          /**                \n");
-    printf("    /**   /**  **   ** /**   *****   ******\n");
-    printf("    /*******  /**  /** /**  **///** **////\n"); 
-    printf("    /**///**  /**  /** /** /*******//***** \n");
-    printf("    /**  //** /**  /** /** /**////  /////**\n");
-    printf("    /**   //**//****** *** //****** ****** \n");
-    printf("    //     //  //////  ///  ////// //////\n\n\n");  
-    printf("==============================================\n\n");
-    printf("In the 1st roll if the sum of the 2 randomly generated numbers is 7 then you will win.\nBut if the sum is 11 or 2 then you will lose. However, if the sum is neither of the aforementioned\nnumbers then it will move to succeeding rolls. In the 2nd rolls and onwards the rules will be different,\nyou will only win if the sum of the newly randomly generated numbers is equal to the sum of the first roll\nand you will lose if the sum is equal to 7.\n\n");
+    printf("\t\t\t==============================================\n\n");                              
+    printf("\t\t\t    *******            **                \n");
+    printf("\t\t\t    /**////**          /**                \n");
+    printf("\t\t\t    /**   /**  **   ** /**   *****   ******\n");
+    printf("\t\t\t    /*******  /**  /** /**  **///** **////\n"); 
+    printf("\t\t\t    /**///**  /**  /** /** /*******//***** \n");
+    printf("\t\t\t    /**  //** /**  /** /** /**////  /////**\n");
+    printf("\t\t\t    /**   //**//****** *** //****** ****** \n");
+    printf("\t\t\t    //     //  //////  ///  ////// //////\n\n\n");  
+    printf("\t\t\t==============================================\n\n\n");
+    printf("\t\t\tIn the 1st roll if the sum of the 2 randomly generated numbers is 7 then you will win.\nBut if the sum is 11 or 2 then you will lose. However, if the sum is neither of the aforementioned\nnumbers then it will move to succeeding rolls. In the 2nd rolls and onwards the rules will be different,\nyou will only win if the sum of the newly randomly generated numbers is equal to the sum of the first roll\nand you will lose if the sum is equal to 7.\n\n");
 
 }
