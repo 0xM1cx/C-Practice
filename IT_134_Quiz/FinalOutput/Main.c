@@ -15,7 +15,6 @@ DEVELOPERS:
 #define size 100
 
 
-
 // Declaring the functions to be used
 int getRanNums(); 
 void succedingRolls(int userBet, int valToWin), play(int userBet), bet(), playAgain(), displayInfo(), rules(), loadingAnimation(), displayBanner();
@@ -31,7 +30,6 @@ int currentRoll = 0;
 
 // Main function where the program will first start
 void main(){
-    system("eugene cam - cove.mp3");
     system("cls");
     srand(time(0));
     char UserInput; // This is used to get the user input
@@ -78,23 +76,22 @@ void displayBanner(){
 
 // The Animated Loading Screen.
 void loadingAnimation(){
-    for (int i = 0; i<=0; i++) {
-        sleep(1);
+    for (int i = 0; i<=5; i++) {
+        Sleep(90);
         printf("\b\\");
         
-        sleep(1);
+        Sleep(90);
         printf("\b|");
     
-        sleep(1);
+        Sleep(90);
         printf("\b/");
     
-        sleep(1);
+        Sleep(90);
         printf("\b-");
-        sleep(1);
+        Sleep(90);
     }
+    printf("")
 }
-
-
 
 void playAgain(){
     char userInput;
