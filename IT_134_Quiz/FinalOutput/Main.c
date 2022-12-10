@@ -12,13 +12,26 @@ DEVELOPERS:
 */
 
 
+/*TODO:
++ Add ASCII Goodbye Banner*
++ /
+*/
 #define size 100
 
 
 // Declaring the functions to be used
 int getRanNums(); 
 void succedingRolls(int userBet, int valToWin), play(int userBet), bet(), playAgain(), displayInfo(), rules(), loadingAnimation(), displayBanner();
+void drawBlocks();
 
+void drawBlocks(){
+    printf("\t\t\t");
+    for (int i = 1; i < 85; i++)
+    {
+        printf("%c", 223);
+    }
+    printf("\n");
+}
 
 
 // Declaring and initializing the global variables to be used
@@ -37,9 +50,9 @@ void main(){
     displayBanner();
     printf("\033[0;32m");
 
-
+    drawBlocks();
     displayInfo();
-
+    drawBlocks();
     
     printf("[P]lay\n[E]xit\n[R]ules\n\nINPUT: ");
     scanf(" %c", &UserInput);
@@ -62,16 +75,16 @@ void main(){
 
 void displayBanner(){
     printf("\033[0;37m");
-    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",95,95,95,220, 223, 223, 223, 220,220,220,220,220,220,220,223,223,223,220,95,95,95);
-    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 196,196,196, 219, 178,178, 178,178,178,178,178,178,178,178,178,178,178,219,196,196,196);
-    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 196,196,196, 196,219,178,178,219,178,178,178,178,178,219,178,178,219,196,196,196);
-    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 196,220,220,196,196,219,178,178,178,223,219,223,178,178,178,219,196,196,220,220,196);
-    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 219,178,178,219,196,223,220,178,178,178,178,178,178,178,220,223,196,219,178,178,219);
-    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",219,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,219);
-    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",219,178,178, 203,196,203, 201,187,203,196,201,187,201,187,201,203,187,201,187,178,219);
-    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",219,178,178,  186,186,186,  204,196, 186,196,186,196,186,186,186,186,186,204,196,178,219);
-    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",219,178,178, 200,202,188,  200,188, 200,188, 200,188, 200,188,202,196,202, 200,188,178,219);
-    printf("\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n\n",219,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,219);
+    printf("\t\t\t\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",95,95,95,220, 223, 223, 223, 220,220,220,220,220,220,220,223,223,223,220,95,95,95);
+    printf("\t\t\t\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 196,196,196, 219, 178,178, 178,178,178,178,178,178,178,178,178,178,178,219,196,196,196);
+    printf("\t\t\t\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 196,196,196, 196,219,178,178,219,178,178,178,178,178,219,178,178,219,196,196,196);
+    printf("\t\t\t\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 196,220,220,196,196,219,178,178,178,223,219,223,178,178,178,219,196,196,220,220,196);
+    printf("\t\t\t\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 219,178,178,219,196,223,220,178,178,178,178,178,178,178,220,223,196,219,178,178,219);
+    printf("\t\t\t\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",219,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,223,219);
+    printf("\t\t\t\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",219,178,178, 203,196,203, 201,187,203,196,201,187,201,187,201,203,187,201,187,178,219);
+    printf("\t\t\t\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",219,178,178,  186,186,186,  204,196, 186,196,186,196,186,186,186,186,186,204,196,178,219);
+    printf("\t\t\t\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n",219,178,178, 200,202,188,  200,188, 200,188, 200,188, 200,188,202,196,202, 200,188,178,219);
+    printf("\t\t\t\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n\n",219,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,219);
 }
 
 // The Animated Loading Screen.
@@ -106,17 +119,18 @@ void playAgain(){
         system("cls");
         displayBanner();
         printf("\033[0;37m");
-        printf("\t\t\t=========================\n\n");
+        drawBlocks();
         printf("\033[0;34m");
         printf("\033[0;32m \t\t\tThank You For \033[0;37m Playing!!\n\n");
         printf("\033[0;37m");
-        printf("\t\t\t=========================\n\n\n\n\n");
+        drawBlocks();
         displayInfo();
         sleep(2);
         exit(0);
     }else{
         printf("Wrong Input!!!");
         sleep(2);
+        system("cls");
         playAgain();  
     }
     
@@ -182,14 +196,13 @@ void succedingRolls(int userBet, int valToWin){
 
 void play(int userBet){
     int randNum = getRanNums();
-
     currentRoll = 0; // this is used for the number of the row used in the 2d array
 
     printf("\n\nRolling Dice and Getting sum  ");
     loadingAnimation();
     
 
-    printf("\n\nRoll 1\n\t");
+    printf("\nRoll 1\n\t");
     printf("D1: %d\n\t", RollsArr[currentRoll][0]);
     printf("D2: %d\n\t", RollsArr[currentRoll][1]);
     printf("T: %d\n", RollsArr[currentRoll][2]);
