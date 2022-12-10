@@ -89,9 +89,8 @@ void loadingAnimation(){
         Sleep(90);
         printf("\b-");
         Sleep(90);
-        printf("\b");
     }
-
+    printf("\b ");
 }
 
 void playAgain(){
