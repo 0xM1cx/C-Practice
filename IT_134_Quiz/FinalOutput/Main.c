@@ -91,6 +91,7 @@ void loadingAnimation(){
 }
 
 
+
 void playAgain(){
     char userInput;
     
@@ -268,7 +269,8 @@ void displayInfo(){
 
 
 void rules(){
-    system("cls");                                    
+    system("cls");      
+    printf("==============================================\n\n");                              
     printf("    *******            **                \n");
     printf("    /**////**          /**                \n");
     printf("    /**   /**  **   ** /**   *****   ******\n");
@@ -277,6 +279,7 @@ void rules(){
     printf("    /**  //** /**  /** /** /**////  /////**\n");
     printf("    /**   //**//****** *** //****** ****** \n");
     printf("    //     //  //////  ///  ////// //////\n\n\n");  
-    printf("In the 1st roll if the sum of the 2 randomly generated numbers is 7 then you will win.\nBut if the sum is 11 or 2 then you will lose. However, if the sum is neither of the\naforementioned numbers then it will move to succeeding rolls. In the 2nd rolls and onwards\nthe rules will be different, you will only win if the sum of the newly randomly generated num\nbers is equal to the sum of the first roll and you will lose if the sum is equal to 7.");
+    printf("==============================================\n\n");
+    printf("In the 1st roll if the sum of the 2 randomly generated numbers is 7 then you will win.\nBut if the sum is 11 or 2 then you will lose. However, if the sum is neither of the aforementioned\nnumbers then it will move to succeeding rolls. In the 2nd rolls and onwards the rules will be different,\nyou will only win if the sum of the newly randomly generated numbers is equal to the sum of the first roll\nand you will lose if the sum is equal to 7.\n\n");
 
 }
