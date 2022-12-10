@@ -1,15 +1,12 @@
 #include <stdio.h>
-
-int exerciseOne(){
-    // Write a program to accept two ints and check 
-    // whether they are equal or not.
-    int input;
-    printf("Give input: ");
-    scanf("%d", &input);
+#include <time.h>
+#include <stdlib.h>
+#include <windows.h>
+#include <unistd.h>
 
 
-}
-
-int main(){
-    exerciseOne();
+void main(){
+    int time = clock();
+    sleep(3);
+    printf("%d", time);
 }
