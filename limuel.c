@@ -23,10 +23,10 @@ int main()
 			scanf("%d",&deposit);
 			balance += deposit;
 			system("cls");
+			bet:
 			printf("===========================\n");
 			printf("Balance: %d\n", balance);
 			printf("===========================\n");
-		bet:
 			printf("How much will you bet: ");
 			scanf("%d", &bet);
 			if(bet > balance)
@@ -43,6 +43,10 @@ int main()
 			getch();
 			system("cls");
 			printf("Roll 1:.\n");
+			printf("===========================\n");
+			printf("Your balance now is: %d\n", balance);
+			printf("Bet: %d\n",bet);
+			printf("===========================\n");			
 			printf("Press Enter to throw Dice.\n\n");
 			srand(time(NULL));
 			d1 = rand()%6 + 1;
@@ -71,13 +75,20 @@ int main()
 			}
 			else{
 				roll:
-				printf("No Luck\n\nRoll Again\n");
-				printf("Roll 2:.\n");
+				
+				printf("\nNo Luck\n\nRoll Again\n");
 				printf("Press Enter to throw Dice.\n\n");
+				getch();
+				system("cls");
 				srand(time(NULL));
 				d1 = rand()%6 + 1;
 				d2 = rand()%6 + 1;
-				getch();
+				printf("Roll 2:.\n");
+				printf("===========================\n");
+				printf("Your balance now is: %d\n", balance);
+				printf("Bet: %d\n",bet);
+				printf("===========================\n");
+				printf("Roll 1: %d\n\n", total1);
 				printf("Dice 1: %d\n",d1);
 				printf("Dice 2: %d\n",d2);
 				total2 = d1 + d2;
@@ -99,13 +110,14 @@ int main()
 					printf("Your balance now is: %d\n", balance);
 					printf("===========================\n");
 				}
-				else{system("cls"); goto roll;}
+				else{goto roll;}
 			}
 			printf("===========================\n");
 			printf("       Play Again?   \n");
 			printf("      [1]Yes  [2]No   \n");
 			printf("===========================\n");
 			scanf("%d",&again);
+			system("cls");
 			if(again == 1){goto bet;}
 			else{printf("Thak you for Playing!");}
 			break;

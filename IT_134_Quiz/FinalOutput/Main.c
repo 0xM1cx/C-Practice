@@ -12,8 +12,6 @@ DEVELOPERS:
 + @jadehartlee | Jade Hart Lee
 */
 
-
-
 /*
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⣖⣤⣶⣿⣿⣿⣿⣿⣭⡶⠶⠒⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠈⠉⠁⠒⠤⠀⡔⠄⠀⠂
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡴⢋⣥⣾⣿⣿⣿⣿⣿⣿⡿⠛⠁⢀⣠⠔⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠛⠓⢤⡀⠀⠀⢀⣀⠈⠂⠉⠀
@@ -36,7 +34,7 @@ DEVELOPERS:
 ⠀⠀⠀⢀⣠⠾⠋⢉⣴⣫⣶⣿⣿⡿⠋⠁⠀⠀⠀⣿⣿⡄⠀⠈⢿⡀⠈⠉⢁⡼⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣷⣧⡀⠀⠈⢻⣿⣆⠹⣿⣿⣿⣿
 ⠀⠀⠀⠈⢱⣄⣾⣯⣿⣿⠟⠋⠀⠀⠀⠀⠀⣠⣼⠃⠙⢷⠀⠐⠚⠿⠖⠚⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⠛⠿⢿⣿⡏⢙⡏⠻⣿⣆⠀⠀⠻⣿⣷⣿⣿⣿⣿
 ⡀⠀⠀⣠⣿⣿⣿⠟⣹⣵⣤⣤⣤⣤⣤⣤⡼⢿⡏⠀⠀⠀⠙⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⡃⠀⠀⠀⠀⢘⣿⣿⠇⠀⠹⣿⡆⠀⠀⢸⣏⣿⣿⣿⣿
-⣡⣴⣾⣻⣿⠟⣩⣾⣿⣿⣿⣿⣿⣿⣿⡏⠀⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢉⣳⠀⢤⣀⣠⠞⢉⡿⠀⠀⠀⢹⣷⠀⢀⣾⣾⣿⣿⣿⣿
+⣡⣴⣾⣻⣿⠟⣩⣾⣿⣿⣿⣿⣿⣿⣿⡏⠀⣸⠀⠀⠀⠀    Dako grades kudasai⠀⢉⣳⠀⢤⣀⣠⠞⢉⡿⠀⠀⠀⢹⣷⠀⢀⣾⣾⣿⣿⣿⣿
 ⣿⣿⢣⣿⣗⣼⣿⣿⡿⠿⢿⡟⠛⠛⠛⣷⠞⠋⠛⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣧⠀⠀⠀⠀⣠⠟⠀⠀⠀⠀⣸⠇⢀⣾⣾⣿⢿⣿⣿⣿
 ⣿⣿⠠⣿⠿⣿⡁⠈⠀⠀⠀⠑⣄⣠⠞⠁⠀⠀⠀⣀⡹⠶⠤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣒⠖⠋⠁⠀⠀⠀⠀⠞⠁⣰⣿⣿⠟⢡⣿⡿⠋⠀
 ⡋⠙⣸⠃⠀⠈⠻⣦⠀⢀⡴⣶⠟⠁⠀⠀⣀⡴⠚⠁⠀⠀⠀⠙⣆⠀⠀⠀⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣾⡿⢟⡥⣺⣿⠟⠀⠊⠀
@@ -60,7 +58,7 @@ DEVELOPERS:
 + /
 */
 #define size 1000
-int score;
+int score; // Para pag determine han score han user after han game. 
 
 // Declaring the functions to be used
 int getRanNums(); 
@@ -105,7 +103,7 @@ void goodbye(){
 }
 
 
-
+// Function para mag draw horizontal block
 void drawBlocks(){
     printf("\t\t\t");
     for (int i = 1; i < 85; i++)
@@ -136,7 +134,7 @@ void main(){
     displayInfo();
     drawBlocks();
     
-    printf("[P]lay\n[E]xit\n[R]ules\n\nINPUT: ");
+    printf("\t\t\t[P]lay\n\t\t\t[E]xit\n\t\t\t[R]ules\n\n\t\t\tINPUT: ");
     scanf(" %c", &UserInput);
 
     if(UserInput == 'P' || UserInput == 'p'){
@@ -145,8 +143,8 @@ void main(){
     else if(UserInput == 'E' || UserInput == 'e'){
         system("cls");
         goodbye();
-        printf("\nExiting Game... ");
-        loadingAnimation();
+        drawBlocks();
+        printf("\n\t\t\tExiting Game... ");
         loadingAnimation();
         loadingAnimation();
         exit(0);
@@ -154,7 +152,7 @@ void main(){
     else if(UserInput == 'R' || UserInput == 'r'){
         rules();
     }else{
-        printf("Invalid Input, it must be either P or E");
+        printf("\t\t\tInvalid Input, it must be either P or E");
         sleep(2);
         main();
     }
@@ -177,7 +175,7 @@ void displayBanner(){
     printf("\t\t\t\t\t\t%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\n\n",219,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,219);
 }
 
-// The Animated Loading Screen.
+// The Animated Loading Screen
 void loadingAnimation(){
     for (int i = 1; i<=5; i++) {
         Sleep(90);
@@ -199,7 +197,7 @@ void loadingAnimation(){
 void playAgain(){
     char userInput;
     
-    printf("\n\n\nDo you want to play again? Y or N\nINPUT: ");
+    printf("\n\n\n\t\t\tDo you want to play again? Y or N\n\t\t\tINPUT: ");
     scanf(" %c", &userInput);
 
     if(userInput == 'Y' || userInput == 'y'){
@@ -221,7 +219,7 @@ void playAgain(){
         loadingAnimation();
         exit(0);
     }else{
-        printf("Wrong Input!!!");
+        printf("\t\t\tWrong Input!!!");
         sleep(2);
         system("cls");
         playAgain();  
@@ -229,8 +227,8 @@ void playAgain(){
     
 }
 
+// Function para mag generate ngan compute an random numbers everytime na gin tawag ine na function
 int getRanNums(){
-
     int dieOne = rand() % 6 + 1; // Invokes a random number for die 1
     int dieTwo = rand() % 6 + 1;
     int sum = dieOne + dieTwo;
@@ -238,6 +236,7 @@ int getRanNums(){
     RollsArr[currentRoll][0] = dieOne;
     RollsArr[currentRoll][1] = dieTwo;
     RollsArr[currentRoll][2] = sum;
+    
     return sum;
 }
 
@@ -249,22 +248,25 @@ void succedingRolls(int userBet, int valToWin){
     int isDone = 1;
 
     while(isDone){
-
+        drawBlocks();
         int randNum = getRanNums();
-        printf("\n\nRolling Dice and Getting sum  ");
+        printf("\n\n\t\t\tRolling Dice and Getting sum  ");
         loadingAnimation();
         printf("\n");
         
-        printf("Roll %d\n\t", currentRoll+1);
-        printf("D1: %d\n\t", RollsArr[currentRoll][0]);
-        printf("D2: %d\n\t", RollsArr[currentRoll][1]);
-        printf("T: %d\n\n", RollsArr[currentRoll][2]);
+        drawBlocks();
+        printf("\t\t\tRoll %d\n\t", currentRoll + 1);
+        printf("\t\t\tD1: %d\n\t", RollsArr[currentRoll][0]);
+        printf("\t\t\tD2: %d\n\t", RollsArr[currentRoll][1]);
+        printf("\t\t\tT: %d\n\n", RollsArr[currentRoll][2]);
 
         if(randNum == _valueToWin){
             printf("\033[0;37m");
-            printf("\n\n\nWinner!!\n\n");
+            drawBlocks();
+            printf("\n\n\n\t\t\tWinner!!\n\n");
             currentCapital += userBet;
-            printf("Current Capital: %d\n\n\n", currentCapital);
+            printf("\t\t\tCurrent Capital: %d\n\n\n", currentCapital);
+            drawBlocks();
             printf("\033[0;32m");
             loadingAnimation();
             playAgain();
@@ -272,9 +274,11 @@ void succedingRolls(int userBet, int valToWin){
         }else if (randNum == 7)
         {
             printf("\033[0;37m");
-            printf("\n\n\nYou Lost!!\n\n");
+            drawBlocks();
+            printf("\n\n\n\t\t\tYou Lost!!\n\n");
             currentCapital -= userBet;
-            printf("Current Capital: %d\n\n\n", currentCapital);
+            printf("\t\t\tCurrent Capital: %d\n\n\n", currentCapital);
+            drawBlocks();
             printf("\033[0;32m");
             loadingAnimation();
             playAgain();
@@ -289,39 +293,43 @@ void succedingRolls(int userBet, int valToWin){
 void play(int userBet){
     int randNum = 0; // reset the number to know have the player win because of the last sum of the previous game
     currentRoll = 0; // to the currect roll and change the values from the previous game
-    randNum = getRanNums();
+    randNum = getRanNums(); // Generating random numbers para han first Roll
 
-    printf("\n\nRolling Dice and Getting sum  ");
+    drawBlocks();
+    printf("\n\t\t\tRolling Dice and Getting sum  ");
     loadingAnimation();
     
 
-    printf("\nRoll 1\n\t");
-    printf("D1: %d\n\t", RollsArr[currentRoll][0]);
-    printf("D2: %d\n\t", RollsArr[currentRoll][1]);
-    printf("T: %d\n", RollsArr[currentRoll][2]);
+    printf("\n\t\t\tRoll 1\n\t");
+    printf("\t\t\tD1: %d\n\t", RollsArr[currentRoll][0]);
+    printf("\t\t\tD2: %d\n\t", RollsArr[currentRoll][1]);
+    printf("\t\t\tT: %d\n", RollsArr[currentRoll][2]);
     
     currentRoll++;
     
     if (randNum == 7)
     {   
         printf("\033[0;37m");
-        printf("\n\n\nWe have a winner \n\n");
+        drawBlocks();
+        printf("\n\n\n\t\t\tWe have a winner \n\n");
         currentCapital += userBet;
         score++;
-        printf("Current Capital: %d\n\n\n", currentCapital);
+        printf("\t\t\tCurrent Capital: %d\n\n\n", currentCapital);
+        drawBlocks(); 
         printf("\033[0;32m");
         loadingAnimation();
         playAgain();
     }
     else if(randNum == 11 || randNum == 2){
         printf("\033[0;37m");
-        printf("\n\n\nYou have lost\n\n");
+        drawBlocks();
+        printf("\n\n\n\t\t\tYou have lost\n\n");
         currentCapital -= userBet;
-        printf("Current Capital: %d\n\n\n", currentCapital);
+        printf("\t\t\tCurrent Capital: %d\n\n\n", currentCapital);
+        drawBlocks();
         printf("\033[0;32m");
         loadingAnimation();
         playAgain();
-        
     }else{
         succedingRolls(userBet, randNum);
     }           
@@ -360,13 +368,14 @@ void bet(){
         loadingAnimation();
         exit(0);
     }
-
-    printf("Current Capital: %d\n\n\n", currentCapital); // Displaying the current capital to the user
-    printf("\nYOUR BET: ");
+    drawBlocks();
+    printf("\t\t\tCurrent Capital: %d\n\n\n", currentCapital); // Displaying the current capital to the user
+    printf("\n\t\t\tYOUR BET: ");
     scanf("%d", &userBet);
 
     if(userBet <= 0 || userBet > currentCapital){
-        printf("Invalid Bet");
+        printf("\t\t\tInvalid Bet");
+        printf("\n\t\t\tGoing back... ");
         loadingAnimation();
         bet();
     }
@@ -374,10 +383,17 @@ void bet(){
 }
 
 void displayInfo(){
-    printf("\t\t\tDEVELOPERS:\n\t");
-    printf("\t\t\tShawn Michael Sudaria\t @shun_m1cx\t Github: https://github.com/0xM1cx\n\t");
-    printf("\t\t\tJade Hart Lee\t\t @jadehartlee\n\t");
-    printf("\t\t\tRenz Ivan Monteza\t @renz_mont\n\n");
+    char strings[30][30] = {
+        "\t\t\tDEVELOPERS:\n\t", "\t\t\tShawn Michael Sudaria\t\t", "@shun_m1cx\t", "Github: github.com/0xM1cx\n\t", "\t\t\tJade Hart Lee\t\t\t", "@jadehartlee\n\t", "\t\t\tRenz Ivan Monteza\t\t", "@renz_mont\n\n"
+    };
+
+    for(int i = 0; i <= 7; i++){
+        for (int b = 0; b < 30; b++)
+        {
+            Sleep(10);
+            printf("%c", strings[i][b]);
+        }
+    }
 }
 
 
@@ -396,7 +412,7 @@ void rules(){
     printf("\t\t\t==============================================\n\n\n");
     printf("\t\t\tIn the 1st roll if the sum of the 2 randomly generated numbers is 7 then you will win.\n\t\t\tBut if the sum is 11 or 2 then you will lose. However, if the sum is neither of the aforementioned\n\t\t\tnumbers then it will move to succeeding rolls. In the 2nd rolls and onwards the rules will be different,\n\t\t\tyou will only win if the sum of the newly randomly generated numbers is equal to the sum of the previous roll\n\t\t\tand you will lose if the sum is equal to 7.\n\n");
 
-    printf("\t\t\t [G]O BACK: ");
+    printf("\t\t\t[G]O BACK: ");
     scanf(" %c", &userInput);
 
     if(userInput == 'G' || userInput == 'g'){
