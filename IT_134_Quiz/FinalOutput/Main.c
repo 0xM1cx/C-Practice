@@ -3,6 +3,7 @@
 #include <stdlib.h> 
 #include <unistd.h> // for the sleep(), compatability for linux
 #include <windows.h> // for the sleep(), compatability for windows
+#include <conio.h> // for the getch() function
 
 /*
 DEVELOPERS:
@@ -58,7 +59,7 @@ DEVELOPERS:
 + Add ASCII Goodbye Banner*
 + /
 */
-#define size 100
+#define size 1000
 int score;
 
 // Declaring the functions to be used
@@ -211,11 +212,13 @@ void playAgain(){
         drawBlocks();
         printf("\033[0;34m");
         printf("\033[0;32m \t\t\tThank You For\033[0;37m Playing!!\n\n");
-        printf("Your score: %d\n\n", score);
+        printf("\t\t\tYour score: %d\n\n", score);
         printf("\033[0;37m");
         drawBlocks();
         displayInfo();
-        sleep(2);
+        printf("\n\n\t\t\tExiting Game... ");
+        loadingAnimation();
+        loadingAnimation();
         exit(0);
     }else{
         printf("Wrong Input!!!");
@@ -283,10 +286,10 @@ void succedingRolls(int userBet, int valToWin){
     }
 }
 
-
 void play(int userBet){
-    int randNum = getRanNums();
-    currentRoll = 0; // this is used for the number of the row used in the 2d array
+    int randNum = 0; // reset the number to know have the player win because of the last sum of the previous game
+    currentRoll = 0; // to the currect roll and change the values from the previous game
+    randNum = getRanNums();
 
     printf("\n\nRolling Dice and Getting sum  ");
     loadingAnimation();
@@ -302,7 +305,7 @@ void play(int userBet){
     if (randNum == 7)
     {   
         printf("\033[0;37m");
-        printf("\n\n\nWe have a winner_\n\n");
+        printf("\n\n\nWe have a winner \n\n");
         currentCapital += userBet;
         score++;
         printf("Current Capital: %d\n\n\n", currentCapital);
@@ -345,11 +348,15 @@ void bet(){
         printf("\t\t\t   /**   //****** //******  /********//******  ****** //******\n");
         printf("\t\t\t   //     //////   //////   ////////  //////  //////   //////\n");
         printf("\033[0;32m");
-        char usrInput;
-        printf("\n\nInsufficient Balance.\n\n\nThank You For Playing");
-        printf("\n\nYour score: %d", score);
-        printf("\n\nPress Any E to Exit ");
-        scanf(" %c", &usrInput);
+        printf("\n\n\t\t\tInsufficient Balance.\n\n");
+        drawBlocks();
+        printf("\t\t\tThank You For Playing");
+        printf("\n\n\t\t\tYour score: %d\n\n", score);
+        drawBlocks();
+        printf("\n\n\t\t\tPress Any key to Exit ");
+        getch();
+        printf("\n\n\t\t\tExiting Game... ");
+        loadingAnimation();
         loadingAnimation();
         exit(0);
     }
@@ -375,6 +382,7 @@ void displayInfo(){
 
 
 void rules(){
+    char userInput;
     system("cls");      
     printf("\t\t\t==============================================\n\n");                              
     printf("\t\t\t    *******            **                \n");
@@ -386,6 +394,16 @@ void rules(){
     printf("\t\t\t    /**   //**//****** *** //****** ****** \n");
     printf("\t\t\t    //     //  //////  ///  ////// //////\n\n\n");  
     printf("\t\t\t==============================================\n\n\n");
-    printf("\t\t\tIn the 1st roll if the sum of the 2 randomly generated numbers is 7 then you will win.\nBut if the sum is 11 or 2 then you will lose. However, if the sum is neither of the aforementioned\nnumbers then it will move to succeeding rolls. In the 2nd rolls and onwards the rules will be different,\nyou will only win if the sum of the newly randomly generated numbers is equal to the sum of the first roll\nand you will lose if the sum is equal to 7.\n\n");
+    printf("\t\t\tIn the 1st roll if the sum of the 2 randomly generated numbers is 7 then you will win.\n\t\t\tBut if the sum is 11 or 2 then you will lose. However, if the sum is neither of the aforementioned\n\t\t\tnumbers then it will move to succeeding rolls. In the 2nd rolls and onwards the rules will be different,\n\t\t\tyou will only win if the sum of the newly randomly generated numbers is equal to the sum of the previous roll\n\t\t\tand you will lose if the sum is equal to 7.\n\n");
 
+    printf("\t\t\t [G]O BACK: ");
+    scanf(" %c", &userInput);
+
+    if(userInput == 'G' || userInput == 'g'){
+        main();
+    }else{
+        printf("\t\t\tWRONG INPUT!!");
+        loadingAnimation();
+        rules();
+    }
 }
