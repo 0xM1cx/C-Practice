@@ -64,7 +64,46 @@ int score;
 // Declaring the functions to be used
 int getRanNums(); 
 void succedingRolls(int userBet, int valToWin), play(int userBet), bet(), playAgain(), displayInfo(), rules(), loadingAnimation(), displayBanner();
-void drawBlocks();
+void drawBlocks(), goodbye();
+
+
+void goodbye(){
+    printf("\t\t\t                     ___..-.---.---.--..___\n");
+    printf("\t\t\t               _..-- `.`.   `.  `.  `.      --.._\n");
+    printf("\t\t\t              /    ___________\\   \\   \\______    \\\n");
+    printf("\t\t\t              |   |.-----------`.  `.  `.---.|   |\n");
+    printf("\t\t\t              |`. |'  \\`.        \\   \\   \\  '|   |\n");
+    printf("\t\t\t              |`. |'   \\ `-._     `.  `.  `.'|   |\n");
+    printf("\t\t\t             /|   |'    `-._o)\\  /(o\\   \\   \\|   |\\\\\n");
+    printf("\t\t\t           .' |   |'  `.     .'  '.  `.  `.  `.  | `.\n");
+    printf("\t\t\t          /  .|   |'    `.  (_.==._)   \\   \\   \\ |.  \\         _.--.\n");
+    printf("\t\t\t        .' .' |   |'      _.-======-._  `.  `.  `. `. `.    _.-_.-'\\\\\n");
+    printf("\t\t\t       /  /   |   |'    .'   |_||_|   `.  \\   \\   \\  \\  \\ .'_.'     ||\n");
+    printf("\t\t\t      / .'    |`. |'   /_.-'========`-._\\  `.  `-._`._`. \\(.__      :|\n");
+    printf("\t\t\t     ( '      |`. |'.______________________.'\\      _.) ` )`-._`-._/ /\n");
+    printf("\t\t\t      \\\\      |   '.------------------------.'`-._-'    //     `-._.'\n");
+    printf("\t\t\t      _\\\\_    \\    | GOODBYE By Dev Team  `.`.|    '  //\n");
+    printf("\t\t\t     (_  _)    '-._|________________________|_.-'|   _//_\n");
+    printf("\t\t\t     /  /      /`-._      |`-._     / /      /   |  (_  _)\n");
+    printf("\t\t\t   .'   \\     |`-._ `-._   `-._`-._/ /      /    |    \\  \\\\\n");
+    printf("\t\t\t  /      `.   |    `-._ `-._   `-._|/      /     |    /   `.\n");
+    printf("\t\t\t /  / / /. )  |  `-._  `-._ `-._          /     /   .'      \\\n");
+    printf("\t\t\t| | | \\ \\|/   |  `-._`-._  `-._ `-._     /     /.  ( .\\ \\ \\  \\\n");
+    printf("\t\t\t \\ \\ \\ \\/     |  `-._`-._`-._  `-._ `-._/     /  \\  \\|/ / | | |\n");
+    printf("\t\t\t  `.\\_\\/       `-._  `-._`-._`-._  `-._/|    /|   \\   \\/ / / /\n");
+    printf("\t\t\t              /    `-._  `-._`-._`-._  ||   / |    \\   \\/_/.'\n");
+    printf("\t\t\t            .'         `-._  `-._`-._  ||  /  |     \\\n");
+    printf("\t\t\t@shun_m1cx  /          / . `-._  `-._  || /   |      \\\n");
+    printf("\t\t\t          '\\          / /      `-._    ||/'._.'       \\\n");
+    printf("\t\t\t           \\`.      .' /           `-._|/              \\\n");
+    printf("\t\t\t            `.`-._.' .'               \\               .'\n");
+    printf("\t\t\t              `-.__\\/                 `\\            .' '\n");
+    printf("\t\t\t                                       \\`.       _.' .'\n");
+    printf("\t\t\t                                        `.`-._.-' _.'\n");
+    printf("\t\t\t                                          `-.__.-'\n");
+}
+
+
 
 void drawBlocks(){
     printf("\t\t\t");
@@ -103,6 +142,12 @@ void main(){
         bet();
     }
     else if(UserInput == 'E' || UserInput == 'e'){
+        system("cls");
+        goodbye();
+        printf("\nExiting Game... ");
+        loadingAnimation();
+        loadingAnimation();
+        loadingAnimation();
         exit(0);
     }
     else if(UserInput == 'R' || UserInput == 'r'){
@@ -161,45 +206,12 @@ void playAgain(){
     }
     else if(userInput == 'N' || userInput == 'n'){
         system("cls");
-
-printf("\t\t\t                     ___..-.---.---.--..___\n");
-printf("\t\t\t               _..-- `.`.   `.  `.  `.      --.._\n");
-printf("\t\t\t              /    ___________\\   \\   \\______    \\\n");
-printf("\t\t\t              |   |.-----------`.  `.  `.---.|   |\n");
-printf("\t\t\t              |`. |'  \\`.        \\   \\   \\  '|   |\n");
-printf("\t\t\t              |`. |'   \\ `-._     `.  `.  `.'|   |\n");
-printf("\t\t\t             /|   |'    `-._o)\\  /(o\\   \\   \\|   |\\\\\n");
-printf("\t\t\t           .' |   |'  `.     .'  '.  `.  `.  `.  | `.\n");
-printf("\t\t\t          /  .|   |'    `.  (_.==._)   \\   \\   \\ |.  \\         _.--.\n");
-printf("\t\t\t        .' .' |   |'      _.-======-._  `.  `.  `. `. `.    _.-_.-'\\\\\n");
-printf("\t\t\t       /  /   |   |'    .'   |_||_|   `.  \\   \\   \\  \\  \\ .'_.'     ||\n");
-printf("\t\t\t      / .'    |`. |'   /_.-'========`-._\\  `.  `-._`._`. \\(.__      :|\n");
-printf("\t\t\t     ( '      |`. |'.______________________.'\\      _.) ` )`-._`-._/ /\n");
-printf("\t\t\t      \\\\      |   '.------------------------.'`-._-'    //     `-._.'\n");
-printf("\t\t\t      _\\\\_    \\    | GOODBYE By Dev Team  `.`.|    '  //\n");
-printf("\t\t\t     (_  _)    '-._|________________________|_.-'|   _//_\n");
-printf("\t\t\t     /  /      /`-._      |`-._     / /      /   |  (_  _)\n");
-printf("\t\t\t   .'   \\     |`-._ `-._   `-._`-._/ /      /    |    \\  \\\\\n");
-printf("\t\t\t  /      `.   |    `-._ `-._   `-._|/      /     |    /   `.\n");
-printf("\t\t\t /  / / /. )  |  `-._  `-._ `-._          /     /   .'      \\\n");
-printf("\t\t\t| | | \\ \\|/   |  `-._`-._  `-._ `-._     /     /.  ( .\\ \\ \\  \\\n");
-printf("\t\t\t \\ \\ \\ \\/     |  `-._`-._`-._  `-._ `-._/     /  \\  \\|/ / | | |\n");
-printf("\t\t\t  `.\\_\\/       `-._  `-._`-._`-._  `-._/|    /|   \\   \\/ / / /\n");
-printf("\t\t\t              /    `-._  `-._`-._`-._  ||   / |    \\   \\/_/.'\n");
-printf("\t\t\t            .'         `-._  `-._`-._  ||  /  |     \\\n");
-printf("\t\t\t@shun_m1cx  /          / . `-._  `-._  || /   |      \\\n");
-printf("\t\t\t          '\\          / /      `-._    ||/'._.'       \\\n");
-printf("\t\t\t           \\`.      .' /           `-._|/              \\\n");
-printf("\t\t\t            `.`-._.' .'               \\               .'\n");
-printf("\t\t\t              `-.__\\/                 `\\            .' '\n");
-printf("\t\t\t                                       \\`.       _.' .'\n");
-printf("\t\t\t                                        `.`-._.-' _.'\n");
-printf("\t\t\t                                          `-.__.-'\n");
+        goodbye();
         printf("\033[0;37m");
         drawBlocks();
         printf("\033[0;34m");
         printf("\033[0;32m \t\t\tThank You For\033[0;37m Playing!!\n\n");
-        printf("\Your score: %d\n\n", score);
+        printf("Your score: %d\n\n", score);
         printf("\033[0;37m");
         drawBlocks();
         displayInfo();
