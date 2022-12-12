@@ -60,13 +60,23 @@ DEVELOPERS:
 #define size 1000
 int score = 0; // Para pag determine han score han user after han game. 
 
+// Declaring and initializing the global variables to be used
+int currentCapital = 1000;
+int RollsArr[size][size];
+int currentRoll = 0;
+
 // Declaring the functions to be used
 int getRanNums(); 
 void succedingRolls(int userBet, int valToWin), play(int userBet), bet(), playAgain(), displayInfo(), rules(), loadingAnimation(), displayBanner();
-void drawBlocks(), goodbye(), saving();
+void drawBlocks(), goodbye(), savingGame();
 int numOfGames = 0;
-void saving(){
-    FILE *filePointer;
+int winRate;
+
+FILE *filePointer;
+
+void savingGame(){
+
+    // Para pag calculate han win rate.
 
     filePointer = fopen("C:\\Users\\Asus\\OneDrive\\Documents\\EVSU\\Computer Programming 1\\FinalOutput\\score.txt", "a");
 
@@ -125,10 +135,7 @@ void drawBlocks(){
 }
 
 
-// Declaring and initializing the global variables to be used
-int currentCapital = 1000;
-int RollsArr[size][size];
-int currentRoll = 0;
+
 
 
 
@@ -137,6 +144,10 @@ void main(){
     system("cls");
     srand(time(0));
     char UserInput; // This is used to get the user input
+
+    filePointer = fopen("score.txt", "w");
+    fprintf(filePointer, "Score Per Game:\n");
+    fclose(filePointer);
 
     displayBanner();
     printf("\033[0;32m");
@@ -155,7 +166,7 @@ void main(){
         system("cls");
         goodbye();
         drawBlocks();
-        saving();
+        savingGame();
         printf("\n\t\t\tExiting Game... ");
         loadingAnimation();
         loadingAnimation();
@@ -213,12 +224,16 @@ void playAgain(){
     scanf(" %c", &userInput);
 
     if(userInput == 'Y' || userInput == 'y'){
-        saving();
+        savingGame();
         bet();
     }
     else if(userInput == 'N' || userInput == 'n'){
         system("cls");
-        saving();
+        savingGame();
+        winRate = (score / numOfGames) * 100;
+        filePointer = fopen("score.txt", "a");
+        fprintf(filePointer, "WIN RATE: %d", winRate);
+        fclose(filePointer);
         goodbye();
         printf("\033[0;37m");
         drawBlocks();
@@ -228,7 +243,7 @@ void playAgain(){
         printf("\033[0;37m");
         drawBlocks();
         displayInfo();
-        printf("\n\n\t\t\tExiting Game... ");
+        printf("\n\n\t\t\tSaving Stats & Exiting Game... ");
         loadingAnimation();
         loadingAnimation();
         exit(0);
@@ -316,7 +331,7 @@ void play(int userBet){
     drawBlocks();
     printf("\n\t\t\tRolling Dice and Getting sum  ");
     loadingAnimation();
-    
+
 
     printf("\n\t\t\tRoll 1\n\t");
     printf("\t\t\tD1: %d\n\t", RollsArr[currentRoll][0]);
@@ -363,6 +378,11 @@ void bet(){
 
     if (currentCapital == 0)
     {
+        winRate = (score / numOfGames) * 100;
+        filePointer = fopen("score.txt", "a");
+        fprintf(filePointer,"\n\n WIN RATE: %d", winRate);
+        fclose(filePointer);
+        savingGame();
         system("cls");
         printf("\033[0;37m");
         printf("\t\t\t**    **                    **                               \n");
@@ -381,7 +401,7 @@ void bet(){
         drawBlocks();
         printf("\n\n\t\t\tPress Any key to Exit ");
         getch();
-        printf("\n\n\t\t\tExiting Game... ");
+        printf("\n\n\t\t\tSaving & Exiting Game... ");
         loadingAnimation();
         loadingAnimation();
         exit(0);
