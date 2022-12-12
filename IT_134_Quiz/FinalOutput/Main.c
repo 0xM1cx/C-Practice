@@ -58,12 +58,23 @@ DEVELOPERS:
 + /
 */
 #define size 1000
-int score; // Para pag determine han score han user after han game. 
+int score = 0; // Para pag determine han score han user after han game. 
 
 // Declaring the functions to be used
 int getRanNums(); 
 void succedingRolls(int userBet, int valToWin), play(int userBet), bet(), playAgain(), displayInfo(), rules(), loadingAnimation(), displayBanner();
-void drawBlocks(), goodbye();
+void drawBlocks(), goodbye(), saving();
+int numOfGames = 0;
+void saving(){
+    FILE *filePointer;
+
+    filePointer = fopen("C:\\Users\\Asus\\OneDrive\\Documents\\EVSU\\Computer Programming 1\\FinalOutput\\score.txt", "a");
+
+    if(filePointer != NULL){
+        fprintf(filePointer, "\n\n\nGame %d Score: %d\nCaptial: %d", numOfGames, score, currentCapital);
+        fclose(filePointer);
+    }
+}
 
 
 void goodbye(){
@@ -144,6 +155,7 @@ void main(){
         system("cls");
         goodbye();
         drawBlocks();
+        saving();
         printf("\n\t\t\tExiting Game... ");
         loadingAnimation();
         loadingAnimation();
@@ -201,10 +213,12 @@ void playAgain(){
     scanf(" %c", &userInput);
 
     if(userInput == 'Y' || userInput == 'y'){
+        saving();
         bet();
     }
     else if(userInput == 'N' || userInput == 'n'){
         system("cls");
+        saving();
         goodbye();
         printf("\033[0;37m");
         drawBlocks();
@@ -250,21 +264,22 @@ void succedingRolls(int userBet, int valToWin){
     while(isDone){
         drawBlocks();
         int randNum = getRanNums();
-        printf("\n\n\t\t\tRolling Dice and Getting sum  ");
+        printf("\n\t\t\tRolling Dice and Getting sum  ");
         loadingAnimation();
         printf("\n");
         
-        drawBlocks();
         printf("\t\t\tRoll %d\n\t", currentRoll + 1);
         printf("\t\t\tD1: %d\n\t", RollsArr[currentRoll][0]);
         printf("\t\t\tD2: %d\n\t", RollsArr[currentRoll][1]);
         printf("\t\t\tT: %d\n\n", RollsArr[currentRoll][2]);
+        drawBlocks();
 
         if(randNum == _valueToWin){
             printf("\033[0;37m");
             drawBlocks();
-            printf("\n\n\n\t\t\tWinner!!\n\n");
+            printf("\n\n\t\t\tWinner!!\n\n");
             currentCapital += userBet;
+            score++;
             printf("\t\t\tCurrent Capital: %d\n\n\n", currentCapital);
             drawBlocks();
             printf("\033[0;32m");
@@ -275,7 +290,7 @@ void succedingRolls(int userBet, int valToWin){
         {
             printf("\033[0;37m");
             drawBlocks();
-            printf("\n\n\n\t\t\tYou Lost!!\n\n");
+            printf("\n\n\t\t\tYou Lost!!\n\n");
             currentCapital -= userBet;
             printf("\t\t\tCurrent Capital: %d\n\n\n", currentCapital);
             drawBlocks();
@@ -295,6 +310,9 @@ void play(int userBet){
     currentRoll = 0; // to the currect roll and change the values from the previous game
     randNum = getRanNums(); // Generating random numbers para han first Roll
 
+    numOfGames++;
+
+    system("cls");
     drawBlocks();
     printf("\n\t\t\tRolling Dice and Getting sum  ");
     loadingAnimation();
@@ -303,7 +321,7 @@ void play(int userBet){
     printf("\n\t\t\tRoll 1\n\t");
     printf("\t\t\tD1: %d\n\t", RollsArr[currentRoll][0]);
     printf("\t\t\tD2: %d\n\t", RollsArr[currentRoll][1]);
-    printf("\t\t\tT: %d\n", RollsArr[currentRoll][2]);
+    printf("\t\t\tT: %d\n\n", RollsArr[currentRoll][2]);
     
     currentRoll++;
     
@@ -311,7 +329,7 @@ void play(int userBet){
     {   
         printf("\033[0;37m");
         drawBlocks();
-        printf("\n\n\n\t\t\tWe have a winner \n\n");
+        printf("\n\n\t\t\tWe have a winner \n\n");
         currentCapital += userBet;
         score++;
         printf("\t\t\tCurrent Capital: %d\n\n\n", currentCapital);
@@ -323,7 +341,7 @@ void play(int userBet){
     else if(randNum == 11 || randNum == 2){
         printf("\033[0;37m");
         drawBlocks();
-        printf("\n\n\n\t\t\tYou have lost\n\n");
+        printf("\n\n\t\t\tYou have lost\n\n");
         currentCapital -= userBet;
         printf("\t\t\tCurrent Capital: %d\n\n\n", currentCapital);
         drawBlocks();
