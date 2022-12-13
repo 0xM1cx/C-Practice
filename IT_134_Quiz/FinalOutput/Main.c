@@ -13,7 +13,7 @@ DEVELOPERS:
 */
 
 /*
-        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⣖⣤⣶⣿⣿⣿⣿⣿⣭⡶⠶⠒⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠈⠉⠁⠒⠤⠀⡔⠄⠀⠂
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⣀⡤⣖⣤⣶⣿⣿⣿⣿⣿⣭⡶⠶⠒⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠈⠉⠁⠒⠤⠀⡔⠄⠀⠂
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡴⢋⣥⣾⣿⣿⣿⣿⣿⣿⡿⠛⠁⢀⣠⠔⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠛⠓⢤⡀⠀⠀⢀⣀⠈⠂⠉⠀
 ⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠘⣿⣀⢻⡟⠉⣷⠀⠀⠀⠀⠀⠀⢀⡤⠎⠁⣀⣿⣿⣿⣿⣿⣿⣿⠟⢉⣠⣶⡾⠋⠀⠀⠀⠀⣀⣠⡤⢶⡾⠶⠀⠀⠀⠀⠀⠉⠶⣽⣾⣿⣷⣄⡀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣶⣬⣺⡟⠀⠀⠀⠀⢀⡴⠋⢀⣤⣾⣿⣿⣿⣿⣿⣿⡿⣣⣴⡿⠟⠁⠀⠀⣠⣤⣶⡿⠟⢉⣴⠋⠁⠀⠀⢀⡞⠀⠀⣦⠀⠙⢿⣿⣿⣿⣿⣦
@@ -68,20 +68,23 @@ int currentRoll = 0;
 // Declaring the functions to be used
 int getRanNums(); 
 void succedingRolls(int userBet, int valToWin), play(int userBet), bet(), playAgain(), displayInfo(), rules(), loadingAnimation(), displayBanner();
-void drawBlocks(), goodbye(), savingGame();
+void drawBlocks(), goodbye(), savingGame(), scoreHistory();
 int numOfGames = 0;
 int winRate;
 
 FILE *filePointer;
 
+
+
+
 void savingGame(){
 
     // Para pag calculate han win rate.
 
-    filePointer = fopen("C:\\Users\\Asus\\OneDrive\\Documents\\EVSU\\Computer Programming 1\\FinalOutput\\score.txt", "a");
+    filePointer = fopen("C:\\Users\\Asus\\OneDrive\\Documents\\EVSU\\Computer Programming 1\\FinalOutput\\Score.txt", "a");
 
     if(filePointer != NULL){
-        fprintf(filePointer, "\n\n\nGame %d Score: %d\nCaptial: %d", numOfGames, score, currentCapital);
+        fprintf(filePointer, "\n\n\n\t\t\tGame %d Score: %d\n\t\t\tCaptial: %d", numOfGames, score, currentCapital);
         fclose(filePointer);
     }
 }
@@ -145,8 +148,8 @@ void main(){
     srand(time(0));
     char UserInput; // This is used to get the user input
 
-    filePointer = fopen("score.txt", "w");
-    fprintf(filePointer, "Score Per Game:\n");
+    filePointer = fopen("C:\\Users\\Asus\\OneDrive\\Documents\\EVSU\\Computer Programming 1\\FinalOutput\\Score.txt", "a");
+    fprintf(filePointer, "\n===================================================\nScore Per Game:\n");
     fclose(filePointer);
 
     displayBanner();
@@ -156,7 +159,7 @@ void main(){
     displayInfo();
     drawBlocks();
     
-    printf("\t\t\t[P]lay\n\t\t\t[E]xit\n\t\t\t[R]ules\n\n\t\t\tINPUT: ");
+    printf("\t\t\t[P]lay\n\t\t\t[E]xit\n\t\t\t[R]ules\n\t\t\t[S]core History\n\n\t\t\tINPUT: ");
     scanf(" %c", &UserInput);
 
     if(UserInput == 'P' || UserInput == 'p'){
@@ -174,6 +177,8 @@ void main(){
     }
     else if(UserInput == 'R' || UserInput == 'r'){
         rules();
+    }else if(UserInput == 'S' || UserInput == 's'){
+        scoreHistory();
     }else{
         printf("\t\t\tInvalid Input, it must be either P or E");
         sleep(2);
@@ -182,6 +187,20 @@ void main(){
 }
 
 
+char c; // to be used when reading the score.txt file
+void scoreHistory(){
+    system("cls");
+    drawBlocks();
+    printf("\t\t\tSCORE HISTORY\n");
+    drawBlocks();
+    filePointer = fopen("C:\\Users\\Asus\\OneDrive\\Documents\\EVSU\\Computer Programming 1\\FinalOutput\\Score.txt", "r");
+    while ((c = getc(filePointer)) != EOF) printf("%c", c);
+    fclose(filePointer);   
+
+    printf("GO BACK?");
+    getch();
+    main();
+}
 
 
 void displayBanner(){
@@ -213,6 +232,7 @@ void loadingAnimation(){
         Sleep(90);
         printf("\b-");
         Sleep(90);
+        
     }
     printf("\b ");
 }
@@ -231,8 +251,8 @@ void playAgain(){
         system("cls");
         savingGame();
         winRate = (score / numOfGames) * 100;
-        filePointer = fopen("score.txt", "a");
-        fprintf(filePointer, "WIN RATE: %d", winRate);
+        filePointer = fopen("C:\\Users\\Asus\\OneDrive\\Documents\\EVSU\\Computer Programming 1\\FinalOutput\\Score.txt", "a");
+        fprintf(filePointer, "\n\n\t\t\tWIN RATE: %d\n\n", winRate);
         fclose(filePointer);
         goodbye();
         printf("\033[0;37m");
@@ -332,6 +352,7 @@ void play(int userBet){
     printf("\n\t\t\tRolling Dice and Getting sum  ");
     loadingAnimation();
 
+    
 
     printf("\n\t\t\tRoll 1\n\t");
     printf("\t\t\tD1: %d\n\t", RollsArr[currentRoll][0]);
@@ -379,8 +400,8 @@ void bet(){
     if (currentCapital == 0)
     {
         winRate = (score / numOfGames) * 100;
-        filePointer = fopen("score.txt", "a");
-        fprintf(filePointer,"\n\n WIN RATE: %d", winRate);
+        filePointer = fopen("C:\\Users\\Asus\\OneDrive\\Documents\\EVSU\\Computer Programming 1\\FinalOutput\\Score.txt", "a");
+        fprintf(filePointer,"\n\nWIN RATE: %d\n\n", winRate);
         fclose(filePointer);
         savingGame();
         system("cls");
