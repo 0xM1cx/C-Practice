@@ -36,7 +36,7 @@ void main(){
 
 
 void BookThree(){
-
+    printf("")
 }
 
 void game(){
@@ -235,7 +235,7 @@ void getWish(){
     sleep(3);
     printf("CRYSTAL: Bye, we'll meet again soon.");
     loadingAnimation();
-    end();
+    BookThree();
     
 }
 
@@ -260,9 +260,7 @@ void loadingAnimation(){
 }
 
 
-
 int chosenNums[8];
-
 int getRandnum(){
     int index = 0;
     srand(time(0));
