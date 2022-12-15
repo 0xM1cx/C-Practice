@@ -144,8 +144,6 @@ void game(){
         }else{
             printf("Wrong\n\n");
             points--;
-        
-            
         }
         break;
     case 5:

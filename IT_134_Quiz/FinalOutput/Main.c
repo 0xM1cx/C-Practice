@@ -4,6 +4,7 @@
 #include <unistd.h> // for the sleep(), compatability for linux
 #include <windows.h> // for the sleep(), compatability for windows
 #include <conio.h> // for the getch() function
+#include <mmsystem.h>
 
 /*
 DEVELOPERS:
@@ -155,6 +156,8 @@ void main(){
     scanf(" %c", &UserInput);
 
     if(UserInput == 'P' || UserInput == 'p'){
+        // song eugene cam - cove
+        PlaySound("C:\\Users\\Asus\\OneDrive\\Documents\\C-Practice\\IT_134_Quiz\\FinalOutput\\cove.mp3", NULL, SND_FILENAME | SND_ASYNC);
         bet();
     }
     else if(UserInput == 'E' || UserInput == 'e'){
