@@ -169,7 +169,7 @@ void main(){
         loadingAnimation();
         loadingAnimation();
         exit(0);
-    }
+    }// test interface one
     else if(UserInput == 'R' || UserInput == 'r'){
         rules();
     }else if(UserInput == 'S' || UserInput == 's'){
@@ -180,7 +180,6 @@ void main(){
         main();
     }
 }
-
 
 char c; // to be used when reading the score.txt file
 void scoreHistory(){

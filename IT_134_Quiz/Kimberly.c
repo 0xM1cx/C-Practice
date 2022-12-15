@@ -35,7 +35,8 @@ void main(){
 
 
 void BookThree(){
-    printf("");
+    printf("*You wake up in an empty white room*");
+    sleep(2);
 }
 
 void game(){
