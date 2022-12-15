@@ -6,10 +6,11 @@
 #include <time.h>
 
 
-void goToOffice(), goNear(), BookTwo(), BookOne(char *playerName), loadingAnimation(), getWish(), end(), game();
+void goToOffice(), goNear(), BookTwo(), BookOne(char *playerName), loadingAnimation(), getWish(), end(), game(), BookThree();
 int getRandnum();
 int playerGotBook = 0;
 int points = 0;
+
 
 
 void main(){
@@ -33,6 +34,10 @@ void main(){
 
 }
 
+
+void BookThree(){
+
+}
 
 void game(){
     char userAns[30];
