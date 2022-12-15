@@ -10,7 +10,7 @@ void goToOffice(), goNear(), BookTwo(), BookOne(char *playerName), loadingAnimat
 int getRandnum();
 int playerGotBook = 0;
 int points = 0;
-
+char name[30];
 
 
 void main(){
@@ -31,12 +31,11 @@ void main(){
     printf("\n=========================\n\n\n");
     loadingAnimation();
     BookOne(playerName);
-
 }
 
 
 void BookThree(){
-    printf("")
+    printf("");
 }
 
 void game(){
@@ -64,8 +63,6 @@ void game(){
         }else{
             printf("Wrong\n\n");
             points--;
-        
-        
         }
         break;
     case 1:
@@ -86,9 +83,11 @@ void game(){
             printf("Wrong\n\n");
             points--;
         
-    
+
         }
         break;
+
+        
     case 2:
         printf("\033[0;37m");
         printf("This device displays the processed data\n\n");
@@ -126,8 +125,6 @@ void game(){
         }else{
             printf("Wrong\n\n");
             points--;
-    
-    
         }
         break;
     case 4:
@@ -210,8 +207,6 @@ void game(){
         }else{
             printf("Wrong\n\n");
             points--;
-            
-        
         }
         break;
     }
@@ -229,11 +224,11 @@ void end(){
 void getWish(){
     printf("DOCTOR: Great you have passed the test, you can now get you wish\n\n");
     sleep(3);
-    printf("*You wish to get your memories back and go home*\n\n");
+    printf("*You wish to get your memories back*\n\n");
     sleep(3);
     printf("*The ball shines brightly until your blinded by the light, the next thing you know you\nhear a Crsytal's voice*");
     sleep(3);
-    printf("CRYSTAL: Bye, we'll meet again soon.");
+    printf("CRYSTAL: %s are you ok?", name);
     loadingAnimation();
     BookThree();
     
@@ -259,7 +254,6 @@ void loadingAnimation(){
     printf("\n\n");
 }
 
-
 int chosenNums[8];
 int getRandnum(){
     int index = 0;
@@ -271,10 +265,8 @@ int getRandnum(){
             chosenNums[index] = randNum;
             index++;
             return chosenNums[i];
-
         }
     }
-    
 }
 
 
@@ -327,7 +319,6 @@ void goToOffice(char *username){
     printf("YOU: For what?\n\n");
     sleep(2);
     printf("DOCTOR: It will help you later on, for the challenge that you must take.\nIn order for you to go home\n\n");
-
     BookTwo();
 }
 
@@ -393,11 +384,13 @@ void BookOne(char *playerName){
     if(userInput == 1){
         strcpy(username, playerName);
         printf("...I'm %s \n\n", username);
+        strcpy(name, username);
         sleep(3);
     }
     else if(userInput == 2){
         printf("YOU: uhm...I'd rather not say\n\n");
         printf("Stranger: Ok...Yeah. I understand anonymity is important; especially when you're in an unknown place.\nFrom now on I will call you \"Peace\" as a symbol of our peaceful friendship\n\n");
+        for(int i = )
         sleep(3);
     }else{
         goto choiceOne;
