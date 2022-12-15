@@ -87,7 +87,7 @@ void game(){
         }
         break;
 
-        
+
     case 2:
         printf("\033[0;37m");
         printf("This device displays the processed data\n\n");
@@ -165,8 +165,6 @@ void game(){
         }else{
             printf("Wrong\n\n");
             points--;
-            
-            
         }
         break;
     case 6:
@@ -181,13 +179,9 @@ void game(){
         if(strcmp(userAns, wordsToGuess[randNum]) == 0){
             printf("Correct\n\n");
             points++;
-            
-            
         }else{
             printf("Wrong\n\n");
-            points--;
-            
-            
+            points--;    
         }
         break;
     case 7:
@@ -202,8 +196,6 @@ void game(){
         if(strcmp(userAns, wordsToGuess[randNum]) == 0){
             printf("Correct\n\n");
             points++;
-            
-            
         }else{
             printf("Wrong\n\n");
             points--;

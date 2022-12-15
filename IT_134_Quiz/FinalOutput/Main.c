@@ -74,9 +74,6 @@ int winRate;
 
 FILE *filePointer;
 
-
-
-
 void savingGame(){
 
     // Para pag calculate han win rate.
@@ -126,7 +123,6 @@ void goodbye(){
     printf("\t\t\t                                          `-.__.-'\n");
 }
 
-
 // Function para mag draw horizontal block
 void drawBlocks(){
     printf("\t\t\t");
@@ -136,10 +132,6 @@ void drawBlocks(){
     }
     printf("\n");
 }
-
-
-
-
 
 
 // Main function where the program will first start
