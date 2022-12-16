@@ -7,7 +7,7 @@
 
 #define size 5
 
-void goToOffice(), goNear(), BookTwo(), BookOne(char *playerName), loadingAnimation(), getWish(), end(), game(), BookThree(), BookTheePartTwo(), BookTheeFinale();
+void goToOffice(), goNear(), BookTwo(), BookOne(char *playerName), loadingAnimation(), getWish(), end(), game(), BookThree(), BookTheePartTwo(), BookThreeFinale();
 int getRandnum();
 int playerGotBook = 0;
 int points = 0;
@@ -34,9 +34,154 @@ void main(){
     BookOne(playerName);
 }
 
-void BookTheeFinale(){
-    printf("*The final showdown begins*");
+void BookThreeFinale(){
+    system("cls");
+    printf("*The final showdown begins*\n\n\n");
     sleep(2);
+    int score = 0
+    int userInput;
+
+    printf("Unix is written in what language?\n");
+    printf("1. C#\t2. C\n3.Java\t4.COBOL\n");
+    printf("Number of your answer: ");
+    scanf("%d", &userInput);
+    if(userInput == 2){
+        score++;
+    }
+
+    printf("Which of the following is an extension of image file?\n");
+    printf("1. .mkv\t2. .txt\n3. .gif\t4. .vdf\n");
+    printf("Number of your answer: ");
+    scanf("%d", &userInput);
+    if(userInput == 3){
+        score++;
+    }
+
+    printf("The main memory of a computer system is?\n");
+    printf("1. Non-volatile\t2. volatile\n3. restricted\t4. unrestricted\n");
+    printf("Number of your answer: ");
+    scanf("%d", &userInput);
+    if(userInput == 2){
+        score++;
+    }
+
+    printf("URL stand for?\n");
+    printf("1. Uniform Resource Locator\t2. Uniform Record Locator\n3. Uninterrupted resource Locator\t4. Uninterrupted record locator\n");
+    printf("Number of your answer: ");
+    scanf("%d", &userInput);
+    if(userInput == 1){
+        score++;
+    }
+
+    printf("SSL stands for?\n");
+    printf("1. Secure server layer\t2. Secure system level\n3. Secure server level\t4. Secure Sockets Layer\n");
+    printf("Number of your answer: ");
+    scanf("%d", &userInput);
+    if(userInput == 4){
+        score++;
+    }
+
+    printf("How many bits is a nibble?\n");
+    printf("1. 4 bits\t2. 1 bits\n3. 3 bits\t4. 10 bits\n");
+    printf("Number of your answer: ");
+    scanf("%d", &userInput);
+    if(userInput == 1){
+        score++;
+    }
+
+    printf("Where is the computer firmare present\n");
+    printf("1. Cache Memory\t2. Non-volatile memory\n3. Volatile Memory\t4. SSD/HDD\n");
+    printf("Number of your answer: ");
+    scanf("%d", &userInput);
+    if(userInput == 2){
+        score++;
+    }
+
+    printf("Computer word size is a multiple of?\n");
+    printf("1. 100 bits\t2. 16 bits\n3. 10 bits\t4. 1024 bits\n");
+    printf("Number of your answer: ");
+    scanf("%d", &userInput);
+    if(userInput == 2){
+        score++;
+    }
+
+    printf("What does OCR stand for?\n");
+    printf("1. Optical Card Reader\t2. Office Cash Receiver\n3.Optical Character Reader\t4. Online Computer Retrieval\n");
+    printf("Number of your answer: ");
+    scanf("%d", &userInput);
+    if(userInput == 3){
+        score++;
+    }
+
+    printf("In a computer, a number which is used to identify the location of a word in memory is called?\n");
+    printf("1. code\t2. location\n3.address\t4. binary number\n");
+    printf("Number of your answer: ");
+    scanf("%d", &userInput);
+    if(userInput == 3){
+        score++;
+    }
+
+    if(score >= 8){
+        printf("JOHN: tsk, very well. I am a man of my word.\n");
+        sleep(2);
+        system("cls");
+        printf("JOHN: Here is the scroll\n");
+        sleep(2);
+        printf("*crystal punches john in the face*");
+        sleep(2);
+        printf("CRYSTAL: I won't let you off the hook. Your coming with me to the town gaurd.\nWhere you will be tried for your sins\n");
+        sleep(2);
+        printf("*You and crystal go back to the town*");
+        sleep(2);
+        printf("CRYSTAL: GAURDS! John is accused of stealing other worldy beings memories\n and illegal transportation\n");
+        sleep(2);
+        printf("*John is taken by the gaurds to the holding cell, awaiting his trail*\n\n");
+        sleep(2);
+        printf("CRYSTAL: So lets go to the town center to get something to eat\n before you go home\n");
+        sleep(2);
+        printf("*You and crystal go to the town tavern to get something to eat*");
+        sleep(2);
+        printf("CRYSTAL: You know, you can use that scoll to come back here anytime you want.\n I mean your DNA is registered on it so its yours\n");
+        sleep(2);
+        printf("YOU: Yeah, I would of course.");
+        sleep(2);
+        printf("*Both you and crystal go to the town fountian before you leave*");
+        sleep(2);
+        printf("CRYSTAL: So this is it huh. Well it was nice to go on an adventure with you\n");
+        sleep(2);
+        printf("YOU: Don't worry when I come back, we'll go on more adventures. Promise\n");
+        sleep(2);
+        printf("*You start to open the scoll and read the text*\n");
+        sleep(2);
+        printf("*You start to fade away*\n");
+        sleep(2);
+        printf("*You arrive at your room stil the same like you didn't leave, the only difference it its daytime now*\n");
+        sleep(2);
+        printf("*You look at the toy bow in your wall and wonder.\n*");
+        sleep(2);
+        printf("YOU: What adventure will I have next when I come back");
+
+        sleep(4);
+        system("cls");
+        printf("\n\n\n\nTHANK YOU FOR PLAYING!!!\n\n");
+        printf("Exiting Game...");
+        for(int i = 0; i <=; i++){
+            printf("\\\b");
+            sleep(1);
+            printf("|\b");
+            sleep(1);
+            printf("/\b");
+            sleep(1);
+            printf("-\b");
+            sleep(1);
+        }
+    }else{
+        printf("You've failed to get the required points of 8 and greater");
+        sleep(3);
+        system("cls");
+        BookThreeFinale();
+    }
+    
 }
 
 
