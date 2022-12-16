@@ -1,13 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-#define INITIAL_MONEY 100
-
-int roll_dice() {
-  return rand() % 6 + 1;
-}
-
 int main() {
   srand(time(NULL)); // seed the random number generator
 
@@ -44,6 +34,21 @@ int main() {
         money += bet;
       } else {
         printf("Roll again.\n");
+
+        // Insert loop here
+        while (1) {
+          int roll = roll_dice() + roll_dice();
+          printf("You rolled %d.\n", roll);
+          if (roll == 7) {
+            printf("You lose.\n");
+            money -= bet;
+            break;
+          } else if (roll == roll1) {
+            printf("You win!\n");
+            money += bet;
+            break;
+          }
+        }
       }
     }
   }
