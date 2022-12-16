@@ -7,7 +7,7 @@
 
 #define size 5
 
-void goToOffice(), goNear(), BookTwo(), BookOne(char *playerName), loadingAnimation(), getWish(), end(), game(), BookThree(), BookTheePartTwo(), BookThreeFinale();
+void goToOffice(), goNear(), BookTwo(), BookOne(char *playerName), loadingAnimation(), getWish(), end(), game(), BookThree(), BookThreePartTwo(), BookThreeFinale();
 int getRandnum();
 int playerGotBook = 0;
 int points = 0;
@@ -176,7 +176,7 @@ void BookThreeFinale(){
 }
 
 
-void BookTheePartTwo(){
+void BookThreePartTwo(){
     printf("*A flash appears blinding you\n*");
     sleep(2);
     printf("*As you start to wake up, you see a flashes of you memory\n and you found out a pilgrim with a gold star badge stole your memories*\n");
@@ -328,7 +328,7 @@ void BookThree(){
         printf("\"You've done well. I will now grant you're wish\"");
         sleep(2);
         system("cls");
-        BookTheePartTwo();
+        BookThreePartTwo();
 
     }else{
         printf("\"You've failed to meet the required score of 3 correct answers.\n I cannot give you your wish.\"");
