@@ -5,6 +5,7 @@
 #include <string.h>
 #include <time.h>
 
+#define size 5
 
 void goToOffice(), goNear(), BookTwo(), BookOne(char *playerName), loadingAnimation(), getWish(), end(), game(), BookThree();
 int getRandnum();
@@ -35,9 +36,32 @@ void main(){
 
 
 void BookThree(){
+    char useAns;
     printf("*You wake up in an empty white room*");
     sleep(2);
-    printf("");
+    printf("*A gray distorted figure appears in front of you saying*");
+    sleep(2);
+    printf("\"You have called the spirit of the crystal ball\n\"");
+    sleep(2);
+    printf("\"You wish to have the memories which you've lost in order for you to find your way home\n\"");
+    sleep(2);
+    printf("\"Before I give you your wish, you must solve my riddles.\"");
+    sleep(2);
+    
+    char answers[size][30] = {"Keyboard", "Mouse", "Monitor", "Internet Explorer", "windows"};
+    char riddles[size][50] = {
+        "I can write without a pen, without the number 10, what am I?",
+        "I have a tail and two flat ears. I move with no feet",
+        "A box to anywhere. Just watch for my glare.",
+        "I move slower than molasses, if you use me, you probably wear glasses.",
+        "25 years old, but only turned 10"
+    };
+
+    srand(time(NULL));
+    for(int j = 0; j <= size; j++){
+        pr
+    }
+    
 }
 
 void game(){
@@ -102,8 +126,6 @@ void game(){
         if(strcmp(userAns, wordsToGuess[randNum]) == 0){
             printf("Correct\n\n");
             points++;
-    
-            
         }else{
             printf("Wrong\n\n");
             points--;
