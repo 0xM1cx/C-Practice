@@ -38,7 +38,7 @@ void BookThreeFinale(){
     system("cls");
     printf("*The final showdown begins*\n\n\n");
     sleep(2);
-    int score = 0
+    int score = 0;
     int userInput;
 
     printf("Unix is written in what language?\n");
@@ -165,16 +165,7 @@ void BookThreeFinale(){
         system("cls");
         printf("\n\n\n\nTHANK YOU FOR PLAYING!!!\n\n");
         printf("Exiting Game...");
-        for(int i = 0; i <=; i++){
-            printf("\\\b");
-            sleep(1);
-            printf("|\b");
-            sleep(1);
-            printf("/\b");
-            sleep(1);
-            printf("-\b");
-            sleep(1);
-        }
+        loadingAnimation();
     }else{
         printf("You've failed to get the required points of 8 and greater");
         sleep(3);
@@ -277,7 +268,7 @@ void BookTheePartTwo(){
 
 
 void BookThree(){
-    char userAns;
+    char _userAns[30];
     int riddleScore = 0;
     printf("*You wake up in an empty white room*");
     sleep(2);
@@ -290,42 +281,44 @@ void BookThree(){
     printf("\"Before I give you your wish, you must solve my riddles.\n\n\"");
     sleep(2);
 
+
+    char answers[10][30] = {"Keyboard", "Mouse", "Monitor", "Internet Explorer", "Windows"};
     system("cls");
     printf("I can write without a pen, without the number 10, what am I?");
-    scanf("%s", userAns);
-    if(strcmp(userAns, "Keyboard") == 0){
+    scanf(" %s", _userAns);
+    if(strcmp(_userAns, answers[0]) == 0){
         riddleScore++;
     }
     sleep(2);
     system("cls");
 
     printf("I have a tail and two flat ears. I move with no feet");
-    scanf("%s", userAns);
-    if(strcmp(userAns, "Mouse") == 0){
+    scanf(" %s", _userAns);
+    if(strcmp(_userAns, answers[1]) == 0){
         riddleScore++;
     }
     sleep(2);
     system("cls");
 
     printf("A box to anywhere. Just watch for my glare.");
-    scanf("%s", userAns);
-    if(strcmp(userAns, "Monitor") == 0){
+    scanf(" %s", _userAns);
+    if(strcmp(_userAns, answers[2]) == 0){
         riddleScore++;
     }
     sleep(2);
     system("cls");
     
     printf("I move slower than molasses, if you use me, you probably wear glasses.");
-    scanf("%s", userAns);
-    if(strcmp(userAns, "Internet Explorer") == 0){
+    scanf(" %s", _userAns);
+    if(strcmp(_userAns, answers[3]) == 0){
         riddleScore++;
     }
     sleep(2);
     system("cls");
 
     printf("25 years old, but only turned 10");
-    scanf("%s", userAns);
-    if(strcmp(userAns, "windows") == 0){
+    scanf(" %s", _userAns);
+    if(strcmp(_userAns, answers[4]) == 0){
         riddleScore++;
     }
     sleep(2);
