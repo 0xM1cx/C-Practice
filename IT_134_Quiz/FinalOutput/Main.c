@@ -334,6 +334,7 @@ void succedingRolls(int userBet, int valToWin){
     }
 }
 
+
 void play(int userBet){
     int randNum = 0; // reset the number to know have the player win because of the last sum of the previous game
     currentRoll = 0; // to the currect roll and change the values from the previous game

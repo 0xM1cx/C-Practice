@@ -7,7 +7,7 @@
 
 #define size 5
 
-void goToOffice(), goNear(), BookTwo(), BookOne(char *playerName), loadingAnimation(), getWish(), end(), game(), BookThree();
+void goToOffice(), goNear(), BookTwo(), BookOne(char *playerName), loadingAnimation(), getWish(), end(), game(), BookThree(), BookTheePartTwo();
 int getRandnum();
 int playerGotBook = 0;
 int points = 0;
@@ -35,8 +35,20 @@ void main(){
 }
 
 
+void BookTheePartTwo(){
+    printf("*A flash appears blinding you\n*");
+    sleep(2);
+    printf("*As you start to wake up, you \n*");
+    sleep(2);
+    printf("**");
+    sleep(2);
+    printf("");
+    sleep(2);
+}
+
+
 void BookThree(){
-    char useAns;
+    char userAns;
     printf("*You wake up in an empty white room*");
     sleep(2);
     printf("*A gray distorted figure appears in front of you saying*");
@@ -45,7 +57,7 @@ void BookThree(){
     sleep(2);
     printf("\"You wish to have the memories which you've lost in order for you to find your way home\n\"");
     sleep(2);
-    printf("\"Before I give you your wish, you must solve my riddles.\"");
+    printf("\"Before I give you your wish, you must solve my riddles.\n\n\"");
     sleep(2);
     
     char answers[size][30] = {"Keyboard", "Mouse", "Monitor", "Internet Explorer", "windows"};
@@ -58,10 +70,32 @@ void BookThree(){
     };
 
     srand(time(NULL));
+    int currentRiddle = 1;
+    int riddleScore = 0;
+    char currentWord[100];
+
     for(int j = 0; j <= size; j++){
-        pr
+        for (int i = 0; i < 30; i++)
+        {
+            printf("%d. %s\n", currentRiddle, riddles[j][i]);
+            printf("Your Answer: ");
+            scanf(" %s", userAns);
+            currentWord == riddles[j][i];
+        }
+        if(strcmp(currentWord, userAns) == 0){
+            riddleScore++;
+        }
+        currentRiddle++;   
     }
-    
+
+    if(riddleScore >= 3){
+        printf("\"You've done well. I will now grant you're wish\"");
+        system("cls");
+        BookTheePartTwo();
+
+    }else{
+        printf("\"You've failed to meet the required score of 3 correct answers.\n I cannot give you your wish.\"");
+    }
 }
 
 void game(){
