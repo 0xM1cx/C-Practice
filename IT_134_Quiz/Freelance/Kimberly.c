@@ -7,7 +7,7 @@
 
 #define size 5
 
-void goToOffice(), goNear(), BookTwo(), BookOne(char *playerName), loadingAnimation(), getWish(), end(), game(), BookThree(), BookTheePartTwo();
+void goToOffice(), goNear(), BookTwo(), BookOne(char *playerName), loadingAnimation(), getWish(), end(), game(), BookThree(), BookTheePartTwo(), BookTheeFinale();
 int getRandnum();
 int playerGotBook = 0;
 int points = 0;
@@ -34,6 +34,11 @@ void main(){
     BookOne(playerName);
 }
 
+void BookTheeFinale(){
+    printf("*The final showdown begins*");
+    sleep(2);
+}
+
 
 void BookTheePartTwo(){
     printf("*A flash appears blinding you\n*");
@@ -46,6 +51,83 @@ void BookTheePartTwo(){
     sleep(2);
     printf("YOU: Yeah, I'm OK\n");
     sleep(2);
+    printf("CRYSTAL: What did you see?\n");
+    sleep(2);
+    printf("YOU: I saw a pilgrim with a gold star badge\nBut I don't know who it is\n\n");
+    sleep(2);
+    printf("CRYSTAL: A pilgrim with a gold badge...\n");
+    sleep(2);
+    printf("CRYSTAL: There is one person who I know has that badge\n");
+    sleep(2);
+    printf("CRYSTAL: Its John, the world traveller\n");
+    sleep(2);
+    printf("YOU: World Traveller?");
+    sleep(2);
+    printf("CRYSTAL: Like a traveller but between world, they are mostly scientist\n");
+    sleep(2);
+    printf("CRYSTAL: John the Pilgrim is one of the worst, he's greedy and a total jerk, no wonder why he took your memories.\n");
+    sleep(2);
+    printf("YOU: But why would he take it?\n");
+    sleep(2);
+    printf("Why don't we find out for ourselves. Thanks DOC for helping us\n");
+    sleep(2);
+    printf("DOCTOR: No problem...Be careful you two\n");
+    sleep(2);
+
+    system("cls");
+
+    printf("*You and Crystal journey to the lake where John lives*\n\n");
+    sleep(2);
+    printf("*As you enter the lodge in the lake, you see John reading a book*\n");
+    sleep(2);
+    printf("*Due to Crystal impatience, she recklessly approaches him*\n");
+    sleep(2);
+    printf("JOHN: WHO ARE YOU?\n\n");
+    sleep(2);
+    printf("*John looks at you*");
+    sleep(2);
+    printf("JOHN: Ah, you the girl from earth\n");
+    sleep(2);
+    printf("YOU: You recognize me?\n");
+    sleep(2);
+    printf("JOHN: Of course, you one of the most sweetest memories of all the worlds that i've travelled\n");
+    sleep(2);
+    printf("YOU: so you've taken other people memories. But why did you transport me here?");
+    sleep(2);
+    printf("JOHN: Not really, stealing is against the law of course and you can't transfer memories between worlds\nunless you can transport the person first to your world and take their memories from there\n\n");
+    sleep(2);
+    printf("YOU: That's why, you doozed me off and transported me here, then after you stole my memories you left me in the forrest\n");
+    sleep(2);
+    printf("JOHN: You got it. But why come to me, I presumed you gained them back\nI mean your with Crystal the famous adventurer\nI'm sure her friend DOC would have find a way\n");
+    sleep(2);
+    printf("JOHN: Do you wan't revenge? or is it that you can't go home\n");
+    sleep(2);
+    printf("*John saw the look on your face as he said the other possibility*\n\n");
+    sleep(2);
+    printf("JOHN: I see you can't go home, HAHAHAH.\nOf course you can't I'm the one who brought you here with a TCP scroll.\n");
+    sleep(2);
+    printf("CRYSTAL: TCP scoll?\n\n");
+    sleep(2);
+    printf("JOHN: Its a new invention of mine, it allows me to tranfer large life force in segements\n and prevents any loss in those segments because when each segement is transported\n my scroll check if it has been truly transported before transporting the other segment\n\n");
+    sleep(2);
+    printf("JOHN: The only problem, the only way to go back is to get the same scroll to transport you back\nThat's because when a person is transported via TCP scroll their DNA is ingrained into the scroll\n\n");
+    sleep(2);
+    printf("*Crystal points her bow at john*\n");
+    sleep(2);
+    printf("JOHN: Woah, no need to get violent. I'll give you the scroll if you defeat me that is\n");
+    sleep(2);
+    printf("CRYSTAL: You think this is a game?\n");
+    sleep(2);
+    printf("JOHN: Yes HAHAH, All the searching, fighting has led to this moment. Isn't it exciting HAAHAH\n");
+    sleep(2);
+    printf("JOHN: Shall we begin");
+    sleep(2);
+    printf("The rules of the game is simple, I will give you questions and yo just have to answer them");
+    sleep(2);
+
+
+
+
 }
 
 
