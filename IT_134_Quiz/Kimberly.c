@@ -37,6 +37,7 @@ void main(){
 void BookThree(){
     printf("*You wake up in an empty white room*");
     sleep(2);
+    printf("");
 }
 
 void game(){
@@ -381,12 +382,11 @@ void BookOne(char *playerName){
     else if(userInput == 2){
         printf("YOU: uhm...I'd rather not say\n\n");
         printf("Stranger: Ok...Yeah. I understand anonymity is important; especially when you're in an unknown place.\nFrom now on I will call you \"Peace\" as a symbol of our peaceful friendship\n\n");
-        for(int i = )
+        
         sleep(3);
     }else{
         goto choiceOne;
     }
-
 
     printf("Sorry about that, I'm Crystal, a professional adventurer from the town to the north named Negus.\nIf it's ok to ask, what were you doing here in the forest.\n\n");
     sleep(4);
