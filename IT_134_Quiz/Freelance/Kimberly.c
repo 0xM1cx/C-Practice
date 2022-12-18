@@ -261,7 +261,7 @@ void BookThreePartTwo(){
     printf("The rules of the game is simple, I will give you questions and yo just have to answer them");
     sleep(2);
 
-
+    BookThreeFinale();
 
 
 }
@@ -377,13 +377,9 @@ void game(){
         if(strcmp(userAns, wordsToGuess[randNum]) == 0){
             printf("Correct\n\n");
             points++;
-        
-            
         }else{
             printf("Wrong\n\n");
             points--;
-        
-
         }
         break;
 

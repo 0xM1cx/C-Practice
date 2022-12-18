@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
 int main() {
   srand(time(NULL)); // seed the random number generator
 
