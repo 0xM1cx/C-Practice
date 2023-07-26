@@ -19,11 +19,10 @@ int main(){
 		  	if (balance==3.90312e-322){
 				//to avoid printing out 3.90312e-322
 				cout<<"\nYour balance is 0";
-			    }
-		    else{
+			} else{
 				cout<<"\nCurrent balance: "<<balance;
 			}
-			
+
 			cout<<"\nEnter an amount: ";
 			cin>>amount;
 			balance=balance+amount;
