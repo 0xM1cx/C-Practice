@@ -1,11 +1,22 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    string name;
+void typeConvertion() {
     int age;
-    cout << "What is your name and age: ";
-    cin >> name >> age;
-    cout << "Welcome " << name << " aged " << age << endl;
+
+    double sample = 14.324234;
+
+    age = (int)sample;
+    cout << age;
+}
+
+int main() {
+    // string name;
+    // int age;
+    // cout << "What is your name and age: ";
+    // cin >> name >> age;
+    // cout << "Welcome " << name << " aged " << age << endl;
+
+    typeConvertion();
     return 0;
 }
