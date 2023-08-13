@@ -2,6 +2,9 @@
 using namespace std;
 
 int main() {
-    cout << "Hello";
+    string name;
+    cout << "What is your name: ";
+    cin >> name;
+    cout << "Welcome " << name << endl;
     return 0;
 }
