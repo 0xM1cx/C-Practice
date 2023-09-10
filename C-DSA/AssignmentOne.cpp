@@ -13,7 +13,7 @@ int main() {
 
     // Step 3: Initialize SMALL and COUNT
     SMALL = NUM1;
-    COUNT = 2;
+    COUNT = 2; // DD ko na gin set COUNT TO 2.
 
     // Step 4: Loop to compare integers
     while (COUNT <= N) {
@@ -21,20 +21,16 @@ int main() {
         // Input the next integer
         cout << "Enter integer #" << COUNT << ": ";
         cin >> nextNum;
-
         // Step 5: Compare NUM1 with SMALL and update SMALL if needed
         if (nextNum < SMALL) {
             SMALL = nextNum;
         }
-
         // Step 6: Increment COUNT
         COUNT++;
-
-        // Step 7: Return to step 5
+        // Step 7: Return to step
     }
-
-    // Step 8: Ig display la an value han SMALL. Optional la ine na variable.
-    cout << "The smallest integer is: " << SMALL << std::endl;
+    // Step 8: Ig display la an value han SMALL. Optional la ine na step
+    cout << "The smallest integer is: " << SMALL << endl;
 
     return 0;
 }
