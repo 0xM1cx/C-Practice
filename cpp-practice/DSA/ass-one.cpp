@@ -7,7 +7,11 @@ string Sort_Arr(string Arr1[], int N) {
     while (Ctr1 <= N - 1) {
         int Ctr2 = Ctr1 + 1;
         while (Ctr2 <= N) {
-            * /
+            if (Arr1[Ctr1] > Arr1[Ctr2])
+            {
+                string
+            }
+            
         }
     }
 }
