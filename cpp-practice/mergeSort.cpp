@@ -2,9 +2,8 @@
 using namespace std;
 
 int main() {
-    cout << "==============================" << endl;
-    cout << "How many elements would you like to put in each array" int inputSize;
-    string arr1[];
-    string arr2[];
+
+    string arr1[] = {"Shawn", "James", "Phil", "Renzon", "Celine"};
+    string arr2[] = {"Justin", "Ruffa", "Fabi", "JM", "Sean"};
     return 0;
 }

@@ -1,5 +1,12 @@
 #include <iostream>
+
 using namespace std;
+
+void loading() {
+    for (int i = 0; i < 5; i++) {
+        /* code */
+    }
+}
 
 int main() {
 
@@ -10,5 +17,6 @@ int main() {
     cin >> N;
 
     cout << "\n============================================================" << endl;
+
     return 0;
 }
