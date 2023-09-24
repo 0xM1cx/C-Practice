@@ -14,10 +14,13 @@ void arr2(vector<string> Arr3, int Count3, vector<string> Arr2, int Count2) {
     Count2++;
 }
 
-vector<string> Merge_Arr(vector<string> Arr1, vector<string> Arr2, int N1, int N2) {
+void Merge_Arr(vector<string> Arr1, vector<string> Arr2, int N1, int N2) {
     int Count1 = 1;
     int Count2 = 1;
     int Count3 = 1;
+    for (int i = 0; i < Arr2.size(); i++) {
+        cout << "Arr2[" << i + 1 << "] = " << Arr2[i] << endl;
+    }
 
     vector<string> Arr3;
 
@@ -35,6 +38,7 @@ vector<string> Merge_Arr(vector<string> Arr1, vector<string> Arr2, int N1, int N
                 }
             }
         }
+        Count3++;
     }
 }
 
