@@ -20,12 +20,15 @@ void Sort_Arr(vector<string> Arr1, int N) {
         Ctr1++;
     }
 
+    cout << "OUTPUT | SORTED ARRAY" << endl;
+    cout << "============================================================" << endl;
     for (int i = 0; i < N; i++) {
-        cout << Arr1[i] << " ";
+        cout << "Arr[" << i + 1 << "] = " << Arr1[i] << endl;
     }
 }
 
 void loading() {
+    cout << "Loading...";
     for (int i = 0; i < 5; i++) {
         Sleep(90);
         cout << "\b\\";
@@ -40,11 +43,14 @@ void loading() {
 }
 
 vector<string> push(vector<string> Arr1, int N) {
-    for (int i = Arr1.size(); i < N; i++) {
+    system("cls");
+    cout << "INPUT NAMES" << endl;
+    cout << "============================================================" << endl;
+    for (int i = 0; i < N; i++) {
         string name;
         cout << "Name: ";
         cin >> name;
-        Arr1[i] = name;
+        Arr1.push_back(name);
     }
 
     return Arr1;
@@ -60,15 +66,18 @@ int main() {
     cin >> N;
 
     if (N < 3) {
-        cout << "Elements in the arry must be greater than 3!";
+        cout << "\nElements in the array must be greater than 3!" << endl;
         loading();
+        system("cls");
         main();
     }
 
     cout << "\n============================================================" << endl;
-    loading();
 
+    loading();
     Arr1 = push(Arr1, N);
+    loading();
+    system("cls");
     Sort_Arr(Arr1, N);
 
     return 0;
