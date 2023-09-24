@@ -1,8 +1,9 @@
 #include <iostream>
+#include <vector>
 #include <windows.h>
 using namespace std;
 
-void Sort_Arr(string Arr1[], int N) {
+void Sort_Arr(vector<string> Arr1, int N) {
     int Ctr1 = 0, Ctr2;
     string temp;
 
@@ -38,15 +39,22 @@ void loading() {
     cout << "\b" << endl;
 }
 
-void push(string Arr1[], int N) {
-    int arr_len = sizeof(Arr1) / sizeof(Arr1[0]);
-    cout << arr_len;
+vector<string> push(vector<string> Arr1, int N) {
+    for (int i = Arr1.size(); i < N; i++) {
+        string name;
+        cout << "Name: ";
+        cin >> name;
+        Arr1[i] = name;
+    }
+
+    return Arr1;
 }
 
 int main() {
 
     int N;
-    string arr1[0];
+
+    vector<string> Arr1;
     cout << "============================================================" << endl;
     cout << "\nHow many elements would you like in the array? ";
     cin >> N;
@@ -60,8 +68,8 @@ int main() {
     cout << "\n============================================================" << endl;
     loading();
 
-    push(arr1, N);
-    // Sort_Arr(arr1, N);
+    Arr1 = push(Arr1, N);
+    Sort_Arr(Arr1, N);
 
     return 0;
 }

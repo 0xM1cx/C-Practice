@@ -3,7 +3,8 @@ using namespace std;
 
 int main() {
 
-    string arr1[] = {"Shawn", "James", "Phil", "Renzon", "Celine"};
-    string arr2[] = {"Justin", "Ruffa", "Fabi", "JM", "Sean"};
+    string arr1[] = {"Mango", "Orange", "Apple"};
+    string arr2[] = {"Banana", "Grape"};
+
     return 0;
 }
