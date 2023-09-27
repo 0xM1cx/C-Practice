@@ -8,6 +8,6 @@ int main() {
     int i = 2;
     // printf("%d", *start);
     int loc = *start + k * (i - 1);
-    printf("%x", loc);
+    printf("%x", start);
     return 0;
 }
