@@ -24,6 +24,7 @@ int parse_int(char *);
  */
 
 int hourglassSum(int arr_rows, int arr_columns, int **arr) {
+    
 }
 
 int main() {
@@ -140,7 +141,7 @@ char *rtrim(char *str) {
     return str;
 }
 
-char **split_string(char *str) {
+char **split_string(char *str) { 
     char **splits = NULL;
     char *token = strtok(str, " ");
 
