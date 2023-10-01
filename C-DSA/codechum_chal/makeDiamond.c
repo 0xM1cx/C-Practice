@@ -1,29 +1,36 @@
 #include <stdio.h>
 
-void main(){
+void main() {
     int addInt;
     printf("Enter an odd integer: ");
-    scanf("%d", &addInt);
-    int ctr = 3;
-    for(int i = 1; i <= addInt; i++){
-        for(int j = ctr; j >= 1; j--){
-            printf("\t");
-        }
-        for(int b = 1; b <= i; b++){
-            if((i % 2) != 0){
-                printf("*"); 
-            }
-        }
-        ctr--;
-        printf("\n");
+    scanf(" %d", &addInt);
+
+    if (addInt % 2 == 0) {
+        printf("it must be an odd\n\n\n");
+        main();
     }
 
-    for(int i = addInt-1; i >= 1; i--){
-        for(int b = i; b >= 1; b--){
-            if((i % 2) != 0){
-                printf("*"); 
-            }
+    int space = addInt / 2;
+    for (int i = 1; i <= addInt; i += 2) {
+        for (int j = 1; j <= space; j++) {
+            printf(" ");
+        }
+        for (int b = 1; b <= i; b++) {
+            printf("*");
         }
         printf("\n");
+        space--;
+    }
+
+    space = 1;
+    for (int i = addInt - 2; i >= 1; i -= 2) {
+        for (int j = 1; j <= space; j++) {
+            printf(" ");
+        }
+        for (int b = 1; b <= i; b++) {
+            printf("*");
+        }
+        printf("\n");
+        space++;
     }
 }
