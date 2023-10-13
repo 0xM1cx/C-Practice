@@ -4,7 +4,7 @@ void reverseSparse() {
 }
 
 void main() {
-    int source[7][3] = {
+    int sourcecode[7][3] = {
         {1, 2, 5},
         {2, 4, 1},
         {3, 1, 2},
@@ -12,4 +12,6 @@ void main() {
         {5, 10, 8},
         {8, 6, 9},
         {7, 8, 10}};
+
+    printf("%d %d %d", sourcecode[0][0], sourcecode[0][1], sourcecode[0][2]);
 }
