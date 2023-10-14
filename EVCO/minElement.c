@@ -14,7 +14,7 @@ void main() {
 
     int smalles = 0;
     for (int b = 0; b < size; b++) {
-        if (arr[b] > smalles) {
+        if (arr[b] < smalles) {
             smalles = arr[b];
         }
     }
