@@ -3,12 +3,29 @@
 #include <vector>
 using namespace std;
 
-void Arr1(vector<string> arr1, string arr3[], int &count1, int count3) {
+void Sort_Arr(string arr3[], int arr3_len) {
+    int Ctr1 = 0, Ctr2;
+    string temp;
+    while (Ctr1 <= arr3_len - 2) {
+        Ctr2 = Ctr1 + 1;
+        while (Ctr2 <= arr3_len - 1) {
+            if (arr3[Ctr1] > arr3[Ctr2]) {
+                temp = arr3[Ctr1];
+                arr3[Ctr1] = arr3[Ctr2];
+                arr3[Ctr2] = temp;
+            }
+            Ctr2++;
+        }
+        Ctr1++;
+    }
+}
+
+void Arr1(vector<string> arr1, string arr3[], int &count1, int &count3) {
     arr3[count3] = arr1[count1];
 
     count1++;
 }
-void Arr2(vector<string> arr2, string arr3[], int &count2, int count3) {
+void Arr2(vector<string> arr2, string arr3[], int &count2, int &count3) {
     arr3[count3] = arr2[count2];
 
     count2++;
@@ -20,12 +37,16 @@ void Merge_Arr(vector<string> arr1, vector<string> arr2, string arr3[], int N1, 
     while ((count1 < N1) || (count2 < N2)) {
         if (count1 >= N1) {
             Arr2(arr2, arr3, count2, count3);
-        } else if (count2 >= N2) {
-            Arr1(arr1, arr3, count1, count3);
-        } else if (arr1[count1] < arr2[count2]) {
-            Arr1(arr1, arr3, count1, count3);
         } else {
-            Arr2(arr2, arr3, count2, count3);
+            if (count2 >= N2) {
+                Arr1(arr1, arr3, count1, count3);
+            } else {
+                if (arr1[count1] < arr2[count2]) {
+                    Arr1(arr1, arr3, count1, count3);
+                } else {
+                    Arr2(arr2, arr3, count2, count3);
+                }
+            }
         }
         count3++;
     }
@@ -61,6 +82,7 @@ int main() {
     }
 
     Merge_Arr(arr1, arr2, arr3, N1, N2);
+    Sort_Arr(arr3, N1 + N2);
 
     cout << "\tOUTPUT" << endl;
     cout << "==============================" << endl;
