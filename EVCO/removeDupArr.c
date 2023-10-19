@@ -9,21 +9,25 @@ void main() {
     printf("Enter elements in array: \n");
     for (int i = 0; i < size; i++) {
         int element;
-        int flag = 1;
         scanf("%d", &element);
-        for (int j = 0; j < i; j++) {
-            if (element == arr[j]) {
-                flag = 2;
-            }
-        }
+        arr[i] = element;
+    }
 
-        if (flag != 2) {
-            arr[i] = element;
+    for (int j = 0; j < size; j++) {
+        for (int n = j + 1; n < size;) {
+            if (arr[j] == arr[n]) {
+                for (int m = j; m < size - 1; m++) {
+                    arr[m] = arr[m + 1];
+                }
+                size--;
+            } else {
+                n++;
+            }
         }
     }
 
     printf("Array after removing duplicates: ");
-    for (int h = 0; h < (sizeof(arr) / sizeof(arr[0])); h++) {
-        printf("%d", arr[h]);
+    for (int h = 0; h < size; h++) {
+        printf("%d ", arr[h]);
     }
 }
