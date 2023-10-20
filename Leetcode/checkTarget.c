@@ -12,7 +12,6 @@ int *twoSum(int *nums, int numsSize, int target, int *returnSize) {
                 arr[0] = i;
                 arr[1] = j;
                 return arr;
-                free(arr);
             }
         }
     }
@@ -20,5 +19,8 @@ int *twoSum(int *nums, int numsSize, int target, int *returnSize) {
 
 int main() {
     int *arr = {2, 7, 11, 15};
-    twoSum(arr, 4, 8, 2);
+    int *re = {1, 1};
+    twoSum(arr, 4, 9, re);
+
+    free(arr);
 }
