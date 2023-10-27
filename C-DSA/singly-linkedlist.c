@@ -31,11 +31,11 @@ void main() {
     head = insertNewNodeAtBeginning(head, "ZD");
 
     struct node *current = head;
-    while (current != NULL) {
-        printf("%s->", current->data);
-        current = current->link;
-    }
-    printf("NULL");
+    // while (current != NULL) {
+    //     printf("%s->", current->data);
+    //     current = current->link;
+    // }
+    // printf("NULL");
 
     // strcpy(head->data, "SH");
     // head->link = NULL;
@@ -51,7 +51,7 @@ void main() {
     // head->link = second;
     // second->link = third;
 
-    // printf("%s\n", head->data);
+    printf("%s\n", head->data);
     // printf("%x\n", head->link);
     // printf("%s\n", head->link->data);
     // printf("%x\n", second->link);
