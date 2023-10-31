@@ -1,6 +1,7 @@
 #include <chrono>
 #include <iostream>
 #include <thread>
+#include <vector>
 using namespace std;
 
 void loadingAnimation() {
@@ -17,35 +18,45 @@ void loadingAnimation() {
     }
 }
 
+void DisplayTable() {
+}
+
 int AskValue() {
+    int num;
+    printf("Number to Push: ");
+    scanf("%d", &num);
+    return num;
 }
 
-int *Push(int value) {
+int Push(int value, vector<int> Arr, int Top) {
+    Arr[Top] = value;
+    return Top++;
 }
 
-int *Pop() {
+void Pop(vector<int> Arr, int Top) {
+    printf("%d", Arr[Top]);
+    Top--;
 }
 
 int main() {
 
-    int userOption;
+    int userOption, Top = 0, value;
     printf("[1] Push()\n[2] Pop()\n[3] Exit\n");
     printf("OPTION: ");
     scanf("%d", &userOption);
-
+    vector<int> Arr;
     if (userOption < 1 || userOption > 3) {
         printf("Number must be within the options!!\n");
         loadingAnimation();
         main();
     }
-
     switch (userOption) {
     case 1:
-        int value = AskValue();
-        Push(value);
+        value = AskValue();
+        Top = Push(value, Arr, Top);
         break;
     case 2:
-        Pop();
+        Pop(Arr, Top);
         break;
     case 3:
         printf("Goodbye!!...");
