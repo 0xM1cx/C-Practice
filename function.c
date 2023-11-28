@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 void recur(){
     int num = 1;
     printf("%d", num);
@@ -28,7 +26,6 @@ int main() {
     int UserAge;
     printf("How old are you? ");
     scanf("%d", &UserAge);
-    greetUser(UserAge, userName);
-
+//    greetUser(UserAge, userName);
     recur();
 }

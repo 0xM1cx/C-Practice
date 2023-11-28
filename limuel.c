@@ -18,7 +18,6 @@ int main()
 		case 'P': case 'p':
 			printf("===========================\n");
 			printf("Balance: %d\n", balance);
-			printf("===========================\n");
 			printf("How much do you want to deposit: ");
 			scanf("%d",&deposit);
 			balance += deposit;
