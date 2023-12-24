@@ -12,7 +12,7 @@ int main() {
     string numbers = "0123456789";
 
     int counter = 0;
-    vector<string> digitPair = [];
+    vector<string> digitPair;
     bool flag = true;
     while (getline(inputFile, input)) {
         flag = true;
@@ -32,7 +32,7 @@ int main() {
         for (int size = input.size() - 1; size > 0 && flag == true; size--) {
             for (char c : numbers) {
                 if (c == input[size]) {
-                    secondDigit = input[i];
+                    secondDigit = input[size];
                     flag = false;
                     break;
                 }
@@ -41,13 +41,16 @@ int main() {
 
         string combined(1, firstDigit);
         combined += secondDigit;
-        digitPair[counter] = combined;
+        digitPair.push_back(combined);
         counter++;
     }
 
+    int sum = 0;
     for (string s : digitPair) {
-        cout << s;
+        sum += stoi(s);
     }
+
+    cout << sum;
 
     return 0;
 }
