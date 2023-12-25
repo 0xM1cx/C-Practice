@@ -48,6 +48,7 @@ int main() {
     int sum = 0;
     for (string s : digitPair) {
         sum += stoi(s);
+        cout << stoi(s) << endl;
     }
 
     cout << sum;
