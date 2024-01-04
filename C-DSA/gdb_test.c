@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+void greet(){
+
+    printf("Hello");
+}
+
+
 void main(){
     long double start;
     long double step;
@@ -13,6 +19,10 @@ void main(){
         start += step;
 
     }
+
+
+    
+
 
 
 }
