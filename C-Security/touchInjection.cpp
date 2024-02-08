@@ -1,10 +1,9 @@
 #include <iostream>
-#include <stdio.h>
 #include <windows.h>
 #include <winuser.h>
+using namespace std;
 
 int main() {
 
-    BOOL test = InitializeTouchInjection();
     return 0;
 }
