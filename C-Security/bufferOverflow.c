@@ -5,7 +5,7 @@ int main() {
     char ans[4];
     int test = 0;
     printf("INPUT: ");
-    gets(ans);
+    scanf("%s", ans);
     if (!(strcmp(ans, "pass"))) {
         printf("Correct Password!!");
     } else {
