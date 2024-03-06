@@ -1,25 +1,36 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
-struct words {
-    char usaKaWord[100];
-};
-void main() {
-    char *s = malloc(100 * sizeof(char));
-    scanf("%[^\n]s", s);
+void revStr(char s[]) {
+    int n = strlen(s);
+    int end = n - 1;
+    for (int i = n - 1; i >= 0; --i) {
+        if (s[i] == ' ' || i == 0) {
 
-    struct words w[10];
-    char *temp = malloc(50 * sizeof(char));
-    int counter = 0;
+            for (int start = i; start <= end; ++start) {
+                if (s[start] != ' ') {
+                    printf("%c", s[start]);
+                }
+            }
+            printf(" ");
+            end = i;
+        }
+    }
+}
 
-    while (*s != '\0') {
-        if (*s == ' ') {
-            w[counter].usaKaWord = *temp;
-            counter++;
+int main() {
+    char str[104];
+    char new[104];
+
+    scanf("%[^\n]s", str);
+    int n = strlen(str) - 1;
+    for (int i = n; i >= 0; --i) {
+        if (str[i] == ' ') {
+            str[i] = '\0';
         } else {
+            break;
         }
 
-        ++s;
+        revStr(str);
     }
 }
