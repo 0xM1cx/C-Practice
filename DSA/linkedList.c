@@ -6,7 +6,18 @@ struct node{
   struct node *next;
 }
 
+struct node *head = NULL;
+struct node *current = NULL;
+
+void insertAtBegining(int data){
+  struct node *lk = malloc(sizeof(struct node)); 
+  lk->data = data;
+  lk->next = head;  
+  head = lk;
+  head = lk;
+}
+
 void main(){
-  struct node *head = NULL;
-  struct node *current = NULL
+  struct node *p = head;
+  printf("\n[");
 }
