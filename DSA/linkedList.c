@@ -4,20 +4,14 @@
 struct node{
   int data;
   struct node *next;
-}
-
-struct node *head = NULL;
-struct node *current = NULL;
-
-void insertAtBegining(int data){
-  struct node *lk = malloc(sizeof(struct node)); 
-  lk->data = data;
-  lk->next = head;  
-  head = lk;
-  head = lk;
-}
+  
+};
 
 void main(){
-  struct node *p = head;
-  printf("\n[");
+  struct node *head = NULL;
+  head = malloc(sizeof(struct node));
+  head->data = 15;
+  head->next = NULL;
+
+  printf("%d", head->data);
 }
