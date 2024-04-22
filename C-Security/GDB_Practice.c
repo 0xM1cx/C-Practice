@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+unsigned int test(){
+  printf("Test Run\n");
+  return 0;
+}
+
 unsigned int fibbonacci(unsigned int n) {
     if (n <= 1) {
         return n;
@@ -10,7 +15,6 @@ unsigned int fibbonacci(unsigned int n) {
 
 int main() {
     unsigned int n = 10;
-
     printf("First %d elements of the Fibbonacci sequence: ", n);
 
     for (unsigned int i = 0; i < n; i++) {
