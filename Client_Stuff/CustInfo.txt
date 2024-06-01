@@ -1,0 +1,15 @@
+Customer Name: Shun
+Customer Address: tacloban city
+Customer Contact: 09619381867
+Customer Type: Regular
+------------------------------------
+Customer Name: Shun
+Customer Address: Baybay
+Customer Contact: 9123
+Customer Type: Retail
+------------------------------------
+Customer Name: json
+Customer Address: cebu
+Customer Contact: 12341234123
+Customer Type: Regular
+------------------------------------

@@ -132,6 +132,7 @@ public:
     void displayTrans();
     void saveTransaction();
     void saveCustomerInfo();
+    void saveTranNo(); // save the transaction number sa separate na file for easy reading.
 };
 
 class SalesClerk : public User {
@@ -456,8 +457,28 @@ void payment::cashPayment(double &total, double discount, double &tDiscount) {
     cout << "Total payable amount: " << total << "\n";
 }
 
+void transact::saveTranNo() {
+    ofstream file("TransactionNumbers.txt", ios::app);
+    if (!file.is_open()) {
+        cerr << "Error opening file!" << endl;
+        return;
+    }
+    file << tranNo << "\n";
+    file.close();
+}
+
 transact::transact() {
-    tranNo = to_string(++transactionCount);
+    ifstream file("TransactionNumbers.txt");
+    int maxTranNo = 0;
+    string line;
+    while (getline(file, line)) {
+        int currentTranNo = stoi(line);
+        if (currentTranNo > maxTranNo) {
+            maxTranNo = currentTranNo;
+        }
+    }
+    file.close();
+    tranNo = maxTranNo + 1;
     time_t now = time(0);
     tranDate = ctime(&now);
     total = 0.0;
@@ -508,6 +529,7 @@ void transact::displayTrans() {
 }
 
 void transact::saveTransaction() {
+    saveTranNo();
     ofstream file("SalesTran.txt", ios::app);
     file << "Transaction No.: " << tranNo << "\n";
     file << "Transaction Date: " << tranDate;

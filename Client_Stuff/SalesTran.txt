@@ -1,0 +1,16 @@
+Transaction No.: 1
+Transaction Date: Sat Jun 01 21:57:55 2024
+Product ID: phuaP, Quantity: 50
+Product ID: 0mEEg, Quantity: 100
+Total Payable Amount: 92400
+------------------------------------
+Transaction No.: 1
+Transaction Date: Sat Jun 01 22:07:09 2024
+Product ID: ql6Dp, Quantity: 30
+Total Payable Amount: 214200
+------------------------------------
+Transaction No.: 
+Transaction Date: Sat Jun 01 22:43:58 2024
+Product ID: rXuD3, Quantity: 100
+Total Payable Amount: 3520
+------------------------------------

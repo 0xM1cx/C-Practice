@@ -1,0 +1,3 @@
+Product ID: phuaP, Quantity: 50
+Product ID: 0mEEg, Quantity: 100
+Product ID: ql6Dp, Quantity: 30
