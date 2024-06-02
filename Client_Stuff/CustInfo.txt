@@ -1,15 +1,30 @@
-Customer Name: Shun
-Customer Address: tacloban city
+Customer Name: Shawn
+Customer Address: Calbayog
 Customer Contact: 09619381867
 Customer Type: Regular
 ------------------------------------
-Customer Name: Shun
-Customer Address: Baybay
-Customer Contact: 9123
+Customer Name: John
+Customer Address: Tacloban
+Customer Contact: 09136752174
 Customer Type: Retail
 ------------------------------------
-Customer Name: json
-Customer Address: cebu
-Customer Contact: 12341234123
+Customer Name: Charles
+Customer Address: Cebu
+Customer Contact: 09736184313
+Customer Type: Regular
+------------------------------------
+Customer Name: Zyra
+Customer Address: Carigara
+Customer Contact: 9099999999
+Customer Type: Retail
+------------------------------------
+Customer Name: Nigger
+Customer Address: Africa
+Customer Contact: 09367571831
+Customer Type: Regular
+------------------------------------
+Customer Name: Earl
+Customer Address: Brgy. 44
+Customer Contact: 93136478762
 Customer Type: Regular
 ------------------------------------

@@ -1,0 +1,12 @@
+Product ID: MpTBy
+Description: Bottles
+Price: 100
+Quantity: 40
+Reorder Point: 0
+
+Product ID: MrviR
+Description: trash bins
+Price: 900
+Quantity: 100
+Reorder Point: 0
+

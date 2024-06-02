@@ -1,21 +1,3 @@
-/*
-The program should be based on the following requirements:
-1. The program must record the following details when a customer buys items:
-    a. Product ID
-    b. Product Description
-    c. Quantity
-    d. Item Price
-    e. Transaction ID
-    f. Transaction Date
-2. Use the two classes(PRODUCT and TRANSACT) that you have defined in the last practice activity. You may modify the classes according
-to the requirements of this task.
-3. The program should compute for the amount of item purchased. If the total amount
-is more than Php 1000.00 the customer is entitled to a 12% discount
-4. The program should output the total amount of the item, the discount price, and
-the amount due to the customer.
-5. The program should be able to display the transaction. See sample output below.
-6. There should be an option to run the program again or exit the program.
-*/
 #include <ctime>
 #include <fstream>
 #include <iostream>
@@ -28,6 +10,7 @@ the amount due to the customer.
 
 using namespace std;
 
+// Function to generate random ID
 string generateRandomID(int length) {
     static const string charset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     static default_random_engine rng(time(nullptr));
@@ -40,12 +23,14 @@ string generateRandomID(int length) {
     return randomID;
 }
 
+// Function to input string
 string inputString() {
     string input;
     getline(cin, input);
     return input;
 }
 
+// Function to input number
 double inputNum() {
     string input;
     while (true) {
@@ -66,6 +51,7 @@ double inputNum() {
     }
 }
 
+// Abstract class for user
 class User {
 protected:
     string username;
@@ -76,6 +62,7 @@ public:
     virtual void menu() = 0;
 };
 
+// Class for customer
 class customer {
 protected:
     string name, address;
@@ -89,6 +76,7 @@ public:
     void askRegular();
 };
 
+// Class for product
 class product {
 private:
     int qty;
@@ -105,9 +93,9 @@ public:
     int getQuantity() { return qty; }
     void setReorderPoint(int point);
     bool needsReplenishment();
-    void saveProduct(); // new method to save product details to the inventory.txt
 };
 
+// Class for payment
 class payment : public customer {
 protected:
     bool cash;
@@ -120,6 +108,7 @@ public:
     void cashPayment(double &total, double discount, double &tDiscount);
 };
 
+// Class for transaction
 class transact : private payment {
 protected:
     static int transactionCount;
@@ -137,6 +126,7 @@ public:
     string generateUniqueTranNo(int desiredLength); // save the transaction number sa separate na file for easy reading.
 };
 
+// Class for Sales Clerk
 class SalesClerk : public User {
 public:
     SalesClerk() {
@@ -248,38 +238,6 @@ public:
         cout << "Total Sales: " << totalSales << endl;
     }
 
-    // commented out the code so that it can read the new way of storing tranNo. Don't worry the function is still the same
-    // void nullifyTransaction() {
-    //     ifstream file("SalesTran.txt");
-    //     ofstream tempFile("temp.txt");
-    //     string tranNo, line;
-    //     cout << "Enter Transaction No to nullify: ";
-    //     cin >> tranNo;
-    //     cin.ignore();
-    //     bool found = false;
-
-    //     while (getline(file, line)) {
-    //         if (line.find("Transaction No.: " + tranNo) == string::npos) {
-    //             tempFile << line << endl;
-    //         } else {
-    //             found = true;
-    //             for (int i = 0; i < 7; ++i) {
-    //                 getline(file, line); // skip the next lines of the transaction
-    //             }
-    //         }
-    //     }
-    //     file.close();
-    //     tempFile.close();
-    //     remove("SalesTran.txt");
-    //     rename("temp.txt", "SalesTran.txt");
-
-    //     if (found) {
-    //         cout << "Transaction " << tranNo << " nullified." << endl;
-    //     } else {
-    //         cout << "Transaction " << tranNo << " not found." << endl;
-    //     }
-    // }
-
     void nullifyTransaction() {
         ifstream file("SalesTran.txt");
         ofstream tempFile("temp.txt");
@@ -287,28 +245,21 @@ public:
 
         cout << "Enter Transaction No to nullify: ";
         cin >> tranNo;
-        cin.ignore();
+        cin.ignore(); // Consume newline character
 
         bool found = false;
         while (getline(file, line)) {
-            // Look for lines starting with "Transaction No.: " followed by a space
-            if (line.find("Transaction No.: ") == 0) {
-                size_t startPos = line.find(": ") + 2;                         // Skip "Transaction No.: "
-                size_t endPos = line.find_first_of(" \t\n", startPos);         // Find yung next whitespace
-                string foundTranNo = line.substr(startPos, endPos - startPos); // Extract transaction number
-
-                if (foundTranNo == tranNo) {
-                    found = true;
-                    line.replace(startPos, foundTranNo.length(), "NULLIFIED"); // replace the tranNo with the word NULLIFIEd
+            if (line.find("Transaction No.: " + tranNo) == string::npos) {
+                tempFile << line << endl;
+            } else {
+                found = true;
+                for (int i = 0; i < 7; ++i) {
+                    getline(file, line); // skip the next lines of the transaction
                 }
             }
-            tempFile << line << endl;
         }
-
         file.close();
         tempFile.close();
-
-        // Replace SalesTran.txt with temp.txt
         remove("SalesTran.txt");
         rename("temp.txt", "SalesTran.txt");
 
@@ -319,19 +270,12 @@ public:
         }
     }
 
-    // this will read the invetory.txt file and display its current inventory
     void viewInventory() {
         ifstream file("Inventory.txt");
-        if (!file.is_open()) {
-            cout << "Unable to open inventory file.\n";
-            return;
-        }
-
         string line;
         while (getline(file, line)) {
             cout << line << endl;
         }
-
         file.close();
     }
 
@@ -371,42 +315,17 @@ public:
         cout << "Reorder point set for Product ID " << pID << "." << endl;
     }
 
-    // void determineItemsToReplenish() {
-    //     ifstream file("Inventory.txt");
-    //     string line;
-    //     cout << "Items to Replenish:\n";
-    //     while (getline(file, line)) {
-    //         if (line.find("Quantity: ") != string::npos) {
-    //             int quantity = stoi(line.substr(line.find(": ") + 2));
-    //             getline(file, line);
-    //             int reorderPoint = stoi(line.substr(line.find(": ") + 2));
-    //             if (quantity <= reorderPoint) {
-    //                 cout << line << endl;
-    //             }
-    //         }
-    //     }
-    //     file.close();
-    // }
     void determineItemsToReplenish() {
         ifstream file("Inventory.txt");
         string line;
         cout << "Items to Replenish:\n";
-        cout << "====================\n";
         while (getline(file, line)) {
             if (line.find("Quantity: ") != string::npos) {
                 int quantity = stoi(line.substr(line.find(": ") + 2));
-                getline(file, line); // Read the next line
+                getline(file, line);
                 int reorderPoint = stoi(line.substr(line.find(": ") + 2));
-                getline(file, line); // Read the next line (to move to the next product)
                 if (quantity <= reorderPoint) {
-                    cout << "Product ID: " << line << endl;
-                    getline(file, line); // Read the next line (Description)
-                    cout << "Description: " << line << endl;
-                    getline(file, line); // Read the next line (Price)
-                    cout << "Price: " << line << endl;
-                    cout << "Quantity: " << quantity << endl;
-                    cout << "Reorder Point: " << reorderPoint << endl;
-                    cout << "---------------------\n";
+                    cout << line << endl;
                 }
             }
         }
@@ -414,6 +333,7 @@ public:
     }
 };
 
+// Class for Store Manager
 class StoreManager : public User {
 public:
     StoreManager() {
@@ -435,16 +355,20 @@ public:
         char choice;
         do {
             cout << "\nStore Manager Menu\n";
-            cout << "1. View Sales Reports\n";
-            cout << "2. Logout\n";
+            cout << "1. View Sales Transactions\n";
+            cout << "2. View Reports\n";
+            cout << "3. Logout\n";
             cout << "Choice: ";
             cin >> choice;
             cin.ignore();
             switch (choice) {
             case '1':
-                viewSalesReports();
+                viewSalesTransactions();
                 break;
             case '2':
+                viewReports();
+                break;
+            case '3':
                 return;
             default:
                 cout << "Invalid choice. Try again.\n";
@@ -452,9 +376,42 @@ public:
         } while (true);
     }
 
-    void viewSalesReports() {
-        ifstream file("SalesReport.txt");
+    void viewSalesTransactions() {
+        ifstream file("SalesTran.txt");
         string line;
+        while (getline(file, line)) {
+            cout << line << endl;
+        }
+        file.close();
+    }
+
+    void viewReports() {
+        ifstream file;
+        string line;
+
+        cout << "\nRetail Customers Information:\n";
+        file.open("CustRetail.txt");
+        while (getline(file, line)) {
+            cout << line << endl;
+        }
+        file.close();
+
+        cout << "\nRegular Customers Information:\n";
+        file.open("CustReg.txt");
+        while (getline(file, line)) {
+            cout << line << endl;
+        }
+        file.close();
+
+        cout << "\nSales Transactions per Product ID:\n";
+        file.open("SalesID.txt");
+        while (getline(file, line)) {
+            cout << line << endl;
+        }
+        file.close();
+
+        cout << "\nTotal Sales:\n";
+        file.open("SalesReport.txt");
         while (getline(file, line)) {
             cout << line << endl;
         }
@@ -462,14 +419,48 @@ public:
     }
 };
 
-// int transact::transactionCount = 0;
+// Function to display login menu
+void displayLoginMenu() {
+    User *user = nullptr;
+    char choice;
 
-customer::customer() {
-    name = "";
-    address = "";
-    contact = "";
-    regular = false;
+    do {
+        cout << "Login Menu\n";
+        cout << "1. Sales Clerk\n";
+        cout << "2. Store Manager\n";
+        cout << "3. Exit\n";
+        cout << "Choice: ";
+        cin >> choice;
+        cin.ignore();
+
+        switch (choice) {
+        case '1':
+            user = new SalesClerk();
+            break;
+        case '2':
+            user = new StoreManager();
+            break;
+        case '3':
+            return;
+        default:
+            cout << "Invalid choice. Try again.\n";
+            continue;
+        }
+
+        if (user && user->login()) {
+            user->menu();
+        } else {
+            cout << "Invalid credentials. Try again.\n";
+        }
+
+        delete user;
+        user = nullptr;
+
+    } while (true);
 }
+
+// Implementations of customer methods
+customer::customer() : regular(false) {}
 
 void customer::getInfo() {
     cout << "Enter customer name: ";
@@ -480,113 +471,104 @@ void customer::getInfo() {
     contact = inputString();
 }
 
-bool customer::isRegular() {
-    return regular;
-}
+bool customer::isRegular() { return regular; }
 
 void customer::askRegular() {
-    char ans;
-    cout << "Is the customer a regular? (Y/N): ";
-    cin >> ans;
-    cin.ignore();
-    regular = (ans == 'Y' || ans == 'y');
+    char choice;
+    cout << "Is the customer a regular customer? (y/n): ";
+    cin >> choice;
+    regular = (choice == 'y' || choice == 'Y');
 }
 
-payment::payment() : customer() {
-    cash = true;
-    frontPay = 0.0;
-    interestRate = 0.0;
-    months = 0.0;
+// Implementations of product methods
+product::product() : qty(0), price(0.0), reorderPoint(0) {}
+
+void product::productIn() {
+    cout << "Enter product ID: ";
+    pID = inputString();
+    cout << "Enter product description: ";
+    pDesc = inputString();
+    cout << "Enter product price: ";
+    price = inputNum();
+    cout << "Enter product quantity: ";
+    qty = inputNum();
 }
+
+double product::calculateSubtotal() { return price * qty; }
+
+void product::displayProduct() {
+    cout << "Product ID: " << pID << "\n";
+    cout << "Product Description: " << pDesc << "\n";
+    cout << "Product Price: " << price << "\n";
+    cout << "Product Quantity: " << qty << "\n";
+}
+
+void product::setReorderPoint(int point) { reorderPoint = point; }
+
+bool product::needsReplenishment() { return qty <= reorderPoint; }
+
+// Implementations of payment methods
+payment::payment() : cash(false), frontPay(0.0), interestRate(0.0), months(0) {}
 
 void payment::askType() {
-    int x;
-    cout << "Choose payment type (1 = Installment / 2 = Cash): ";
-    while (true) {
-        cin >> x;
-        if (x == 1) {
-            cash = false;
-            break;
-        } else if (x == 2) {
-            break;
-        } else {
-            cout << "Invalid input, Please pick one (1 = Installment / 2 = Cash): ";
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        }
-    }
+    char choice;
+    cout << "Is the payment mode cash? (y/n): ";
+    cin >> choice;
+    cash = (choice == 'y' || choice == 'Y');
 }
 
 void payment::installmentPayment(double &total) {
-    frontPay = 0.3 * total;
-    interestRate = 0.02;
-    months = 12;
-    total = ((total - frontPay) + ((total - frontPay) * interestRate));
-    cout << "Total payable amount: " << total << "\n";
+    if (isRegular()) {
+        frontPay = total * 0.25;
+        cout << "Choose terms of payment: 3, 6, or 9 months: ";
+        months = inputNum();
+    } else {
+        frontPay = total * 0.30;
+        interestRate = 0.025;
+        cout << "Choose terms of payment: 3, 6, or 9 months: ";
+        months = inputNum();
+        total += total * interestRate * months;
+    }
 }
 
 void payment::cashPayment(double &total, double discount, double &tDiscount) {
     tDiscount = total * discount;
-    total = total - tDiscount;
-    cout << "Total payable amount: " << total << "\n";
+    total -= tDiscount;
 }
 
-// Yung goal ng function na toh is to generate a unique combinations of numbers. because
-// when the program is exited and started back again the transactoinNumber counter variable will reset to 1.
-// this will cause duplications in the file and when the user will nullify a duplicated tranNo it will affect other tranNo
-string transact::generateUniqueTranNo(int desiredLength) {
-    static const string characterSet = "0123456789";
-    static default_random_engine randomGenerator(time(nullptr));
-    static uniform_int_distribution<int> characterDistribution(0, characterSet.length() - 1);
-    static unordered_set<string> usedIDs;
+// Implementations of transact methods
+int transact::transactionCount = 0;
 
-    string uniqueID;
-    do {
-        uniqueID.clear();
-        for (int i = 0; i < desiredLength; ++i) {
-            uniqueID += characterSet[characterDistribution(randomGenerator)];
-        }
-    } while (usedIDs.find(uniqueID) != usedIDs.end());
-
-    usedIDs.insert(uniqueID);
-
-    return uniqueID;
-}
-
-transact::transact() {
-    tranNo = generateUniqueTranNo(7);
-    time_t now = time(0);
-    tranDate = ctime(&now);
-    total = 0.0;
-    discount = 0.05;
-    tDiscount = 0.0;
-}
+transact::transact() : total(0.0), discount(0.0), tDiscount(0.0) {}
 
 void transact::startTran() {
-    askRegular();
-    if (!isRegular()) {
-        discount = 0.0;
-    }
-    getInfo();
-    askType();
-    char addMore = 'Y';
-    while (addMore == 'Y' || addMore == 'y') {
+    transactionCount++;
+    tranNo = generateUniqueTranNo(8);
+    time_t now = time(0);
+    char *dt = ctime(&now);
+    tranDate = string(dt);
+
+    int itemCount;
+    cout << "Enter number of items: ";
+    itemCount = inputNum();
+
+    for (int i = 0; i < itemCount; ++i) {
         product p;
         p.productIn();
-        p.saveProduct(); // call the saveProduct method in the product call to save the product details to the inventory.txt file
         products.push_back(p);
         total += p.calculateSubtotal();
-        cout << "Add another product? (Y/N): ";
-        cin >> addMore;
-        cout << addMore << endl;
-        cin.ignore();
     }
 
-    if (cash) {
-        if (total > 1000.0) {
-            discount = 0.12;
+    getInfo();
+    askRegular();
+    if (isRegular()) {
+        askType();
+        if (cash) {
+            discount = 0.05;
+            cashPayment(total, discount, tDiscount);
+        } else {
+            installmentPayment(total);
         }
-        cashPayment(total, discount, tDiscount);
     } else {
         installmentPayment(total);
     }
@@ -597,23 +579,41 @@ void transact::startTran() {
 }
 
 void transact::displayTrans() {
-    cout << "Transaction No.: " << tranNo << "\n";
-    cout << "Transaction Date: " << tranDate;
-    for (auto &p : products) {
+    cout << "\nTransaction No.: " << tranNo << "\n";
+    cout << "Transaction Date: " << tranDate << "\n";
+    for (const auto &p : products) {
         p.displayProduct();
+        cout << "Subtotal: " << p.calculateSubtotal() << "\n";
     }
-    cout << "Total Payable Amount: " << total << "\n";
+    cout << "Total Purchase Price: " << total << "\n";
+    if (cash) {
+        cout << "Discount: " << tDiscount << "\n";
+        cout << "Total Payable Amount: " << total << "\n";
+    } else {
+        cout << "Front Payment: " << frontPay << "\n";
+        cout << "Monthly Payment for " << months << " months: " << (total - frontPay) / months << "\n";
+        cout << "Total Payable Amount: " << total << "\n";
+    }
 }
 
 void transact::saveTransaction() {
     ofstream file("SalesTran.txt", ios::app);
     file << "Transaction No.: " << tranNo << "\n";
-    file << "Transaction Date: " << tranDate;
-    for (auto &p : products) {
-        file << "Product ID: " << p.getProductID() << ", Quantity: " << p.getQuantity() << "\n";
+    file << "Transaction Date: " << tranDate << "\n";
+    for (const auto &p : products) {
+        file << "Product ID: " << p.getProductID() << "\n";
+        file << "Subtotal: " << p.calculateSubtotal() << "\n";
     }
-    file << "Total Payable Amount: " << total << "\n";
-    file << "------------------------------------\n";
+    file << "Total Purchase Price: " << total << "\n";
+    if (cash) {
+        file << "Discount: " << tDiscount << "\n";
+        file << "Total Payable Amount: " << total << "\n";
+    } else {
+        file << "Front Payment: " << frontPay << "\n";
+        file << "Monthly Payment for " << months << " months: " << (total - frontPay) / months << "\n";
+        file << "Total Payable Amount: " << total << "\n";
+    }
+    file << "Customer Type: " << (isRegular() ? "Regular" : "Retail") << "\n\n";
     file.close();
 }
 
@@ -623,101 +623,20 @@ void transact::saveCustomerInfo() {
     file << "Customer Address: " << address << "\n";
     file << "Customer Contact: " << contact << "\n";
     file << "Customer Type: " << (isRegular() ? "Regular" : "Retail") << "\n";
-    file << "------------------------------------\n";
+    file << "Transaction No.: " << tranNo << "\n\n";
     file.close();
 }
 
-product::product() {
-    qty = 0;
-    price = 0.0;
-    pID = generateRandomID(5);
-    pDesc = "";
-    reorderPoint = 0;
-}
-
-// Save some product details to the Inventory.txt file.
-void product::saveProduct() {
-    ofstream file("Inventory.txt", ios::app);
-    if (file.is_open()) {
-        file << "Product ID: " << pID << "\n";
-        file << "Description: " << pDesc << "\n";
-        file << "Price: " << price << "\n";
-        file << "Quantity: " << qty << "\n";
-        file << "Reorder Point: " << reorderPoint << "\n\n";
-        file.close();
-    } else {
-        cout << "Unable to open file for writing.\n";
-    }
-}
-
-void product::productIn() {
-    cout << "Enter product description: ";
-    cin.ignore();
-    getline(cin, pDesc);
-    cout << "Enter product price: ";
-    price = inputNum();
-    cout << "Enter product quantity: ";
-    qty = inputNum();
-}
-
-double product::calculateSubtotal() {
-    return price * qty;
-}
-
-void product::displayProduct() {
-    cout << "Product ID: " << pID << "\n";
-    cout << "Product Description: " << pDesc << "\n";
-    cout << "Product Price: " << price << "\n";
-    cout << "Product Quantity: " << qty << "\n";
-    cout << "Subtotal: " << calculateSubtotal() << "\n";
-}
-
-void product::setReorderPoint(int point) {
-    reorderPoint = point;
-}
-
-bool product::needsReplenishment() {
-    return qty <= reorderPoint;
-}
-
-int main() {
-    char userType;
-    User *user = nullptr;
-
+string transact::generateUniqueTranNo(int desiredLength) {
+    string uniqueTranNo;
     do {
-        cout << "Select user type:\n";
-        cout << "1. Sales Clerk\n";
-        cout << "2. Store Manager\n";
-        cout << "3. Exit\n";
-        cout << "Choice: ";
-        cin >> userType;
-        cin.ignore();
+        uniqueTranNo = generateRandomID(desiredLength);
+    } while (uniqueTranNo.empty());
+    return uniqueTranNo;
+}
 
-        switch (userType) {
-        case '1':
-            user = new SalesClerk();
-            break;
-        case '2':
-            user = new StoreManager();
-            break;
-        case '3':
-            cout << "Exiting program.\n";
-            return 0;
-        default:
-            cout << "Invalid choice. Try again.\n";
-            continue;
-        }
-
-        if (user != nullptr && user->login()) {
-            user->menu();
-        } else {
-            cout << "Login failed. Try again.\n";
-        }
-
-        delete user;
-        user = nullptr;
-
-    } while (true);
-
+// Main function
+int main() {
+    displayLoginMenu();
     return 0;
 }

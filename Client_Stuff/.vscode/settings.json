@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "*.rmd": "markdown",
+        "*.module": "php",
+        "*.php": "php",
+        "iostream": "cpp"
+    }
+}

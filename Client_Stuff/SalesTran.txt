@@ -1,16 +1,23 @@
-Transaction No.: 1
-Transaction Date: Sat Jun 01 21:57:55 2024
-Product ID: phuaP, Quantity: 50
-Product ID: 0mEEg, Quantity: 100
-Total Payable Amount: 92400
+Product ID: O8lnf, Quantity: 10
+Total Payable Amount: 7140
 ------------------------------------
-Transaction No.: 1
-Transaction Date: Sat Jun 01 22:07:09 2024
-Product ID: ql6Dp, Quantity: 30
-Total Payable Amount: 214200
+Transaction No.: 3683036
+Transaction Date: Sun Jun 02 16:01:06 2024
+Product ID: LwQtM, Quantity: 10
+Total Payable Amount: 8800
 ------------------------------------
-Transaction No.: 
-Transaction Date: Sat Jun 01 22:43:58 2024
-Product ID: rXuD3, Quantity: 100
+Transaction No.: NULLIFIED
+Transaction Date: Sun Jun 02 16:01:26 2024
+Product ID: V4cfZ, Quantity: 10
+Total Payable Amount: 71400
+------------------------------------
+Transaction No.: 3813983
+Transaction Date: Sun Jun 02 16:51:41 2024
+Product ID: MpTBy, Quantity: 40
 Total Payable Amount: 3520
+------------------------------------
+Transaction No.: 3285736
+Transaction Date: Sun Jun 02 16:57:26 2024
+Product ID: MrviR, Quantity: 100
+Total Payable Amount: 64260
 ------------------------------------
