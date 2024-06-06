@@ -1,21 +1,3 @@
-/*
-The program should be based on the following requirements:
-1. The program must record the following details when a customer buys items:
-    a. Product ID
-    b. Product Description
-    c. Quantity
-    d. Item Price
-    e. Transaction ID
-    f. Transaction Date
-2. Use the two classes(PRODUCT and TRANSACT) that you have defined in the last practice activity. You may modify the classes according
-to the requirements of this task.
-3. The program should compute for the amount of item purchased. If the total amount
-is more than Php 1000.00 the customer is entitled to a 12% discount
-4. The program should output the total amount of the item, the discount price, and
-the amount due to the customer.
-5. The program should be able to display the transaction. See sample output below.
-6. There should be an option to run the program again or exit the program.
-*/
 #include <ctime>
 #include <fstream>
 #include <iostream>
@@ -390,24 +372,24 @@ public:
     void determineItemsToReplenish() {
         ifstream file("Inventory.txt");
         string line;
-        cout << "Items to Replenish:\n";
-        cout << "====================\n";
+        bool insideItem = false;
         while (getline(file, line)) {
-            if (line.find("Quantity: ") != string::npos) {
-                int quantity = stoi(line.substr(line.find(": ") + 2));
-                getline(file, line); // Read the next line
-                int reorderPoint = stoi(line.substr(line.find(": ") + 2));
-                getline(file, line); // Read the next line (to move to the next product)
-                if (quantity <= reorderPoint) {
-                    cout << "Product ID: " << line << endl;
-                    getline(file, line); // Read the next line (Description)
-                    cout << "Description: " << line << endl;
-                    getline(file, line); // Read the next line (Price)
-                    cout << "Price: " << line << endl;
-                    cout << "Quantity: " << quantity << endl;
-                    cout << "Reorder Point: " << reorderPoint << endl;
-                    cout << "---------------------\n";
+            if (!insideItem && !line.empty()) {
+                insideItem = true; // Start printing if not already
+                cout << "Items to Replenish:\n";
+                cout << "====================\n";
+            }
+            if (insideItem && line.substr(0, 11) == "Product ID:") {
+                cout << line << endl; // Print Product ID
+                for (int i = 0; i < 4; ++i) {
+                    getline(file, line);  // Read the next 4 lines
+                    cout << line << endl; // Print each line
                 }
+                insideItem = false; // Stop printing after reaching Reorder Point
+                cout << "---------------------\n";
+            }
+            if (insideItem && line.empty()) {
+                insideItem = false; // Stop printing on encountering a blank line
             }
         }
         file.close();
