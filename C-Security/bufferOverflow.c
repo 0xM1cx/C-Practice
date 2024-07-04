@@ -15,7 +15,7 @@ int main() {
     }
 
     if (flag == 1) {
-        printf("Welcome Root user:  ");
+        printf("Welcome Root user\n");
     }
     return 0;
 }
