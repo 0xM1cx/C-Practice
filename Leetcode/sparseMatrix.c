@@ -10,13 +10,9 @@ void main() {
         {0, 0, 12, 0, 0}};
 
     int x, y;
-
     int altern[9][3];
-
     int rowCount = 0;
-
     for (int i = 0; i < 5; i++) {
-
         for (int j = 0; j < 5; j++) {
             if (sparseMatrix[i][j] != 0) {
                 altern[rowCount][0] = i;
@@ -31,3 +27,5 @@ void main() {
     printf(" %d |", altern[0][1]);
     printf(" %d |", altern[0][2]);
 }
+
+    
