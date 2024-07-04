@@ -4,17 +4,18 @@
 int main() {
     char ans[4];
     int test = 0;
+    int flag = 0;
     printf("INPUT: ");
     scanf("%s", ans);
-    if (!(strcmp(ans, "pass"))) {
-        printf("Correct Password!!");
+    if (test != 0) {
+        printf("Buffer Overflowed\n");
+        flag = 1;
     } else {
-        printf("HEHEHEHEHEH");
+        printf("Try Again");
     }
 
-    if (test) {
-        printf("Welcome Root user");
-        printf("%d", test);
+    if (flag == 1) {
+        printf("Welcome Root user:  ");
     }
     return 0;
 }
