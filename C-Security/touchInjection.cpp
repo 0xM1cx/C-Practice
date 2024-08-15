@@ -1,6 +1,7 @@
 #include <iostream>
-#include <windows.h>
-#include <winuser.h>
+#define NOMINMAX
+#include <Windows.h>
+
 using namespace std;
 
 int main() {
